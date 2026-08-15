@@ -149,7 +149,7 @@ sha256sum -c checksums.sha256            # or the plain-text digest list
 
 The same command recomputes **two stages of the study's sealed chain** from the files published
 here — the frozen environment and the captured price bodies — and compares them with the values
-folded into ROOT `f82aacb7…`. A single changed byte in `data/` breaks the match.
+folded into ROOT `ff31be04…`. A single changed byte in `data/` breaks the match.
 
 ## Layout
 

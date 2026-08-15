@@ -3,7 +3,7 @@
   "description": "<p>Raw price bodies captured on 2026-08-13 from the IBM Cloud Global Catalog (<code>br-sao</code>) and the AWS Price List (<code>sa-east-1</code>), the code that captured them, and a deterministic 36-month total-cost-of-ownership model for a twelve-server migration under two sizing methods.</p><p>For this workload AWS is cheaper in both phases, and the gap is produced by a single line item: block storage, USD 110,507 apart over 36 months &mdash; more than the total gap between the providers. Every published number is asserted by a test, and the captured evidence recomputes to the stage hashes of the study's sealed provenance chain.</p>",
   "upload_type": "software",
   "access_right": "open",
-  "notes": "Published with the operator's explicit authorization on 2026-08-15. Companion artefact to an academic case study: it carries the evidence and the computation; the text of the article is not part of it. Concept DOI: 10.5281/zenodo.21955051.",
+  "notes": "Published with the operator's explicit authorization on 2026-08-15. Companion artefact to a case study: it carries the evidence and the computation; the text of the study is not part of it. Concept DOI: 10.5281/zenodo.21955051.",
   "license": "Apache-2.0",
   "version": "1.2.0",
   "language": "eng",

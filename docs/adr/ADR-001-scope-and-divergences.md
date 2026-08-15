@@ -2,17 +2,17 @@
 
 - **Status:** accepted
 - **Date:** 2026-08-15
-- **Context:** companion repository to an academic case study that is submitted, not published here
+- **Context:** companion repository to a case study whose text is not published here
 
 ## Context
 
-The study behind this repository produces two things: a **written article**, which is submitted to
-an institution as assessed coursework, and a **body of evidence and computation** — captured prices,
+The study behind this repository produces two things: a **written article**, which the author does
+not publish here, and a **body of evidence and computation** — captured prices,
 capture and analysis code, tests, derived tables and figures — which has no reason to be private and
 every reason to be auditable.
 
 Publishing the second while withholding the first is not a compromise; it is the correct division.
-Evidence that cannot be inspected is a claim about the author's diligence. An assessed text that is
+Evidence that cannot be inspected is a claim about the author's diligence. A text that is
 deposited publicly by its own author is a different kind of object, and one this repository has no
 interest in being.
 
@@ -36,7 +36,7 @@ interest in being.
 
 | What | Why |
 |---|---|
-| The article (PDF, DOCX, Markdown source) | it is assessed coursework, submitted to an institution; the author does not deposit it publicly |
+| The article (PDF, DOCX, Markdown source) | the author does not deposit the text publicly; this repository carries the evidence and the computation behind it |
 | The rendered body tables (`corpo-tabela-*.csv`, `apendice-a-*.csv`) and their generator | those files are the article's tables, prose notes included — they are text, not evidence. The numbers behind them are published in the model's own output (`tco-por-item.csv`, `dimensionamento.csv`, `precos-unitarios.csv`) |
 | The figure captions (`legendas()` in `figuras.py`, `LEGENDAS-FIGURAS.md`) | captions are paragraphs of the article body. The figures themselves are published |
 | The paper toolchain (`export_docx.py`, `gates_paper.py`, `tabelas_paper.py`, `build_run.py`) | it produces or seals the article, not the evidence |
@@ -65,7 +65,7 @@ interest in being.
 
 ## Alternatives rejected
 
-- **Publish nothing until the article is assessed.** Rejected: the repository's value is that it can
+- **Publish nothing until the article is out.** Rejected: the repository's value is that it can
   be inspected alongside the work, and delaying it adds no protection that the scope rule does not
   already give.
 - **Publish the article behind a password printed in the document.** Rejected: the deposit would
