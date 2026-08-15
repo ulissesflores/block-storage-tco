@@ -1,0 +1,44 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Block storage decides the bill: audited public-cloud price capture and a deterministic 36-month TCO model",
+  "description": "Raw price bodies captured on 2026-08-13 from the IBM Cloud Global Catalog (br-sao) and the AWS Price List (sa-east-1), the code that captured them, and a deterministic 36-month total-cost-of-ownership model for a twelve-server migration under two sizing methods. Every published number is asserted by a test, and the captured evidence recomputes to the stage hashes of the study's sealed provenance chain.",
+  "version": "1.0.0",
+  "dateCreated": "2026-08-13",
+  "datePublished": "2026-08-15",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11+",
+  "license": [
+    "https://spdx.org/licenses/Apache-2.0",
+    "https://spdx.org/licenses/CC-BY-4.0"
+  ],
+  "codeRepository": "https://github.com/ulissesflores/block-storage-tco",
+  "relatedLink": [
+    "https://globalcatalog.cloud.ibm.com/api/v1",
+    "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/index.json"
+  ],
+  "keywords": [
+    "cloud computing",
+    "total cost of ownership",
+    "public cloud pricing",
+    "IBM Cloud",
+    "Amazon Web Services",
+    "block storage",
+    "reproducible research",
+    "provenance",
+    "queueing theory"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-6034-7765",
+      "givenName": "Carlos Ulisses",
+      "familyName": "Flores",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
+      },
+      "url": "https://ulissesflores.com"
+    }
+  ]
+}

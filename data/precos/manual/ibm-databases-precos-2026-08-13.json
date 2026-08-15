@@ -1,0 +1,22 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-databases-precos",
+  "url": "https://www.ibm.com/products/databases-for-postgresql/pricing",
+  "timestamp_utc": "2026-08-13T20:22:50+00:00",
+  "http_status": null,
+  "bytes": 178737,
+  "via": "manual",
+  "classe_evidencia": "pagina-publica",
+  "data_captura": "2026-08-13",
+  "arquivo_evidencia": "data/evidencia/ibm-databases-precos-2026-08-13.html",
+  "sha256_evidencia": "abd6ed61af7f30f73f13c1ae192f0212ccaaed35b44d54eaafc937a6ff4aa3d4",
+  "conteudo": {
+    "itens": [
+      {
+        "rotulo": "Promo code for new accounts / Apply code DSFREE250 at provisioning to get",
+        "usd": 250.0,
+        "unidade": ""
+      }
+    ]
+  }
+}

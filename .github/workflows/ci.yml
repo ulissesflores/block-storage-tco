@@ -1,0 +1,60 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: verify (python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Integrity of the published tree comes first: if the tree drifted, nothing
+      # downstream is worth running.
+      - name: integrity of the committed seal
+        run: python make_provenance.py --verify
+
+      # Track 1 is standard library only, on purpose: the cost model must not need
+      # a wheel to be reproduced.
+      - name: full replication (Track 1)
+        run: python run_all.py
+
+  figures:
+    name: figures (Track 2)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      # Font rasterisation is platform-dependent, so the PNG bytes may differ from the
+      # published ones on a different machine. The figures are redrawn and the geometry
+      # assertions must hold; the byte-level seal is verified on the CSV files above.
+      - name: redraw figures
+        run: python src/figuras.py
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install ruff
+      # The code was sealed before this lint configuration existed; fixing style here
+      # would change files whose hashes are part of the published record.
+      - name: ruff
+        continue-on-error: true
+        run: ruff check .

@@ -1,0 +1,4572 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-codeengine-standard-nao-regional",
+  "url": "https://globalcatalog.cloud.ibm.com/api/v1/814fb158-af9c-4d3c-a06b-c7da42392845/pricing",
+  "timestamp_utc": "2026-08-13T20:58:58+00:00",
+  "http_status": 200,
+  "bytes": 40595,
+  "via": "api",
+  "provedor": "ibm",
+  "regiao": null,
+  "regional": false,
+  "pais": "USA",
+  "plano": "standard",
+  "plano_id": "814fb158-af9c-4d3c-a06b-c7da42392845",
+  "no_precificado_id": "814fb158-af9c-4d3c-a06b-c7da42392845",
+  "saltos": [
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/?q=name:codeengine&_limit=50",
+      "http_status": 200,
+      "bytes": 24486,
+      "papel": "resolucao-por-busca",
+      "id_resolvido": "2ad2fdd0-bba5-11ea-8966-5d6402fed1c7"
+    },
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/2ad2fdd0-bba5-11ea-8966-5d6402fed1c7/%2A?_offset=0&_limit=200",
+      "http_status": 200,
+      "bytes": 9003
+    },
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/814fb158-af9c-4d3c-a06b-c7da42392845/pricing",
+      "http_status": 200,
+      "bytes": 40595
+    }
+  ],
+  "n_saltos": 3,
+  "effective_from": "2026-08-01T00:00:00Z",
+  "metricas_exigidas": [],
+  "precos_no_pais": {
+    "multi-tenant-vCPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "VIRTUAL-PROCESSOR-CORE-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.1235
+        ]
+      ]
+    },
+    "fleet-A100-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-A100-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          3.7
+        ]
+      ]
+    },
+    "fleet-Gaudi3-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-GAUDI3-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          6.9
+        ]
+      ]
+    },
+    "fleet-H100-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-H100-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          10.5
+        ]
+      ]
+    },
+    "fleet-H200-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-H200-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          10.5
+        ]
+      ]
+    },
+    "fleet-L4-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-L4-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.7
+        ]
+      ]
+    },
+    "fleet-MI355-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-MI355-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "fleet-vCPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-VCPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.048
+        ]
+      ]
+    },
+    "multi-tenant-GB-hour": {
+      "moeda": "USD",
+      "charge_unit": "GIGABYTE-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.0128
+        ]
+      ]
+    },
+    "fleet-B300-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-B300-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          14.7
+        ]
+      ]
+    },
+    "fleet-GB-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-GB-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.0042
+        ]
+      ]
+    },
+    "fleet-L40-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-L40-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          2.1
+        ]
+      ]
+    },
+    "fleet-V100-GPU-hour": {
+      "moeda": "USD",
+      "charge_unit": "FLEET-V100-GPU-HOUR",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          2.4
+        ]
+      ]
+    },
+    "multi-tenant-api-call": {
+      "moeda": "USD",
+      "charge_unit": "Million API Calls",
+      "tier_model": "Linear Tier",
+      "faixas": [
+        [
+          1,
+          0.538
+        ]
+      ]
+    }
+  },
+  "conteudo": {
+    "origin": "pricing_catalog",
+    "type": "Paid",
+    "i18n": {},
+    "starting_price": {},
+    "effective_from": "2026-08-01T00:00:00Z",
+    "effective_until": "9999-12-31T00:00:00Z",
+    "metrics": [
+      {
+        "part_ref": "",
+        "metric_id": "multi-tenant-vCPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "VIRTUAL_PROCESSOR_CORE_HOURS",
+        "charge_unit_display_name": "Virtual Processor Core-Hour",
+        "charge_unit_name": "VIRTUAL_PROCESSOR_CORE_HOURS",
+        "charge_unit": "VIRTUAL-PROCESSOR-CORE-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1082478735
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.17357925
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1764285679
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.685425
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1000597
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.21136402559999998
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.80923375
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.09198912320000001
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2216.578
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 11.911729375
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.0743075
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 182.61698
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.1955911499999998
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.1962457
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.1235
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.0402693999999997
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 27.8,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-A100-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_A100_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-A100-GPU-HOUR",
+        "charge_unit_name": "FLEET_A100_GPU_HOURS",
+        "charge_unit": "FLEET-A100-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.2430537
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.20035
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.28571418
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.535
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.9977400000000003
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.33236352
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 24.24425
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.75594944
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 66407.6
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 356.86962500000004
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 601.4164999999999
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5471.116000000001
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 35.81933
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 35.83894
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.7
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 61.125479999999996
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-Gaudi3-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET-GAUDI3-GPU-HOURS",
+        "charge_unit_display_name": "FLEET-GAUDI3-GPU-HOURS",
+        "charge_unit_name": "FLEET_GAUDI3_GPU_HOURS",
+        "charge_unit": "FLEET-GAUDI3-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.0478569
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 9.69795
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 9.857142660000001
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 38.295
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.590380000000001
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 11.80900224
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 45.212250000000004
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.139473280000001
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 123841.20000000001
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 665.513625
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1121.5605
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10202.892000000002
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 66.79821
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 66.83478
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.9
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 113.99076
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-H100-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_H100_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-H100-GPU-HOUR",
+        "charge_unit_name": "FLEET_H100_GPU_HOURS",
+        "charge_unit": "FLEET-H100-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 9.203260499999999
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.75775
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.9999997
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 58.275
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 8.507100000000001
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 17.9702208
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 68.80125
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 7.820937600000001
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 188454
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1012.738125
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1706.7224999999999
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 15526.140000000001
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 101.64944999999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 101.70509999999999
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 173.46419999999998
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-H200-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_H200_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-H200-GPU-HOUR",
+        "charge_unit_name": "FLEET_H200_GPU_HOURS",
+        "charge_unit": "FLEET-H200-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 9.203260499999999
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.75775
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.9999997
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 58.275
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 8.507100000000001
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 17.9702208
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 68.80125
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 7.820937600000001
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 188454
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1012.738125
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1706.7224999999999
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 15526.140000000001
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 101.64944999999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 101.70509999999999
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.5
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 173.46419999999998
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-L4-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_L4_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-L4-GPU-HOUR",
+        "charge_unit_name": "FLEET_L4_GPU_HOURS",
+        "charge_unit": "FLEET-L4-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.6135506999999999
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.9838499999999999
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.99999998
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.885
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.56714
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.1980147199999998
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 4.586749999999999
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.52139584
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 12563.599999999999
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 67.515875
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 113.78149999999998
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1035.076
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.776629999999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.780339999999999
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 11.564279999999998
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-MI355-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_MI355_GPU_HOURS",
+        "charge_unit_display_name": "FLEET_MI355_GPU_HOURS",
+        "charge_unit_name": "FLEET_MI355_GPU_HOURS",
+        "charge_unit": "FLEET-MI355-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-vCPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_VCPU_HOURS",
+        "charge_unit_display_name": "FLEET-VCPU-HOUR",
+        "charge_unit_name": "FLEET_VCPU_HOURS",
+        "charge_unit": "FLEET-VCPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.042072048
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.067464
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0685714272
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.26639999999999997
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0388896
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0821495808
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.31452
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0357528576
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 861.504
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 4.62966
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 7.80216
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 70.97664
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.46468319999999996
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.4649376
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.048
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7929792
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 27.8,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "multi-tenant-GB-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "GIGABYTE_HOURS",
+        "charge_unit_display_name": "GIGABYTE-HOUR",
+        "charge_unit_name": "GIGABYTE_HOURS",
+        "charge_unit": "GIGABYTE-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0112192128
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0179904
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.018285713920000002
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.07104
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.010370560000000001
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.021906554879999998
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.083872
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.009534095360000001
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 229.73440000000002
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.2345760000000001
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.0805759999999998
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 18.927104000000003
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.12391552
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.12398336
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0128
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.21146112
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 55.5,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-B300-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET-B300-GPU-HOUR",
+        "charge_unit_display_name": "FLEET-B300-GPU-HOUR",
+        "charge_unit_name": "FLEET_B300_GPU_HOURS",
+        "charge_unit": "FLEET-B300-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 12.884564699999999
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.66085
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.99999958
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 81.585
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 11.90994
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 25.15830912
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 96.32175
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 10.94931264
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 263835.6
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1417.833375
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2389.4114999999997
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 21736.596
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 142.30922999999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 142.38714
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 14.7
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 242.84987999999996
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-GB-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_GB_HOURS",
+        "charge_unit_display_name": "FLEET-GB-HOUR",
+        "charge_unit_name": "FLEET_GB_HOURS",
+        "charge_unit": "FLEET-GB-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0036813041999999995
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0059031
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.00599999988
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.023309999999999997
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.00340284
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.007188088319999999
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0275205
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.00312837504
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 75.38159999999999
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.40509524999999996
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.6826889999999999
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 6.210456
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.04065977999999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.040682039999999996
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.0042
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.06938567999999999
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 55.5,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-L40-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_L40_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-L40-GPU-HOUR",
+        "charge_unit_name": "FLEET_L40_GPU_HOURS",
+        "charge_unit": "FLEET-L40-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.8406521
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.95155
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.9999999400000004
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 11.655
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.7014200000000002
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.59404416
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 13.760250000000001
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.5641875200000002
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 37690.8
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 202.547625
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 341.3445
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3105.228
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.32989
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 20.34102
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 34.69284
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "fleet-V100-GPU-hour",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "FLEET_V100_GPU_HOURS",
+        "charge_unit_display_name": "FLEET-V100-GPU-HOUR",
+        "charge_unit_name": "FLEET_V100_GPU_HOURS",
+        "charge_unit": "FLEET-V100-GPU-HOUR",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.1036023999999998
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.3731999999999998
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.42857136
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 13.319999999999999
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.94448
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 4.107479039999999
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 15.725999999999999
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 1.7876428800000002
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 43075.2
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 231.483
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 390.10799999999995
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3548.832
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 23.23416
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 23.246879999999997
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.4
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 39.648959999999995
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0,
+            "instance": 0
+          }
+        }
+      },
+      {
+        "part_ref": "",
+        "metric_id": "multi-tenant-api-call",
+        "tier_model": "Linear Tier",
+        "resource_display_name": "MILLION_API_CALLS",
+        "charge_unit_display_name": "Million API Calls",
+        "charge_unit_name": "MILLION_API_CALLS",
+        "charge_unit": "Million API Calls",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.471557538
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.756159
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.7685714132000001
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 2.9859
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.43588760000000004
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.9207598848
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 3.5252450000000004
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.4007299456
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 9656.024000000001
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 51.890772500000004
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 87.44921
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 795.52984
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.2083242
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 5.2111756
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 0.538
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 1,
+                "price": 8.8879752
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 0.1,
+            "instance": 0
+          }
+        }
+      }
+    ]
+  }
+}

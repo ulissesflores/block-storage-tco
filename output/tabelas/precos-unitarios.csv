@@ -1,0 +1,73 @@
+provedor,recurso,unidade,preco_1a_faixa_usd,faixas,regiao_do_preco,classe_evidencia,arquivo_fonte
+aws,SAE1-AmazonEKS-Hours:perCluster,Hours,0.1,até ∞: 0.1,sa-east-1,api-versionada,data/precos/api/aws-AmazonEKS-sa-east-1-2026-08-13.json
+aws,SAE1-DataTransfer-Out-Bytes,GB,0.15,até 10240: 0.15 | até 51200: 0.138 | até 153600: 0.126 | até ∞: 0.114,sa-east-1,api-versionada,data/precos/api/aws-AWSDataTransfer-sa-east-1-2026-08-13.json
+aws,SAE1-EBS:VolumeP-IOPS.gp3,IOPS-Mo,0.0095,até ∞: 0.0095,sa-east-1,api-versionada,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+aws,SAE1-EBS:VolumeUsage.gp3,GB-Mo,0.152,até ∞: 0.152,sa-east-1,api-versionada,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+aws,SAE1-LCUUsage,LCU-Hrs,0.011,até ∞: 0.011,sa-east-1,api-versionada,data/precos/api/aws-AWSELB-sa-east-1-2026-08-13.json
+aws,SAE1-Lambda-Provisioned-Concurrency,Lambda-GB-Second,6.6372e-06,até ∞: 6.6372e-06,sa-east-1,api-versionada,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
+aws,SAE1-Lambda-Provisioned-GB-Second,Lambda-GB-Second,1.54867e-05,até ∞: 1.54867e-05,sa-east-1,api-versionada,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
+aws,SAE1-LoadBalancerUsage,Hrs,0.034,até ∞: 0.034,sa-east-1,api-versionada,data/precos/api/aws-AWSELB-sa-east-1-2026-08-13.json
+aws,SAE1-RDS:GP3-Storage,GB-Mo,0.219,até ∞: 0.219,sa-east-1,api-versionada,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+aws,SAE1-RDS:Multi-AZ-GP3-Storage,GB-Mo,0.438,até ∞: 0.438,sa-east-1,api-versionada,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+aws,SAE1-Request,Request,2e-07,até ∞: 2e-07,sa-east-1,api-versionada,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
+aws,SAE1-StorageUsage,GB-Mo,0.19,até ∞: 0.19,sa-east-1,api-versionada,data/precos/api/aws-AmazonDocDB-sa-east-1-2026-08-13.json
+aws,SAE1-TimedStorage-ByteHrs,GB-Mo,0.0405,até 51200: 0.0405 | até 512000: 0.039 | até ∞: 0.037,sa-east-1,api-versionada,data/precos/api/aws-AmazonS3-sa-east-1-2026-08-13.json
+aws,SAE1-gpt-oss-120b-input-tokens,1K tokens,0.00018,até ∞: 0.00018,sa-east-1,api-versionada,data/precos/api/aws-AmazonBedrock-sa-east-1-2026-08-13.json
+aws,SAE1-gpt-oss-120b-output-tokens,1K tokens,0.00073,até ∞: 0.00073,sa-east-1,api-versionada,data/precos/api/aws-AmazonBedrock-sa-east-1-2026-08-13.json
+ibm,Open AI / USD 0.159 per 1M tokens input,—,0.636,até ∞: 0.636,não-regional (declarado),pagina-publica,data/precos/manual/ibm-watsonx-ai-2026-08-13.json
+ibm,bandwidth.standard,,0.1935,até 50000: 0.1935 | até 150000: 0.1505 | até 1e+09: 0.1075,br-sao,api-versionada,data/precos/api/ibm-cloud-object-storage-br-sao-2026-08-13.json
+ibm,data-processed,Gigabyte-Month,0.01165,até 1: 0.01165,br-sao,api-versionada,data/precos/api/ibm-is.load-balancer-gen2-load-balancer-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-16-64,Instance-Hour,1373.5289,até 1: 1373.5289,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-30-240,Instance-Hour,3683.91,até 1: 3683.91,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-32-128,Instance-Hour,2747.0578,até 1: 2747.0578,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-4-16,Instance-Hour,343.3822,até 1: 343.3822,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-8-32,Instance-Hour,686.7644,até 1: 686.7644,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-8-64,Instance-Hour,982.3761,até 1: 982.3761,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mongodb-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-16-64,Instance-Hour,1217.7336,até 1: 1217.7336,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-30-240,Instance-Hour,3261.965,até 1: 3261.965,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-32-128,Instance-Hour,2435.4671,até 1: 2435.4671,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-4-16,Instance-Hour,304.4334,até 1: 304.4334,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-8-32,Instance-Hour,608.8668,até 1: 608.8668,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-8-64,Instance-Hour,869.8572,até 1: 869.8572,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-mysql-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+ibm,databases-for-postgresql-16-64,Instance-Hour,870.8559,até 1: 870.8559,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,databases-for-postgresql-30-240,Instance-Hour,2285.747,até 1: 2285.747,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,databases-for-postgresql-8-64,Instance-Hour,609.5326,até 1: 609.5326,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,databases-for-postgresql-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,databases-for-postgresql-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-16-64,Instance-Hour,948.45696,até 1: 948.45696,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-30-240,Instance-Hour,2489.4276,até 1: 2489.4276,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-32-128,Instance-Hour,1896.91392,até 1: 1896.91392,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-4-16,Instance-Hour,237.11424,até 1: 237.11424,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-8-32,Instance-Hour,474.22848,até 1: 474.22848,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-8-64,Instance-Hour,663.84736,até 1: 663.84736,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-backup,Gigabyte-Month,0.03193,até 1: 0.03193,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,databases-for-redis-disk,Gigabyte-Month,0.6283,até 1: 0.6283,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+ibm,gpt-oss-120b / Open AI,—,0.159,até ∞: 0.159,não-regional (declarado),pagina-publica,data/precos/manual/ibm-watsonx-ai-2026-08-13.json
+ibm,is.volume.10iopstier.GB,Gigabyte-Hour,0.001090462,até 1: 0.001090462,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+ibm,is.volume.5iopstier.GB,Gigabyte-Hour,0.00029039,até 1: 0.00029039,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-5iops-tier-br-sao-2026-08-13.json
+ibm,is.volume.custom.GB,Gigabyte-Hour,0.000227176,até 1: 0.000227176,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-custom-br-sao-2026-08-13.json
+ibm,is.volume.custom.IOPS,IOPS_HOUR,0.000159031,até 1: 0.000159031,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-custom-br-sao-2026-08-13.json
+ibm,is.volume.generalpurpose.GB,Gigabyte-Hour,0.00016595,até 1: 0.00016595,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+ibm,is.vpc.egress,Gigabyte Transmitted Outbound,0.115197,até 10000: 0.115197 | até 50000: 0.1099 | até 150000: 0.09269 | até 1e+14: 0.0662,br-sao,api-versionada,data/precos/api/ibm-is.vpc-nextgen-egress-br-sao-2026-08-13.json
+ibm,multi-tenant-GB-hour,GIGABYTE-HOUR,0.0128,até 1: 0.0128,não-regional (declarado),api-versionada,data/precos/api/ibm-codeengine-standard-nao-regional-2026-08-13.json
+ibm,multi-tenant-api-call,Million API Calls,0.538,até 1: 0.538,não-regional (declarado),api-versionada,data/precos/api/ibm-codeengine-standard-nao-regional-2026-08-13.json
+ibm,multi-tenant-vCPU-hour,VIRTUAL-PROCESSOR-CORE-HOUR,0.1235,até 1: 0.1235,não-regional (declarado),api-versionada,data/precos/api/ibm-codeengine-standard-nao-regional-2026-08-13.json
+ibm,part-databases-for-postgresql-32-128,Instance-Hour,1741.7119,até 1: 1741.7119,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,part-iks.vpc.bxf.4x16,Instance-Hour,0.29256,até 1: 0.29256,br-sao,api-versionada,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-4x16-br-sao-2026-08-13.json
+ibm,part-iks.vpc.bxf.8x32,Instance-Hour,0.5865,até 1: 0.5865,br-sao,api-versionada,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-8x32-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-bxf-16x64,Instance-Hour,1.063,até 1: 1.063,br-sao,api-versionada,data/precos/api/ibm-is.instance-bxf-16x64-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-bxf-2x8,Instance-Hour,0.133,até 1: 0.133,br-sao,api-versionada,data/precos/api/ibm-is.instance-bxf-2x8-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-bxf-4x16,Instance-Hour,0.266,até 1: 0.266,br-sao,api-versionada,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-bxf-8x32,Instance-Hour,0.532,até 1: 0.532,br-sao,api-versionada,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-cxf-16x32,Instance-Hour,0.941,até 1: 0.941,br-sao,api-versionada,data/precos/api/ibm-is.instance-cxf-16x32-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-cxf-2x4,Instance-Hour,0.117,até 1: 0.117,br-sao,api-versionada,data/precos/api/ibm-is.instance-cxf-2x4-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-cxf-4x8,Instance-Hour,0.235,até 1: 0.235,br-sao,api-versionada,data/precos/api/ibm-is.instance-cxf-4x8-br-sao-2026-08-13.json
+ibm,part-is.instance-hours-cxf-8x16,Instance-Hour,0.47,até 1: 0.47,br-sao,api-versionada,data/precos/api/ibm-is.instance-cxf-8x16-br-sao-2026-08-13.json
+ibm,postgresql-isolated-4-16,Instance-Hour,217.714,até 1: 217.714,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,postgresql-isolated-8-32,Instance-Hour,435.428,até 1: 435.428,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+ibm,service-usage,Instance-Hour,0.040773,até 1: 0.040773,br-sao,api-versionada,data/precos/api/ibm-is.load-balancer-gen2-load-balancer-br-sao-2026-08-13.json
+ibm,storage.standard,,0.0296571,até 499999: 0.0296571 | até 1e+09: 0.026961,br-sao,api-versionada,data/precos/api/ibm-cloud-object-storage-br-sao-2026-08-13.json

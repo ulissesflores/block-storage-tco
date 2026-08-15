@@ -1,0 +1,114 @@
+{
+  "figura-1-arquitetura-fase-1.png": {
+    "IBM Cloud": [
+      {
+        "rotulo": "SEGURANÇA DA CONTA",
+        "fonte_titulo": 6.5,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "BORDA",
+        "fonte_titulo": 6.5,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "APLICAÇÃO — SUB-REDE PRIVADA",
+        "fonte_titulo": 6.5,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "DADOS — SUB-REDE PRIVADA",
+        "fonte_titulo": 6.5,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "ARMAZENAMENTO DE OBJETO",
+        "fonte_titulo": 6.5,
+        "fonte_sub": 6.5
+      }
+    ],
+    "AWS": [
+      {
+        "rotulo": "SEGURANÇA DA CONTA",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "BORDA",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "APLICAÇÃO — SUB-REDE PRIVADA",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "DADOS — SUB-REDE PRIVADA",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "ARMAZENAMENTO DE OBJETO",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      }
+    ]
+  },
+  "figura-2-arquitetura-fase-2.png": {
+    "IBM Cloud": [
+      {
+        "rotulo": "SEGURANÇA E GOVERNANÇA DE DADOS",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "BORDA E EXECUÇÃO SEM SERVIDOR",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "APLICAÇÃO EM CONTÊINERES",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "DADOS GERENCIADOS",
+        "fonte_titulo": 6.95,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "CAMADA DE IA CORPORATIVA",
+        "fonte_titulo": 8.15,
+        "fonte_sub": 7.7
+      }
+    ],
+    "AWS": [
+      {
+        "rotulo": "SEGURANÇA E GOVERNANÇA DE DADOS",
+        "fonte_titulo": 7.2,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "BORDA E EXECUÇÃO SEM SERVIDOR",
+        "fonte_titulo": 7.2,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "APLICAÇÃO EM CONTÊINERES",
+        "fonte_titulo": 7.2,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "DADOS GERENCIADOS",
+        "fonte_titulo": 7.2,
+        "fonte_sub": 6.5
+      },
+      {
+        "rotulo": "CAMADA DE IA CORPORATIVA",
+        "fonte_titulo": 8.4,
+        "fonte_sub": 7.7
+      }
+    ]
+  }
+}

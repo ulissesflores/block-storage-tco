@@ -1,0 +1,742 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-is.vpc-nextgen-egress-br-sao",
+  "url": "https://globalcatalog.cloud.ibm.com/api/v1/5c6f17b8-1be9-4ae8-a328-afbfe41b02f8%3Abr-sao36365/pricing",
+  "timestamp_utc": "2026-08-13T20:59:01+00:00",
+  "http_status": 200,
+  "bytes": 7476,
+  "via": "api",
+  "provedor": "ibm",
+  "regiao": "br-sao",
+  "regional": true,
+  "pais": "USA",
+  "plano": "nextgen-egress",
+  "plano_id": "5c6f17b8-1be9-4ae8-a328-afbfe41b02f8",
+  "no_precificado_id": "5c6f17b8-1be9-4ae8-a328-afbfe41b02f8:br-sao36365",
+  "saltos": [
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/is.vpc/%2A?_limit=1",
+      "http_status": 200,
+      "bytes": 5123,
+      "papel": "resolucao-por-nome"
+    },
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/is.vpc/%2A?_offset=0&_limit=200",
+      "http_status": 200,
+      "bytes": 5127
+    },
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/5c6f17b8-1be9-4ae8-a328-afbfe41b02f8/%2A?_offset=0&_limit=200",
+      "http_status": 200,
+      "bytes": 37974
+    },
+    {
+      "url": "https://globalcatalog.cloud.ibm.com/api/v1/5c6f17b8-1be9-4ae8-a328-afbfe41b02f8%3Abr-sao36365/pricing",
+      "http_status": 200,
+      "bytes": 7476
+    }
+  ],
+  "n_saltos": 4,
+  "effective_from": "2026-08-01T00:00:00Z",
+  "metricas_exigidas": [
+    "egress"
+  ],
+  "precos_no_pais": {
+    "is.vpc.egress": {
+      "moeda": "USD",
+      "charge_unit": "Gigabyte Transmitted Outbound",
+      "tier_model": "Graduated Tier (Step Tier)",
+      "faixas": [
+        [
+          10000,
+          0.115197
+        ],
+        [
+          50000,
+          0.1099
+        ],
+        [
+          150000,
+          0.09269
+        ],
+        [
+          99999999999999,
+          0.0662
+        ]
+      ]
+    }
+  },
+  "conteudo": {
+    "deployment_id": "5c6f17b8-1be9-4ae8-a328-afbfe41b02f8:br-sao36365",
+    "deployment_location": "br-sao",
+    "deployment_region": "br-sao",
+    "origin": "pricing_catalog",
+    "type": "Paid",
+    "i18n": {},
+    "starting_price": {},
+    "effective_from": "2026-08-01T00:00:00Z",
+    "effective_until": "9999-12-31T00:00:00Z",
+    "metrics": [
+      {
+        "part_ref": "",
+        "metric_id": "is.vpc.egress",
+        "tier_model": "Graduated Tier (Step Tier)",
+        "resource_display_name": "GIGABYTE_TRANSMITTED_OUTBOUNDS",
+        "charge_unit_display_name": "",
+        "charge_unit_name": "GIGABYTE_TRANSMITTED_OUTBOUNDS",
+        "charge_unit": "Gigabyte Transmitted Outbound",
+        "charge_unit_quantity": 1,
+        "amounts": [
+          {
+            "country": "USA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "USD",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "EURO",
+            "currency": "EUR",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.10097028569699999
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.0963274599
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.08124287768999999
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0580243662
+              }
+            ]
+          },
+          {
+            "country": "ARG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "CAN",
+            "currency": "CAD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.16190938349999998
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.15446445
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.130275795
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.09304409999999999
+              }
+            ]
+          },
+          {
+            "country": "AUS",
+            "currency": "AUD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.1645671395658
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.15699999686
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.132414283066
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.09457142668
+              }
+            ]
+          },
+          {
+            "country": "ISA",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "BOL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "BRA",
+            "currency": "BRL",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.63934335
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.609945
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.5144295
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.36740999999999996
+              }
+            ]
+          },
+          {
+            "country": "ASEAN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "CHE",
+            "currency": "CHF",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.0933326094
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.08904098
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.075097438
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.05363524
+              }
+            ]
+          },
+          {
+            "country": "CHL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "NZL",
+            "currency": "NZD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.1971538595712
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.18808831103999998
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.15863426342399997
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.11329796351999999
+              }
+            ]
+          },
+          {
+            "country": "COL",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "DNK",
+            "currency": "DKK",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.7548283425
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.7201197500000001
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.6073512249999999
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.4337755
+              }
+            ]
+          },
+          {
+            "country": "ECU",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "GBR",
+            "currency": "GBP",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.0858046236864
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.08185914688
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.069040257728
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.04930914944
+              }
+            ]
+          },
+          {
+            "country": "HKG",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "IDN",
+            "currency": "IDR",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 2067.5557559999997
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 1972.4851999999998
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 1663.6001199999998
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 1188.1576
+              }
+            ]
+          },
+          {
+            "country": "IND",
+            "currency": "INR",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 11.11089464625
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 10.599992375
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 8.9400663625
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 6.38507275
+              }
+            ]
+          },
+          {
+            "country": "JPN",
+            "currency": "JPY",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 18.724696364999996
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 17.8636955
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 15.066296049999998
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 10.760478999999998
+              }
+            ]
+          },
+          {
+            "country": "KOR",
+            "currency": "KRW",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 170.33949996
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 162.506932
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 137.0588492
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 97.888616
+              }
+            ]
+          },
+          {
+            "country": "MEX",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "NOR",
+            "currency": "NOK",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 1.1152106373
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 1.0639309099999998
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.8973226209999999
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.6408755799999999
+              }
+            ]
+          },
+          {
+            "country": "PER",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "SWE",
+            "currency": "SEK",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 1.1158211813999999
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 1.06451338
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.8978138779999999
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.64122644
+              }
+            ]
+          },
+          {
+            "country": "TWN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "VEN",
+            "currency": "USD",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 0.115197
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 0.1099
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 0.09269
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 0.0662
+              }
+            ]
+          },
+          {
+            "country": "ZAF",
+            "currency": "ZAR",
+            "prices": [
+              {
+                "quantity_tier": 10000,
+                "price": 1.9031005187999996
+              },
+              {
+                "quantity_tier": 50000,
+                "price": 1.81559196
+              },
+              {
+                "quantity_tier": 150000,
+                "price": 1.5312758759999998
+              },
+              {
+                "quantity_tier": 99999999999999,
+                "price": 1.0936504799999998
+              }
+            ]
+          }
+        ],
+        "usage_cap_qty": 0,
+        "display_cap": 0,
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "9999-12-31T00:00:00Z",
+        "additional_properties": {
+          "included_quantities": {
+            "account": 5,
+            "instance": 0
+          }
+        }
+      }
+    ]
+  }
+}

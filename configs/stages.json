@@ -1,0 +1,53 @@
+{
+  "hash_alg": "sha256",
+  "_ordem": "environment -> code -> prereg -> inputs -> data -> scores. Ordem científica: o ambiente é o genesis e o pré-registro sela antes dos dados.",
+  "_nota_corte_figures_paper": "Os estágios `figures` e `paper` foram CORTADOS na adjudicação de execução (2026-08-13). Razão: o texto do artigo é editado muitas vezes e não é publicado, então selá-lo só produz fricção de re-selo. O selo útil é sobre ambiente -> dados -> resultados, que é onde mora o risco real — o /pricing da IBM não tem URL versionada, ao contrário do offer file da AWS, e uma re-captura futura produziria tabelas divergentes em silêncio.",
+  "_nota_required_false": "Estágio ainda não populado entra na cadeia desde o início com required:false — sela árvore vazia sem erro. Vira required:true quando o estágio for populado e a cadeia for re-selada.",
+  "_nota_inputs": "configs/stages.json é ele próprio folha do estágio inputs: a definição da cadeia fica selada junto com os dados de entrada. Não há ciclo — o arquivo é lido de fora e hasheado pelos bytes literais; o manifesto é o teto, nunca folha.",
+  "stages": [
+    {
+      "name": "environment",
+      "kind": "file",
+      "path": "env.json"
+    },
+    {
+      "name": "code",
+      "kind": "tree",
+      "globs": [
+        "src/*.py",
+        "tests/*.py"
+      ]
+    },
+    {
+      "name": "prereg",
+      "kind": "tree",
+      "globs": [
+        "prereg/*.md"
+      ],
+      "required": true
+    },
+    {
+      "name": "inputs",
+      "kind": "tree",
+      "globs": [
+        "configs/*.json"
+      ]
+    },
+    {
+      "name": "data",
+      "kind": "tree",
+      "globs": [
+        "data/precos/**/*.json"
+      ],
+      "required": false
+    },
+    {
+      "name": "scores",
+      "kind": "tree",
+      "globs": [
+        "output/tabelas/*.csv"
+      ],
+      "required": true
+    }
+  ]
+}

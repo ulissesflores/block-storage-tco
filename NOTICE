@@ -1,0 +1,23 @@
+Block storage decides the bill
+Copyright 2026 Carlos Ulisses Flores
+
+Code in src/, run_all.py, make_provenance.py and tests/ is licensed under the
+Apache License, Version 2.0 (LICENSES/Apache-2.0.txt).
+
+Documentation, derived tables (output/tabelas/) and figures (output/figuras/) are
+licensed under Creative Commons Attribution 4.0 International
+(LICENSES/CC-BY-4.0.txt).
+
+THIRD-PARTY CONTENT
+-------------------
+data/precos/ and data/evidencia/ contain responses served by IBM Corporation and
+Amazon Web Services, Inc. from their public, unauthenticated pricing endpoints and
+public product pages on 2026-08-13. They are reproduced verbatim as evidence for the
+figures published here, under the terms that govern quotation of public factual
+material; no ownership over them is claimed and no endorsement by either provider is
+implied. Prices are those served on the capture date and are not current. "IBM",
+"IBM Cloud", "AWS" and "Amazon Web Services" are trademarks of their respective
+owners.
+
+If you are a rights holder and consider any file in data/ to be redistributed
+improperly, open an issue and it will be removed.

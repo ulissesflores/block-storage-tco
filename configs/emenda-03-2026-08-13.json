@@ -1,0 +1,135 @@
+{
+  "_natureza": "emenda ao pré-registro — decisões de MODELAGEM tomadas na etapa E5, depois da captura",
+  "_data": "2026-08-13",
+  "_etapa": "E5 (modelo de TCO)",
+
+  "_por_que_esta_emenda_existe": "O pré-registro selou o vetor de demanda ANTES da captura (causa N3), e fez bem: taxa de chegada, tempo de serviço, objeto, saída de dados e bloco estão lá. Ao montar o modelo, quatro premissas necessárias apareceram que aquele vetor NÃO cobria — a principal é a volumetria da camada de IA, item que a D15 exige com número. Acrescentá-las em silêncio dentro de `premissas-carga.json` reescreveria o compromisso depois de ver o preço; escondê-las deixaria o item dominante sem número. A saída honesta é esta: arquivo próprio, datado, que declara o que foi decidido DEPOIS e como o efeito da decisão é neutralizado — toda premissa nova entra como GRADE reportada por inteiro, nunca como ponto escolhido. `projeto-tecnico.json` e `premissas-carga.json` permanecem intocados, e a identidade em bytes deles continua sendo a prova de que o compromisso precede os dados.",
+
+  "camada_ia": {
+    "_papel": "Item `ia` do conjunto mínimo publicável (D15). Sem volumetria, não há linha de custo; com volumetria escolhida a dedo, há linha escolhida. Daí a grade.",
+    "grade_tokens_mes": [10000000, 100000000, 1000000000],
+    "_justificativa_grade": "Três ordens de grandeza, reportadas TODAS. O paper afirma o veredito em cada ponto; se a ordem entre as nuvens não mudar em nenhum deles, a imaterialidade da escolha vira fato computado em vez de promessa.",
+    "ponto_ilustrativo_tokens_mes": 100000000,
+    "_justificativa_ponto_ilustrativo": "suposição declarada: assistente de atendimento com geração aumentada por recuperação sobre o catálogo do CMS, na ordem de 10^8 tokens mensais para um varejista de médio porte. É ilustração sobre a grade, não a base do resultado.",
+    "razao_entrada_saida": 4.0,
+    "_justificativa_razao_entrada_saida": "suposição declarada: recuperação aumentada envia contexto longo e devolve resposta curta; quatro tokens de entrada por token de saída. A razão entra na grade porque as duas nuvens cobram entrada e saída a preços diferentes.",
+
+    "pareamento_de_modelo": {
+      "_regra": "Mesma convenção da D13 (licença do Oracle): o cenário primário usa o modelo que existe COM O MESMO NOME nos dois catálogos capturados; classe-mais-próxima só onde não houver idêntico, e sempre declarada.",
+      "primario": {
+        "modelo": "gpt-oss-120b",
+        "ibm": {"fonte": "página de preços do watsonx.ai capturada em 2026-08-13", "entrada_por_1m_usd": 0.159, "saida_por_1m_usd": 0.636},
+        "aws": {"fonte": "offer file do AmazonBedrock em sa-east-1 capturado em 2026-08-13", "usagetype_entrada": "SAE1-gpt-oss-120b-input-tokens", "usagetype_saida": "SAE1-gpt-oss-120b-output-tokens"},
+        "_por_que_este": "É o único modelo de peso aberto que aparece com o MESMO identificador nos dois catálogos — pareamento exato, sem inferência de equivalência. Os números vão ser lidos do disco pelo modelo; os valores acima ficam registrados aqui apenas como declaração do que se espera encontrar, e o teste falha se o disco divergir."
+      },
+      "sensibilidade": {
+        "modelo_ibm": "llama-3-3-70b-instruct",
+        "modelo_aws": "Llama 3 70B",
+        "_ressalva": "NÃO é o mesmo modelo: a IBM publica a versão 3.3 e o Bedrock em São Paulo publica a 3. Mesma família e mesmo porte, gerações vizinhas — entra como sensibilidade nomeada, nunca no cenário primário.",
+        "_ressalva_preco_ibm": "a página da IBM traz UM preço para este modelo (USD 0,7526 por 1M tokens), sem separar entrada e saída, ao contrário do que faz para os modelos Granite. O modelo aplica o mesmo valor às duas parcelas e declara a leitura."
+      }
+    },
+
+    "fronteira_de_dados": {
+      "_papel": "O achado que o preço não mostra e que o enunciado cobra ('como reduzir o risco de vazamento').",
+      "fato": "watsonx.ai (Studio e Runtime), watsonx.governance e watsonx.data não declaram br-sao no Global Catalog da IBM em 2026-08-13; o Bedrock é listado em sa-east-1 no índice de preços da AWS no mesmo dia.",
+      "consequencia_no_modelo": "A linha de IA do lado IBM é marcada com região `não-regional (declarado)` e o custo do ponto de extremidade privado e do mascaramento NÃO é precificado — não há SKU capturado para ele. A assimetria é qualitativa e vai ao texto como regime de transferência internacional da LGPD, não como número inventado."
+    }
+  },
+
+  "mitigacao_n4_serverless": {
+    "_papel": "Causa N4: o enunciado manda serverless para as APIs e exige latência inferior a 200 ms; a partida a frio conflita com o alvo. A mitigação é capacidade sempre quente, e ela CUSTA — o custo entra na planilha em vez de a tensão ser varrida para debaixo do tapete.",
+    "instancias_sempre_quentes": 2,
+    "_derivacao": "NÃO é suposição nova: é a Lei de Little sobre o vetor já selado — concorrência = pico_rps x tempo_de_serviço = 60 x 0,025 s = 1,5, arredondado para cima. Duas instâncias também satisfazem a redundância de zona exigida pelo requisito de disponibilidade.",
+    "aws": "concorrência provisionada de 2 x 512 MB, 730 h/mês, mais duração executada à tarifa de concorrência provisionada",
+    "ibm": "duas instâncias mínimas do Code Engine sempre alocadas (vCPU e GB por hora), mais o consumo por requisição",
+    "combo_code_engine": {"vcpu": 0.25, "memoria_gb": 0.5},
+    "_justificativa_combo": "o menor par vCPU/memória do Code Engine que acomoda os 512 MB selados em `premissas-carga.json`; a paridade com o Lambda é feita PELA MEMÓRIA (512 MB nos dois lados), que é a unidade que os dois catálogos cobram."
+  },
+
+  "paridade_de_sku_aws": {
+    "_papel": "A regra de seleção selada diz 'menor SKU da família declarada que satisfaça vCPU e RAM; empate resolvido pelo menor preço'. O catálogo da AWS em sa-east-1 tem, dentro das mesmas famílias, três classes que a IBM não oferece em br-sao — e deixá-las competir faria a comparação premiar uma diferença de portfólio, não de preço.",
+    "cenario_primario": {
+      "arquitetura": "x86 (Intel ou AMD)",
+      "_razao": "o catálogo capturado da IBM em br-sao tem apenas perfis x86 (famílias bxf e cxf); admitir Graviton no primário compararia arquiteturas de processador diferentes, o que a paridade comercial (N1) proíbe.",
+      "geracao": "somente `currentGeneration: Yes`",
+      "_razao_geracao": "a fatia carrega famílias legadas (m1, m2, m3, r4) cujo preço não reflete o catálogo corrente; incluí-las poluiria a escada nos dois sentidos.",
+      "desempenho": "somente sustentado — famílias burstable (t*) ficam fora",
+      "_razao_desempenho": "a IBM também vende SKU burstable em br-sao (medido: `part-is.burstable50-bxf-4x16` a USD 0,18092/h contra 0,266/h do sustentado). Excluir dos DOIS lados é o que mantém a paridade; excluir de um só a quebraria."
+    },
+    "sensibilidade_nomeada": "Graviton (ARM) admitido do lado AWS, sem contrapartida na IBM. Reportado à parte, com a natureza da diferença declarada."
+  },
+
+  "caminho_oracle_ibm": {
+    "_papel": "A D13 manda precificar os DOIS caminhos do lado IBM (máquina virtual e bare metal). Falta dizer qual entra no total do cenário primário — e essa escolha move o resultado, porque o menor bare metal de São Paulo custa 5,5 vezes a máquina virtual de mesma classe.",
+    "primario": "maquina-virtual",
+    "_razao": "É o caminho MAIS BARATO do lado IBM, portanto o mais favorável à nuvem que a tese suspeita perder nesta perna. Se a IBM perder mesmo assim, o achado é forte; se vencer, não foi por escolha do autor. O caminho bare metal — defensável quando o licenciamento se conta por núcleo físico — entra como sensibilidade, porque a premissa de licenciamento que o justifica é INFERÊNCIA (D11), não fato primário.",
+    "sensibilidade": "bare-metal (mx3-metal-16x128, o menor disponível em br-sao, com 16 núcleos — o dobro do requisito)"
+  },
+
+  "iops_e_classe_de_disco": {
+    "_papel": "O de-para selado manda `gen2-volume-custom` (IBM, que cobra IOPS à parte) em banco-4 e app-4, e `gen2-volume-10iops-tier` em banco-1 e banco-5, com a instrução literal de 'mesmo IOPS-alvo dos dois lados'. Faltava o alvo — sem ele não há linha de bloco comparável.",
+    "iops_por_gb": 10,
+    "_justificativa": "Espelha o próprio degrau que a IBM vende como `10iops-tier` (dez operações por segundo por gigabyte). Adotar o degrau do catálogo, em vez de um número inventado, mantém o alvo ancorado em algo publicado e igual nos dois lados.",
+    "conflito_interno_do_arquivo_selado": {
+      "achado": "Dentro de `projeto-tecnico.json`, a matriz de paridade diz 'IOPS provisionado apenas em banco-4 e app-4', enquanto o de-para atribui `10iops-tier` também a banco-1 e banco-5 do lado IBM, sem contrapartida do lado AWS.",
+      "reconciliacao_adotada": "Vale a PARIDADE: onde a IBM paga por um degrau de IOPS, o lado AWS provisiona o mesmo alvo em gp3. Ignorar isso daria à AWS menos capacidade de entrada e saída pelo mesmo trabalho, que é precisamente o vício que a causa N1 descreve. A reconciliação ENCARECE a AWS — não é a direção que facilitaria uma conclusão.",
+      "reportado_em_vez_de_corrigido": "O arquivo selado NÃO é reescrito; o conflito fica registrado aqui e no corpo do paper."
+    },
+    "franquia_gp3": {
+      "iops_incluidos": 3000,
+      "throughput_incluido_mibs": 125,
+      "fonte": "https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html — verificado em 2026-08-13, literal: 'gp3 volumes deliver a consistent baseline IOPS performance of 3,000 IOPS, which is included with the price of storage'",
+      "classe_evidencia": "regra-de-plataforma-documentada (não é preço; não está no offer file)",
+      "_por_que_declarar": "A franquia não aparece em nenhum SKU capturado. Ignorá-la cobraria da AWS três mil operações por segundo que ela não cobra — erro conhecido de 3.000 x 0,0095 = USD 28,50 por volume e por mês. Aplicá-la exige fonte, e a fonte está acima, verificada. O volume IBM `custom` não declara franquia equivalente: paga-se todo o IOPS provisionado."
+    }
+  },
+
+  "backup": {
+    "_papel": "Item `backup` da taxonomia. A retenção de 30 dias já está selada; falta o volume retido.",
+    "regra": "uma cópia completa do armazenamento de cada banco, retida no armazenamento de objetos na fase 1 e na métrica de backup do serviço gerenciado na fase 2",
+    "_justificativa": "Suposição declarada e simétrica: o incremento diário exigiria taxa de mudança, que o enunciado não dá. Uma cópia completa é o piso verificável e vale igual nas duas nuvens.",
+    "assimetria_medida": "A IBM expõe métrica de backup por GB e mês nos quatro bancos gerenciados (0,03225, e 0,03193 no Redis). O offer file do RDS em sa-east-1, capturado em 2026-08-13, NÃO traz nenhum SKU de backup ou snapshot — a linha do lado AWS na fase 2 fica em zero por ausência de tarifa capturada, e isso é declarado como assimetria de cobrança, não como vantagem medida."
+  },
+
+  "regra_de_selecao_leitura_adotada": {
+    "_papel": "A regra selada diz: 'menor SKU da família declarada que satisfaça vCPU e RAM; havendo empate de capacidade, vence o menor preço'. Aplicada à letra — ordenar por capacidade — ela escolhe, entre dois degraus aptos, o de MENOR capacidade mesmo quando ele é MAIS CARO.",
+    "efeito_medido": "No catálogo de cache da AWS em sa-east-1: `cache.r4.large` (12,30 GiB, USD 0,455/h) venceria `cache.r5.large` (13,07 GiB, USD 0,432/h) — pagar 5% a mais por 6% menos memória.",
+    "leitura_adotada": "Ordenar por PREÇO entre os degraus aptos, com a capacidade como desempate.",
+    "por_que_nao_e_afrouxamento": "As duas leituras são determinísticas e imunes à escolha a dedo, que é o que a regra existe para impedir. A diferença é que só uma delas é economicamente correta — nenhum arquiteto paga mais por menos, e apresentar isso como resultado de catálogo seria falso.",
+    "onde_esta_no_codigo": "src/tco.py -> escolher(), com o efeito medido na docstring e teste próprio"
+  },
+
+  "membros_da_implantacao_gerenciada_ibm": {
+    "_papel": "Limitação que precisa estar escrita, porque muda uma linha inteira do custo.",
+    "o_que_o_modelo_faz": "Cobra UM host por implantação de banco gerenciado da IBM. A métrica de host equivale exatamente a `cpu x vCPU + ram x GB` de um host (verificado em MySQL, PostgreSQL e MongoDB), o que confirma que ela precifica um host, não o conjunto.",
+    "o_que_nao_foi_possivel_verificar": "Quantos membros o plano `standard` provisiona por padrão. A página de preços dos bancos da IBM não renderiza essa informação no HTML servido (263 KB salvos como evidência) e a documentação devolveu tempo esgotado e HTTP 403 a este ambiente em 2026-08-13.",
+    "direcao_do_erro": "Se a implantação padrão tiver dois ou três membros, o custo IBM desta linha multiplica na mesma proporção. O erro, portanto, FAVORECE a IBM — que é a nuvem que o resultado aponta como mais cara. A limitação não pode inverter o veredito; só pode reforçá-lo. Do lado AWS não há ambiguidade equivalente: o SKU `Multi-AZ` do RDS já embute o segundo nó no preço, e é ele que o modelo usa onde o nível de serviço morde."
+  },
+
+  "itens_sem_captura": {
+    "_papel": "A taxonomia obriga todo item a aparecer com número OU com 'não aplicável' explícito e justificado. Estes três aparecem com zero e com a razão à vista — omiti-los seria o defeito que a causa N2 descreve.",
+    "observabilidade": "Fora da lista selada de SKUs: nem `Activity Tracker`/`Log Analysis` (IBM) nem `CloudTrail`/`CloudWatch` (AWS) foram capturados. Zero nos dois lados, com a limitação nomeada no corpo.",
+    "gateway_e_ip": "Public Gateway e IP flutuante (IBM) e NAT Gateway e IP elástico (AWS) não foram capturados. A omissão NÃO é neutra e o texto diz por quê: o gateway público da IBM não tem cobrança de uso publicada, enquanto o NAT Gateway da AWS é cobrado por hora e por gigabyte processado — omitir favorece a AWS, e declarar isso é obrigação.",
+    "suporte": "Plano básico sem custo nas duas nuvens (paridade comercial selada). Zero legítimo, não lacuna.",
+    "requisicoes_de_objeto": "As tarifas de requisição classe A e B ESTÃO capturadas nos dois lados (IBM 0,005616875 e 0,0044935 por mil; AWS 0,000007 e 0,00000056 por requisição), mas o vetor de demanda selado não declara volume de requisições — só volume armazenado e saída de dados. A linha fica NÃO MODELADA, e não silenciosamente ausente: o item `objeto` tem número pelo armazenamento, e a lacuna é nomeada aqui e no corpo. Inventar um volume de requisições agora seria a premissa escolhida depois de ver o preço que esta emenda existe para impedir."
+  },
+
+  "convencoes_de_rede": {
+    "_papel": "Duas escolhas de modelagem do balanceador que precisam estar à vista porque não saem de nenhum arquivo selado.",
+    "dado_processado_conta_uma_vez": "A hora de balanceador é cobrada POR balanceador (três na fase 1, um na fase 2), mas o dado processado é o tráfego TOTAL da aplicação, contado uma única vez. Multiplicar o mesmo terabyte pelos três balanceadores seria dupla contagem — pequena (cerca de 24 USD por mês, 0,3% do total), e por isso mesmo fácil de deixar passar.",
+    "unidade_de_capacidade_do_alb_aws": "Uma unidade de capacidade (LCU) por balanceador e por hora. O consumo real depende de conexões novas, conexões ativas, largura de banda e avaliações de regra — telemetria que a XYZ, sendo fictícia, não tem. A convenção é declarada e vale igual nos dois lados na medida em que o catálogo permite: a IBM não cobra unidade equivalente, cobra dado processado."
+  },
+
+  "classe_de_disco_na_fase_2": {
+    "_papel": "O requisito de desempenho de disco não desaparece com a contêinerização.",
+    "regra": "Os trabalhadores de Kubernetes herdam a CLASSE de disco que o de-para atribuiu ao servidor na fase 1 — o app-4 pede alta capacidade de entrada e saída nas duas fases, e rebaixá-lo a disco de propósito geral na fase 2 entregaria menos desempenho pelo mesmo requisito.",
+    "simetria": "Aplicada aos dois lados pela mesma função, com o mesmo alvo de operações por segundo."
+  },
+
+  "horizonte": {
+    "meses": 36,
+    "horas_mes": 730,
+    "_crescimento": "objeto e bloco crescem de forma composta às taxas seladas (3,0% e 1,5% ao mês) sobre a base do enunciado; a saída de dados permanece constante, porque o vetor selado não declara crescimento dela — e inventar um agora seria exatamente o vício que esta emenda existe para evitar."
+  }
+}

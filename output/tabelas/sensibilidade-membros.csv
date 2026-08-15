@@ -1,0 +1,12 @@
+campo,valor
+hosts_por_implantacao,2
+linhas_afetadas,5
+mensal_capturado_usd,1929.2246
+extra_36m_usd,69452.0856
+ibm_36m_base,429733.1319
+ibm_36m_contrafactual,499185.2175
+aws_36m,349419.2658
+delta_pct_base,22.9850
+delta_pct_contrafactual,42.8614
+vencedor_base,aws
+vencedor_contrafactual,aws

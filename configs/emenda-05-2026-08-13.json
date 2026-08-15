@@ -1,0 +1,68 @@
+{
+  "_natureza": "emenda ao pré-registro — RETRATAÇÃO de argumento errado, sem tocar o selado",
+  "_data": "2026-08-13",
+  "_etapa": "E7.1 — conserto anterior à redação do corpo",
+  "_por_que_arquivo_novo": "A `emenda-04-2026-08-13.json` está selada no estágio `inputs` do run `20260813-e7-figuras-tabelas-v2`, e a sua identidade em bytes é parte da prova de que a regra do ponto de operação foi declarada ANTES de desenhar. Corrigi-la no lugar apagaria o erro em vez de exibi-lo. A emenda entra como arquivo próprio, datado, também dentro de `inputs`; a cadeia passa a exibir as duas versões — que é para isso que ela serve. Mesmo padrão da emenda 01.",
+
+  "argumento_retratado": {
+    "onde": "configs/emenda-04-2026-08-13.json -> regra_do_ponto_de_operacao_iso_sla.direcao_do_erro_declarada; e, por propagação, a Nota da legenda da Figura 5 e o teste `test_legenda_da_figura_5_declara_o_regime`",
+    "afirmacao_original_na_integra": "O multiplicador derivado EMPURRA a utilização para baixo, isto é, para FORA do regime de tráfego pesado em que a aproximação exponencial é assintoticamente exata. Nesse regime a aproximação SUPERESTIMA a cauda, porque em G/G/1 com rho < 1 a espera tem um átomo em zero de massa aproximadamente 1 - rho que a exponencial ignora. O erro, portanto, é conservador: o sistema real cumpre o alvo com folga maior que a calculada. Isto vai escrito no corpo, não deixado para o avaliador achar.",
+    "veredito": "RETRATADO em 2026-08-13 — o argumento não se sustenta logicamente",
+
+    "por_que_nao_se_sustenta": [
+      "O átomo em zero é propriedade da ESPERA em fila, W: com probabilidade aproximadamente 1 - rho o cliente encontra o servidor livre e espera zero. A aproximação, porém, não é aplicada a W: é aplicada ao TEMPO DE RESPOSTA, T = W + S, que NÃO tem átomo em zero — todo cliente paga pelo menos o próprio tempo de serviço S, que é estritamente positivo. O argumento fala de uma variável e a conclusão incide sobre outra.",
+      "Mesmo restringindo a W, a inferência 'tem átomo, logo a exponencial superestima' é falsa em geral: em M/M/1 o átomo de W existe com massa exatamente 1 - rho e ainda assim a forma adotada é EXATA para qualquer utilização. O contraexemplo está dentro do próprio repositório, no teste `test_forma_e_exata_em_mm1`, que prova o colapso em E[S]/(1-rho). Um argumento cujo contraexemplo é um teste verde do projeto não pode ir ao corpo.",
+      "Consequência prática: a palavra 'conservador' aplicada à ponte média -> percentil afirma direção de erro que o projeto não mediu, o que é over-claim — exatamente o modo de falha que a honestidade epistêmica do método existe para impedir."
+    ],
+
+    "por_que_o_erro_passou": "O argumento foi montado no sentido correto para a ESPERA em regime de tráfego leve, e transportado sem verificação para o TEMPO DE RESPOSTA, que é o que o requisito de 200 ms mede e o que o código calcula (`percentil_resposta` recebe `espera_s + servico_s`). A troca de variável é invisível na prosa e visível no código — e foi o escrutínio do conselheiro, lendo as duas pontas, que a expôs. Regra que fica: afirmação sobre direção de erro é afirmação técnica e precisa de prova ou de medição, como qualquer número.",
+
+    "consequencia_material": "Nenhuma. Nenhum preço, nenhum SKU, nenhum multiplicador e nenhum total de TCO dependem desta afirmação: ela é PROSA sobre o modelo, não entrada dele. O ponto de operação continua sendo o menor multiplicador da grade cujo P95 cabe nos 200 ms, derivado pelo mesmo código e pelo mesmo critério da emenda 04, que permanece válida em tudo o mais."
+  },
+
+  "formulacao_que_substitui": {
+    "_papel": "Substitui a peça única e errada por quatro peças, cada uma verificável dentro do repositório. Esta é a formulação que vai ao corpo do artigo e à Nota da Figura 5; nada além dela é afirmável sobre a ponte média -> percentil.",
+    "pecas": [
+      {
+        "n": 1,
+        "afirmacao": "A forma adotada é EXATA em M/M/1 para qualquer utilização, não apenas no limite de tráfego pesado. Com Ca^2 = Cs^2 = 1 a expressão de Kingman colapsa em E[S]/(1-rho) e o percentil, no resultado clássico da exponencial.",
+        "verificacao": "tests/test_e7.py::test_forma_e_exata_em_mm1",
+        "natureza": "fato provado no repositório"
+      },
+      {
+        "n": 2,
+        "afirmacao": "A MÉDIA do tempo de resposta é exata, e não aproximada, sob a hipótese declarada de chegadas de Poisson: com chegadas de Poisson a fórmula de Pollaczek-Khinchine dá a espera média exata de M/G/1, e com Ca^2 = 1 a expressão de Kingman coincide numericamente com ela.",
+        "condicao_que_precisa_ser_dita": "É preciso escrever 'chegadas de Poisson', não apenas 'Ca = 1'. Coeficiente de variação unitário é condição NECESSÁRIA e não suficiente para Poisson — há processos de renovação com Ca = 1 que não são de Poisson, e para eles Pollaczek-Khinchine não vale. A hipótese de Poisson já está declarada em `premissas-carga.json/_justificativa_cv_chegada` e é suposição do caso, não medição da XYZ.",
+        "natureza": "fato, condicionado a hipótese declarada"
+      },
+      {
+        "n": 3,
+        "afirmacao": "O PERCENTIL é aproximação declarada. A margem contra o requisito é reportada como número lido do modelo, não como adjetivo: o P95 derivado cabe no alvo de 200 ms com folga, e a folga percentual é computada da própria linha do CSV.",
+        "computo": "margem = alvo_ms / resposta_p95_ms - 1, lida de output/tabelas/filas-ponto-iso-sla.csv na linha do multiplicador derivado",
+        "natureza": "aproximação, com margem medida"
+      },
+      {
+        "n": 4,
+        "afirmacao": "A consequência de CUSTO é invariante a erro da aproximação em QUALQUER direção. O platô de SKU faz o TCO publicado ser idêntico em todo o intervalo de multiplicadores [1,25; 2,00], de modo que ainda que o percentil verdadeiro empurrasse o multiplicador derivado para cima ou para baixo dentro desse intervalo, nem a planilha nem o veredito se moveriam.",
+        "verificacao": "tests/test_e7.py::test_todos_os_cv_da_grade_caem_no_platô_de_custo já travava o platô nos multiplicadores que a grade de variabilidade deriva (1,25 / 1,50 / 2,00); esta emenda acrescenta `test_plato_de_custo_cobre_o_intervalo_declarado`, que trava o intervalo INTEIRO citado no corpo, 1,25 / 1,50 / 1,75 / 2,00, nas quatro configurações. A afirmação que vai ao texto e o teste que a trava passam a ter o mesmo domínio — antes o texto afirmava um intervalo maior que o testado.",
+        "natureza": "fato computado — é a peça mais forte, porque dispensa a direção do erro"
+      }
+    ],
+    "regra_de_redacao": "A palavra 'conservador' NÃO aparece ligada à ponte média -> percentil, nem no corpo, nem em legenda, nem em código. Declara-se: aproximação, margem medida e invariância de custo."
+  },
+
+  "direcao_do_erro": {
+    "estado": "NÃO AFIRMADA — nem conservadora, nem anticonservadora",
+    "_por_que_o_silencio_e_a_resposta_certa": "A direção do erro da aproximação exponencial fora do tráfego pesado, com Cs > 1, não foi computada neste projeto. Afirmar direção sem cômputo foi precisamente o defeito retratado acima; trocar uma direção não medida por outra repetiria o erro com o sinal invertido.",
+    "analise_do_conselheiro_registrada_como_analise": "O conselheiro observou, declarando-a análise e não cômputo, que com Cs = 1,2 a cauda do serviço é mais pesada que a exponencial e que, no limite rho -> 0, P95(S)/E[S] seria da ordem de 3,4 contra os 3,0 da aproximação — isto é, ela SUBESTIMARIA a cauda em torno de 13%, e não a superestimaria. Sob essa leitura o argumento de que o multiplicador 1,25 falha por 12 ms fica mais forte, e quem perde margem é o ponto adotado, que ainda assim caberia no alvo. Fica REGISTRADO como análise de terceiro não computada por este repositório e NÃO vai ao corpo como afirmação."
+  },
+
+  "lugares_tocados_por_esta_emenda": [
+    "src/figuras.py — Nota da legenda da Figura 5, regenerada com as quatro peças em forma comprimida e a margem computada do CSV",
+    "tests/test_e7.py — o teste que EXIGIA a palavra 'conservador' passa a exigir os termos da formulação nova e a PROIBIR a palavra retratada",
+    "src/filas.py — docstring do módulo, que afirmava que Pollaczek-Khinchine 'não é o que se usa aqui'; a peça 2 acima o contradiz, e o repositório não pode embarcar a posição retratada ao lado da emenda que a retrata",
+    "documento interno de estado (não publicado) — o parágrafo sobre o que a redação precisa escrever, já corrigido antes desta emenda"
+  ],
+
+  "_o_que_esta_emenda_nao_muda": "Nenhum preço, nenhum SKU, nenhum multiplicador derivado e nenhum total de TCO. `emenda-04-2026-08-13.json`, `projeto-tecnico.json`, `premissas-carga.json` e `caso-xyz.json` NÃO foram tocados; os estágios `data` e `scores` permanecem byte-idênticos ao selo anterior, e a conferência entre os dois manifestos é a prova disso."
+}

@@ -1,0 +1,44 @@
+{
+  "_natureza": "emenda à lista selada — correção de achado REFUTADO por medição posterior",
+  "_data": "2026-08-13",
+  "_por_que_arquivo_novo": "O `projeto-tecnico.json` está selado no run `20260813-pre-captura` e a sua identidade em bytes é a prova de que o compromisso precede os dados. Corrigi-lo no lugar apagaria o erro em vez de mostrá-lo. A emenda entra como arquivo próprio, datado, também dentro do estágio `inputs`; a cadeia passa a exibir as duas versões, que é para isso que ela serve.",
+
+  "achado_refutado": {
+    "onde": "configs/projeto-tecnico.json -> skus_a_precificar._achado_dos_bancos_gerenciados",
+    "afirmacao_original": "Nos quatro serviços de banco gerenciado da IBM, o plano que DECLARA br-sao ('standard') expõe ZERO métrica com preço, e o plano que CARREGA preço ('standard-gen2') NÃO declara br-sao. Medido plano a plano pela travessia de três saltos.",
+    "veredito": "REFUTADO em 2026-08-13 por nova medição",
+    "medicao_que_refuta": "O plano `standard` dos quatro serviços TEM deployment em br-sao (`standard-br-sao`) e esse deployment expõe 10 a 11 métricas com preço em USD/USA. O que não tem preço é o `/pricing` do PLANO — exatamente o zero silencioso que o achado A1 já havia descrito. A medição original leu o segundo salto e concluiu ausência; o terceiro salto tem o número.",
+    "por_que_o_erro_passou": "Os filhos de um plano só respondem pelo IDENTIFICADOR do plano: `.../databases-for-mysql/standard/%2A` devolve 404, enquanto `.../<id-do-plano>/%2A` devolve os deployments. Um 404 nesse ponto lê-se como 'não há deployment regional' quando significa 'o caminho por nome não existe neste nível'.",
+    "consequencia_material": "Sem a emenda, a planilha usaria `standard-gen2` (por hora, não atribuível a São Paulo) no lugar do preço regional real de São Paulo (por host e por mês). São modelos de cobrança diferentes, não só números diferentes — o erro atravessaria para o TCO e para o veredito entre nuvens."
+  },
+
+  "achado_novo": {
+    "item": "egress",
+    "fato": "O egress da IBM TEM preço público de São Paulo por API. O serviço `is.vpc` tem um único plano, `nextgen-egress` (NextGen Egress), cujo deployment `nextgen-egress-br-sao-rc` expõe a métrica `is.vpc.egress`, `GIGABYTE_TRANSMITTED_OUTBOUNDS`, em Graduated Tier (Step Tier), com preços em USD para o país USA.",
+    "por_que_nao_foi_achado_antes": "A busca anterior procurou métrica de rede DENTRO da instância, do IP flutuante e do gateway público — e de fato não há. O egress é um plano do próprio `is.vpc`, e o `/pricing` do plano devolve `metrics: null`; só o deployment da região carrega o número.",
+    "efeito_no_gate": "Resolve o único item dominante sem número, que fazia o gate D15 reprovar. A via da calculadora pública deixa de ser necessária para este item — a classe de evidência sobe de `pagina-publica` para `api-versionada` (D14)."
+  },
+
+  "skus_a_precificar": {
+    "ibm": [
+      {"servico": "is.vpc", "planos": ["nextgen-egress"], "regiao": "br-sao",
+       "metrica_exigida": "egress", "item_custo": "egress",
+       "_nota": "Métrica `is.vpc.egress`, cobrada por gigabyte transmitido para fora, em faixas graduadas."},
+
+      {"servico": "databases-for-mysql", "planos": ["standard"], "regiao": "br-sao",
+       "metrica_exigida": "-ram", "item_custo": "banco-gerenciado"},
+      {"servico": "databases-for-postgresql", "planos": ["standard"], "regiao": "br-sao",
+       "metrica_exigida": "-ram", "item_custo": "banco-gerenciado"},
+      {"servico": "databases-for-mongodb", "planos": ["standard"], "regiao": "br-sao",
+       "metrica_exigida": "-ram", "item_custo": "banco-gerenciado"},
+      {"servico": "databases-for-redis", "planos": ["standard"], "regiao": "br-sao",
+       "metrica_exigida": "-ram", "item_custo": "banco-gerenciado"}
+    ]
+  },
+
+  "_o_que_esta_emenda_nao_muda": [
+    "Os alvos `standard-gen2` da lista original PERMANECEM sendo capturados. Não se apaga a captura que motivou o erro: as duas ficam em disco e no manifesto, e a diferença entre elas é material do próprio paper (o plano de nova geração é cobrado por hora e não é regionalizado para São Paulo).",
+    "Cloud Object Storage segue sem preço no catálogo — verificado nesta mesma medição pelo identificador do serviço (`dff97f5c-bc5e-4455-b470-411c3edbe49c`): os planos `standard` e `cos-one-rate-plan` têm deployment `global`, com zero métrica precificada. Continua na via (b).",
+    "watsonx.ai segue fora de São Paulo: o achado é de `geo_tags` no nível de SERVIÇO e nada aqui o toca."
+  ]
+}

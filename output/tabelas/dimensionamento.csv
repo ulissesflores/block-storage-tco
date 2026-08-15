@@ -1,0 +1,111 @@
+servidor,fase,nuvem,papel,sku,vcpu,ram,instancias,usd_mes,arquivo_fonte
+banco-1,1,ibm,compute,bxf-4x16,4,16,2,388.3600,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+banco-1,1,ibm,bloco,gen2-volume-10iops-tier,,,2,796.0373,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+banco-2,1,ibm,compute,bxf-8x32,8,32,1,388.3600,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-2,1,ibm,bloco,gen2-volume-general-purpose,,,1,124.0509,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+banco-3,1,ibm,compute,bxf-8x32,8,32,1,388.3600,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-3,1,ibm,bloco,gen2-volume-general-purpose,,,1,84.8004,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+banco-4,1,ibm,compute,bxf-4x16,4,16,1,194.1800,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+banco-4,1,ibm,bloco,gen2-volume-10iops-tier,,,1,815.1422,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+banco-5,1,ibm,compute,bxf-8x32,,,1,388.3600,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-5,1,ibm,bloco,gen2-volume-10iops-tier,,,1,1630.2843,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+banco-6,1,ibm,compute,bxf-2x8,2,8,1,97.0900,data/precos/api/ibm-is.instance-bxf-2x8-br-sao-2026-08-13.json
+banco-6,1,ibm,bloco,gen2-volume-general-purpose,,,1,12.1144,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+app-1,1,ibm,compute,cxf-4x8,4,8,2,343.1000,data/precos/api/ibm-is.instance-cxf-4x8-br-sao-2026-08-13.json
+app-1,1,ibm,bloco,gen2-volume-general-purpose,,,2,60.5717,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+app-2,1,ibm,compute,cxf-2x4,2,4,2,170.8200,data/precos/api/ibm-is.instance-cxf-2x4-br-sao-2026-08-13.json
+app-2,1,ibm,bloco,gen2-volume-general-purpose,,,2,24.2287,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+app-3,1,ibm,compute,bxf-2x8,2,8,1,97.0900,data/precos/api/ibm-is.instance-bxf-2x8-br-sao-2026-08-13.json
+app-3,1,ibm,bloco,gen2-volume-general-purpose,,,1,36.3430,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+app-4,1,ibm,compute,bxf-4x16,4,16,1,194.1800,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+app-4,1,ibm,bloco,gen2-volume-10iops-tier,,,1,159.2075,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+app-5,1,ibm,compute,bxf-8x32,8,32,1,388.3600,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+app-5,1,ibm,bloco,gen2-volume-general-purpose,,,1,60.5717,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+app-6,1,ibm,compute,cxf-2x4,2,4,2,170.8200,data/precos/api/ibm-is.instance-cxf-2x4-br-sao-2026-08-13.json
+app-6,1,ibm,bloco,gen2-volume-general-purpose,,,2,36.3430,data/precos/api/ibm-is.volume-gen2-volume-general-purpose-br-sao-2026-08-13.json
+—,1,ibm,objeto,armazenamento padrão,,,1,607.3774,ver trilha
+—,1,ibm,egress,saída para internet,,,1,1108.6817,ver trilha
+—,1,ibm,rede,balanceador,,,3,101.2225,ver trilha
+banco-1,1,aws,compute,m6a.xlarge,4,16.0000,2,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-1,1,aws,bloco,gp3 (10000 IOPS),,,2,218.5000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-2,1,aws,compute,m6a.2xlarge,8,32.0000,1,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-2,1,aws,bloco,gp3 (3072 IOPS),,,1,156.3320,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-3,1,aws,compute,m6a.2xlarge,8,32.0000,1,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-3,1,aws,bloco,gp3 (2100 IOPS),,,1,106.4000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-4,1,aws,compute,m6a.xlarge,4,16.0000,1,201.0420,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-4,1,aws,bloco,gp3 (10240 IOPS),,,1,224.4280,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-5,1,aws,compute,m6a.2xlarge,8,32.0000,1,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-5,1,aws,bloco,gp3 (20480 IOPS),,,1,477.3560,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-6,1,aws,compute,m6a.large,2,8.0000,1,100.5210,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-6,1,aws,bloco,gp3 (300 IOPS),,,1,15.2000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-1,1,aws,compute,c6a.xlarge,4,8.0000,2,344.2680,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-1,1,aws,bloco,gp3 (1500 IOPS),,,2,76.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-2,1,aws,compute,c6a.large,2,4.0000,2,172.1340,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-2,1,aws,bloco,gp3 (600 IOPS),,,2,30.4000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-3,1,aws,compute,m6a.large,2,8.0000,1,100.5210,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-3,1,aws,bloco,gp3 (900 IOPS),,,1,45.6000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-4,1,aws,compute,m6a.xlarge,4,16.0000,1,201.0420,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-4,1,aws,bloco,gp3 (2000 IOPS),,,1,30.4000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-5,1,aws,compute,m6a.2xlarge,8,32.0000,1,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-5,1,aws,bloco,gp3 (1500 IOPS),,,1,76.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-6,1,aws,compute,c6a.large,2,4.0000,2,172.1340,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-6,1,aws,bloco,gp3 (900 IOPS),,,2,45.6000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+—,1,aws,objeto,armazenamento padrão,,,1,829.4400,ver trilha
+—,1,aws,egress,saída para internet,,,1,921.6000,ver trilha
+—,1,aws,rede,balanceador,,,3,98.5500,ver trilha
+banco-1,2,ibm,gerenciado,databases-for-mysql-4-16,4.0000,16.0000,2,304.4334,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+banco-1,2,ibm,premio-gerenciado,databases-for-mysql-4-16 − bxf-4x16,,,2,-83.9266,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+banco-2,2,ibm,gerenciado,databases-for-mysql-8-32,8.0000,32.0000,1,608.8668,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
+banco-2,2,ibm,premio-gerenciado,databases-for-mysql-8-32 − bxf-8x32,,,1,220.5068,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-3,2,ibm,gerenciado,postgresql-isolated-8-32,6.0000,24.0000,1,435.4280,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
+banco-3,2,ibm,premio-gerenciado,postgresql-isolated-8-32 − bxf-8x32,,,1,47.0680,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-4,2,ibm,gerenciado,databases-for-mongodb-4-16,4.0000,16.0000,1,343.3822,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
+banco-4,2,ibm,premio-gerenciado,databases-for-mongodb-4-16 − bxf-4x16,,,1,149.2022,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+banco-5,2,ibm,compute-oracle,bxf-8x32,,,1,388.3600,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+banco-5,2,ibm,bloco,gen2-volume-10iops-tier,,,1,1630.2843,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json
+banco-6,2,ibm,gerenciado,databases-for-redis-4-16,2.0000,8.0000,1,237.1142,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
+banco-6,2,ibm,premio-gerenciado,databases-for-redis-4-16 − bxf-2x8,,,1,140.0242,data/precos/api/ibm-is.instance-bxf-2x8-br-sao-2026-08-13.json
+app-1,2,ibm,gerenciado,iks.vpc.bxf-4x16,4.0000,8.0000,2,427.1376,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-4x16-br-sao-2026-08-13.json
+app-1,2,ibm,premio-gerenciado,iks.vpc.bxf-4x16 − bxf-4x16,,,2,38.7776,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+app-2,2,ibm,gerenciado,code-engine multi-tenant,2.0000,4.0000,2,103.9922,data/precos/api/ibm-codeengine-standard-nao-regional-2026-08-13.json
+app-2,2,ibm,premio-gerenciado,code-engine multi-tenant − sem equivalente em máquina virtual,,,2,0.0000,data/precos/api/ibm-codeengine-standard-nao-regional-2026-08-13.json
+app-3,2,ibm,gerenciado,iks.vpc.bxf-4x16,2.0000,8.0000,1,213.5688,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-4x16-br-sao-2026-08-13.json
+app-3,2,ibm,premio-gerenciado,iks.vpc.bxf-4x16 − bxf-4x16,,,1,19.3888,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+app-4,2,ibm,gerenciado,iks.vpc.bxf-4x16,4.0000,16.0000,1,213.5688,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-4x16-br-sao-2026-08-13.json
+app-4,2,ibm,premio-gerenciado,iks.vpc.bxf-4x16 − bxf-4x16,,,1,19.3888,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+app-5,2,ibm,gerenciado,iks.vpc.bxf-8x32,6.0000,24.0000,1,428.1450,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-8x32-br-sao-2026-08-13.json
+app-5,2,ibm,premio-gerenciado,iks.vpc.bxf-8x32 − bxf-8x32,,,1,39.7850,data/precos/api/ibm-is.instance-bxf-8x32-br-sao-2026-08-13.json
+app-6,2,ibm,gerenciado,iks.vpc.bxf-4x16,2.0000,4.0000,2,427.1376,data/precos/api/ibm-containers-kubernetes-containers-kubernetes-vpc-bxf-4x16-br-sao-2026-08-13.json
+app-6,2,ibm,premio-gerenciado,iks.vpc.bxf-4x16 − bxf-4x16,,,2,38.7776,data/precos/api/ibm-is.instance-bxf-4x16-br-sao-2026-08-13.json
+—,2,ibm,objeto,armazenamento padrão,,,1,607.3774,ver trilha
+—,2,ibm,egress,saída para internet,,,1,1108.6817,ver trilha
+—,2,ibm,rede,balanceador,,,1,41.6939,ver trilha
+—,2,ibm,premio-gerenciado,plano de controle do cluster,,,1,0.0000,ver trilha
+banco-1,2,aws,gerenciado,db.m6i.xlarge,4.0000,16.0000,2,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-1,2,aws,premio-gerenciado,db.m6i.xlarge − m6a.xlarge,,,2,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-2,2,aws,gerenciado,db.m6i.2xlarge,8.0000,32.0000,1,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-2,2,aws,premio-gerenciado,db.m6i.2xlarge − m6a.2xlarge,,,1,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-3,2,aws,gerenciado,db.m5.2xlarge,6.0000,24.0000,1,680.3600,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-3,2,aws,premio-gerenciado,db.m5.2xlarge − m6a.2xlarge,,,1,278.2760,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-4,2,aws,gerenciado,db.r5.xlarge,4.0000,16.0000,1,836.5800,data/precos/api/aws-AmazonDocDB-sa-east-1-2026-08-13.json
+banco-4,2,aws,premio-gerenciado,db.r5.xlarge − m6a.xlarge,,,1,635.5380,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-5,2,aws,gerenciado,db.m5.2xlarge,8.0000,32.0000,1,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-5,2,aws,premio-gerenciado,db.m5.2xlarge − m6a.2xlarge,,,1,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-6,2,aws,gerenciado,cache.r5.large,2.0000,8.0000,1,315.3600,data/precos/api/aws-AmazonElastiCache-sa-east-1-2026-08-13.json
+banco-6,2,aws,premio-gerenciado,cache.r5.large − m6a.large,,,1,214.8390,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-1,2,aws,gerenciado,m6a.xlarge,4.0000,8.0000,2,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-1,2,aws,premio-gerenciado,m6a.xlarge − m6a.xlarge,,,2,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-2,2,aws,gerenciado,lambda concorrência provisionada,2.0000,4.0000,2,41.9266,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
+app-2,2,aws,premio-gerenciado,lambda concorrência provisionada − sem equivalente em máquina virtual,,,2,0.0000,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
+app-3,2,aws,gerenciado,m6a.large,2.0000,8.0000,1,100.5210,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-3,2,aws,premio-gerenciado,m6a.large − m6a.large,,,1,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-4,2,aws,gerenciado,m6a.xlarge,4.0000,16.0000,1,201.0420,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-4,2,aws,premio-gerenciado,m6a.xlarge − m6a.xlarge,,,1,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-5,2,aws,gerenciado,m6a.2xlarge,6.0000,24.0000,1,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-5,2,aws,premio-gerenciado,m6a.2xlarge − m6a.2xlarge,,,1,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-6,2,aws,gerenciado,m6a.large,2.0000,4.0000,2,201.0420,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+app-6,2,aws,premio-gerenciado,m6a.large − m6a.large,,,2,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+—,2,aws,objeto,armazenamento padrão,,,1,829.4400,ver trilha
+—,2,aws,egress,saída para internet,,,1,921.6000,ver trilha
+—,2,aws,rede,balanceador,,,1,32.8500,ver trilha
+—,2,aws,premio-gerenciado,plano de controle do cluster,,,1,73.0000,ver trilha

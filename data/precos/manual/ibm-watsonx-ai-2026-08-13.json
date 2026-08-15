@@ -1,0 +1,252 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-watsonx-ai",
+  "url": "https://www.ibm.com/products/watsonx-ai/pricing",
+  "timestamp_utc": "2026-08-13T20:22:46+00:00",
+  "http_status": null,
+  "bytes": 356680,
+  "via": "manual",
+  "classe_evidencia": "pagina-publica",
+  "data_captura": "2026-08-13",
+  "arquivo_evidencia": "data/evidencia/ibm-watsonx-ai-2026-08-13.html",
+  "sha256_evidencia": "53c5e231a7fc7c570c1b9db96165a39f59d1f7d25014050e3562928e5f41dbab",
+  "conteudo": {
+    "itens": [
+      {
+        "rotulo": "Embedding models / Includes IBM and third-party models available for",
+        "usd": 0.1,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Production deployments / Starting at",
+        "usd": 0.0,
+        "unidade": "month"
+      },
+      {
+        "rotulo": "Enterprise production / Starting at",
+        "usd": 1110.0,
+        "unidade": "month*"
+      },
+      {
+        "rotulo": "Options available / Advanced support with SLAs available starting at",
+        "usd": 200.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Advanced support with SLAs available starting at USD 200 per month / Advanced support with SLAs available starting at",
+        "usd": 200.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "granite-4h-small / IBM",
+        "usd": 0.0636,
+        "unidade": ""
+      },
+      {
+        "rotulo": "IBM / USD 0.0636 per 1M tokens input",
+        "usd": 0.265,
+        "unidade": ""
+      },
+      {
+        "rotulo": "granite-8b-code-instruct / IBM",
+        "usd": 0.636,
+        "unidade": ""
+      },
+      {
+        "rotulo": "granite-guardian-3-8b / IBM",
+        "usd": 0.212,
+        "unidade": ""
+      },
+      {
+        "rotulo": "llama-4-maverick-17b-128e-instruct-fp8 / Meta",
+        "usd": 0.371,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Meta / USD 0.371 per 1M tokens input",
+        "usd": 1.484,
+        "unidade": ""
+      },
+      {
+        "rotulo": "llama-3-3-70b-instruct / Meta",
+        "usd": 0.7526,
+        "unidade": ""
+      },
+      {
+        "rotulo": "llama-3-2-11b-vision-instruct / Meta",
+        "usd": 0.371,
+        "unidade": ""
+      },
+      {
+        "rotulo": "llama-guard-3-11b-vision / Meta",
+        "usd": 0.371,
+        "unidade": ""
+      },
+      {
+        "rotulo": "mistral-large-2512 / Mistral AI",
+        "usd": 0.636,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Mistral AI / USD 0.636 per 1M tokens input",
+        "usd": 1.908,
+        "unidade": ""
+      },
+      {
+        "rotulo": "mistral-medium-2505 / Mistral AI",
+        "usd": 3.18,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Mistral AI / USD 3.18 per 1M tokens input",
+        "usd": 9.5,
+        "unidade": ""
+      },
+      {
+        "rotulo": "mistral-small-3-1-24b-instruct-2503 / Mistral AI",
+        "usd": 0.106,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Mistral AI / USD 0.106 per 1M tokens input",
+        "usd": 0.318,
+        "unidade": ""
+      },
+      {
+        "rotulo": "gpt-oss-120b / Open AI",
+        "usd": 0.159,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Open AI / USD 0.159 per 1M tokens input",
+        "usd": 0.636,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Prices based on GPU config / granite-embedding-278m-multilingual",
+        "usd": 0.106,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Not available / slate-125m-english-rtrvr-v",
+        "usd": 2.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Not available / slate-30m-english-rtrvr-v",
+        "usd": 2.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Prices based on GPU config / all-mini-l6-v",
+        "usd": 2.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Not available / multilingual-e5-large",
+        "usd": 0.106,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Standard plan / Machine learning models",
+        "usd": 0.55,
+        "unidade": "Capacity Unit-Hour"
+      },
+      {
+        "rotulo": "Machine learning models / 0.55 USD / Capacity Unit-Hour",
+        "usd": 0.45,
+        "unidade": "Capacity Unit-Hour"
+      },
+      {
+        "rotulo": "Text extraction / 3",
+        "usd": 0.0403,
+        "unidade": "Page"
+      },
+      {
+        "rotulo": "3 / 0.0403 USD / Page",
+        "usd": 0.0318,
+        "unidade": "Page"
+      },
+      {
+        "rotulo": "Not available / NVIDIA 1 x A100 GPU:",
+        "usd": 6.3,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 1 x A100 GPU: 6.3 USD / Hour / NVIDIA 1 x H100 GPU:",
+        "usd": 14.85,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "Not available / NVIDIA 1 x L40S GPU:",
+        "usd": 4.43,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 1 x L40S GPU: 4.43 USD / Hour / NVIDIA 2 x L40S GPU:",
+        "usd": 8.86,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 2 x L40S GPU: 8.86 USD / Hour / NVIDIA 1 x A100 GPU:",
+        "usd": 5.8,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 1 x A100 GPU: 5.8 USD / Hour / NVIDIA 2 x A100 GPU:",
+        "usd": 11.6,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 2 x A100 GPU: 11.6 USD / Hour / NVIDIA 4 x A100 GPU:",
+        "usd": 23.2,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 4 x A100 GPU: 23.2 USD / Hour / NVIDIA 8 x A100 GPU:",
+        "usd": 46.4,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 8 x A100 GPU: 46.4 USD / Hour / NVIDIA 1 x H100 GPU:",
+        "usd": 14.5,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 1 x H100 GPU: 14.5 USD / Hour / NVIDIA 2 x H100 GPU:",
+        "usd": 29.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 2 x H100 GPU: 29 USD / Hour / NVIDIA 4 x H100 GPU:",
+        "usd": 58.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 4 x H100 GPU: 58 USD / Hour / NVIDIA 8 x H100 GPU:",
+        "usd": 116.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 8 x H100 GPU: 116 USD / Hour / NVIDIA 1 x H200 GPU:",
+        "usd": 16.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 1 x H200 GPU: 16 USD / Hour / NVIDIA 2 x H200 GPU:",
+        "usd": 32.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 2 x H200 GPU: 32 USD / Hour / NVIDIA 4 x H200 GPU:",
+        "usd": 64.0,
+        "unidade": "Hour"
+      },
+      {
+        "rotulo": "NVIDIA 4 x H200 GPU: 64 USD / Hour / NVIDIA 8 x H200 GPU:",
+        "usd": 128.0,
+        "unidade": "Hour"
+      }
+    ]
+  }
+}

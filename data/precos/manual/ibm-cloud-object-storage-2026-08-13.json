@@ -1,0 +1,32 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-cloud-object-storage",
+  "url": "https://www.ibm.com/products/cloud-object-storage/pricing",
+  "timestamp_utc": "2026-08-13T20:22:47+00:00",
+  "http_status": null,
+  "bytes": 271587,
+  "via": "manual",
+  "classe_evidencia": "pagina-publica",
+  "data_captura": "2026-08-13",
+  "arquivo_evidencia": "data/evidencia/ibm-cloud-object-storage-2026-08-13.html",
+  "sha256_evidencia": "ee28c0c0843f481912c37086ea8807a45e663838a5eb2dc0dac8eef3148272e2",
+  "conteudo": {
+    "itens": [
+      {
+        "rotulo": "Get started for free with TRYCOS promo code / Get up to",
+        "usd": 500.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "One‑Rate Pricing / : A single, all‑inclusive monthly rate starting as low as",
+        "usd": 10.0,
+        "unidade": ""
+      },
+      {
+        "rotulo": "Simplify your costs with the One-Rate plan: An all-inclusive, predictable rate. Available for a limited time — as low as",
+        "usd": 10.0,
+        "unidade": "TB a month — for new workloads"
+      }
+    ]
+  }
+}

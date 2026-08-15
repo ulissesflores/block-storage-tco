@@ -1,0 +1,3 @@
+# Versions of the reference environment (see env.json for interpreter and platform).
+# Track 1 imports no third-party package; this pins only what Track 2 uses.
+matplotlib==3.10.9

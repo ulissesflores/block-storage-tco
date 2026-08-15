@@ -1,0 +1,24 @@
+[project]
+name = "block-storage-tco"
+version = "1.0.0"
+description = "Audited public-cloud price capture and a deterministic 36-month TCO model"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0 AND CC-BY-4.0" }
+authors = [{ name = "Carlos Ulisses Flores" }]
+dependencies = []
+
+[project.optional-dependencies]
+figures = ["matplotlib>=3.8"]
+
+[project.urls]
+Repository = "https://github.com/ulissesflores/block-storage-tco"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

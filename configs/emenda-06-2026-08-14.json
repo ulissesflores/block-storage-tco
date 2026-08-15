@@ -1,0 +1,118 @@
+{
+  "_natureza": "emenda ao pré-registro — ADIÇÃO de alvos de continuidade por onda, sem tocar número já selado",
+  "_data": "2026-08-14",
+  "_etapa": "E9.5 — melhoria de fundo pedida por 3 dos 4 avaliadores do painel cego",
+  "_por_que_arquivo_novo": "O `plano_ondas` de `configs/projeto-tecnico.json` está selado no estágio `inputs` e a sua identidade em bytes é parte da prova de que o sequenciamento foi declarado ANTES da captura de preços. Acrescentar campos ali apagaria essa fronteira. Os alvos entram como arquivo próprio, datado, também dentro de `inputs`, e o gerador de tabelas junta os dois pela chave `onda`. Mesmo padrão das emendas 01 e 05.",
+  "_estatuto_epistemico": "ALVO DE PROJETO DECLARADO, jamais medição. Tem exatamente o mesmo estatuto das durações da Figura 2: é o compromisso que o projeto assume e contra o qual o ensaio de reversão será conferido, não um número observado em produção. A XYZ é empresa fictícia e não há telemetria de corte — afirmar RPO medido seria inventar dado. O que o trabalho pode afirmar com força é a COERÊNCIA entre o alvo e o mecanismo que o sustenta, e é isso que a coluna `mecanismo` expõe linha a linha.",
+  "_por_que_o_rpo_decorre_do_mecanismo": "O desenho de migração já registrado usa captura de alterações (change data capture): carga inicial completa, replicação contínua e corte apenas quando o atraso de replicação cai abaixo do limite acordado. Nesse arranjo o ponto de recuperação NÃO é escolhido por preferência — ele É o atraso de replicação no instante do corte, de sorte que declarar o limite de corte e declarar o RPO é o mesmo ato. O tempo de recuperação, por sua vez, é a soma da janela de virada com o retorno ensaiado, porque a reversão permanece viável até o último instante da janela.",
+  "unidade": "minutos",
+  "alvos_por_onda": [
+    {
+      "onda": 0,
+      "rpo_min": null,
+      "rto_min": null,
+      "mecanismo": "nenhum dado de produção se move: a fundação sobe ao lado do ambiente atual, que segue servindo",
+      "criterio_de_aceite": "conta com credencial raiz sem uso corrente, autenticação em dois fatores exigida, VPC de três zonas ativa, chave gerenciada pelo cliente criada e registro de auditoria escrevendo em destino imutável"
+    },
+    {
+      "onda": 1,
+      "rpo_min": 0,
+      "rto_min": 15,
+      "mecanismo": "aplicações sem estado próprio — o dado fica na origem; o retorno é reverter a entrada de DNS, publicada com tempo de vida curto",
+      "criterio_de_aceite": "paridade de resposta entre origem e destino sob tráfego espelhado, erro de aplicação dentro da linha de base e reversão de DNS ensaiada com sucesso na janela anterior"
+    },
+    {
+      "onda": 2,
+      "rpo_min": 5,
+      "rto_min": 120,
+      "mecanismo": "replicação contínua com corte noturno; o limite de atraso para virar, de cinco minutos, é o próprio ponto de recuperação. O cache é reconstruível a partir da origem",
+      "criterio_de_aceite": "atraso de replicação abaixo de cinco minutos por sessenta minutos consecutivos, contagem de linhas e soma de verificação conferidas entre origem e destino, e restauração de cópia testada no destino"
+    },
+    {
+      "onda": 3,
+      "rpo_min": 1,
+      "rto_min": 30,
+      "mecanismo": "onda em que o nível de serviço morde: limite de corte mais estreito do projeto, e reversão previamente ensaiada em homologação",
+      "criterio_de_aceite": "atraso de replicação abaixo de um minuto, reversão ensaiada com tempo cronometrado dentro do alvo, latência de ponta a ponta dentro do alvo de duzentos milissegundos e transação de compra completada de ponta a ponta no destino"
+    },
+    {
+      "onda": 4,
+      "rpo_min": 0,
+      "rto_min": 240,
+      "mecanismo": "congelamento de fechamento durante o corte: não há transação a perder, e o ponto de recuperação é zero por construção, não por qualidade de replicação",
+      "criterio_de_aceite": "conciliação contábil do período congelado batendo entre origem e destino, instantâneo consistente restaurado e validado antes de reabrir o fechamento, e aceite formal da área financeira"
+    },
+    {
+      "onda": 5,
+      "rpo_min": 5,
+      "rto_min": 60,
+      "mecanismo": "convivência por serviço: o autogerido permanece de pé enquanto o gerenciado assume, e o retorno é redirecionar a aplicação",
+      "criterio_de_aceite": "paridade funcional e de desempenho entre o autogerido e o gerenciado sob carga de referência, e desligamento do autogerido apenas após um ciclo completo de fechamento no gerenciado"
+    },
+    {
+      "onda": 6,
+      "rpo_min": null,
+      "rto_min": 60,
+      "mecanismo": "serviço novo, sem registro de origem: não há dado próprio a recuperar, e o retorno é desligar a camada",
+      "criterio_de_aceite": "inventário de dados pessoais concluído e mascaramento verificado por amostragem antes da liberação, e revogação de chave testada com interrupção comprovada do fluxo"
+    }
+  ],
+  "_por_que_o_custo_dos_controles_entra": "Quatro dos quatro avaliadores do painel cego observaram que a seção de segurança da conta lê como prosa conceitual, e não como desenho de uma conta concreta. O material que faltava JÁ ESTAVA selado em `projeto-tecnico.json -> plano_seguranca_conta`, com nove controles e a prática de cada um; o que nunca foi exposto é o serviço que materializa o controle em cada nuvem e se ele aparece na planilha. Esta seção acrescenta apenas o mapa controle -> item da taxonomia de custo, para que o leitor distinga o controle que custa dinheiro daquele que custa disciplina operacional — distinção que a própria seção 2.3 já afirmava em prosa sem poder demonstrar. Os nomes de serviço vêm de `projeto-tecnico.json -> servicos_compartilhados`, também selado; nenhum serviço novo é introduzido aqui.",
+  "custo_dos_controles_de_seguranca": [
+    {
+      "controle": "identidade",
+      "ibm": "IAM com grupos de acesso",
+      "aws": "IAM com funções",
+      "item_taxonomia": null
+    },
+    {
+      "controle": "segregação",
+      "ibm": "grupos de recursos e etiquetas",
+      "aws": "contas e etiquetas",
+      "item_taxonomia": null
+    },
+    {
+      "controle": "rede",
+      "ibm": "Security Groups, Network ACL, Public Gateway e Application Load Balancer for VPC",
+      "aws": "Security Groups, Network ACL, NAT Gateway e Application Load Balancer",
+      "item_taxonomia": "rede-ip-balanceador"
+    },
+    {
+      "controle": "criptografia",
+      "ibm": "Key Protect",
+      "aws": "KMS",
+      "item_taxonomia": null
+    },
+    {
+      "controle": "segredos",
+      "ibm": "Secrets Manager",
+      "aws": "Secrets Manager",
+      "item_taxonomia": null
+    },
+    {
+      "controle": "auditoria",
+      "ibm": "Activity Tracker e Log Analysis",
+      "aws": "CloudTrail e CloudWatch Logs",
+      "item_taxonomia": "observabilidade"
+    },
+    {
+      "controle": "backup",
+      "ibm": "Cloud Object Storage",
+      "aws": "S3",
+      "item_taxonomia": "backup"
+    },
+    {
+      "controle": "postura",
+      "ibm": "avaliação contínua de conformidade da conta",
+      "aws": "avaliação contínua de conformidade da conta",
+      "item_taxonomia": null
+    },
+    {
+      "controle": "dados pessoais",
+      "ibm": "mascaramento antes do watsonx.ai",
+      "aws": "mascaramento antes do Bedrock",
+      "item_taxonomia": null
+    }
+  ],
+  "_honestidade_do_mapa": "`item_taxonomia: null` significa 'não tarifado NESTE modelo', jamais 'gratuito'. Chave gerenciada, cofre de segredos e avaliação de postura têm preço público nas duas nuvens; ficaram fora da planilha pela mesma razão que suporte e observabilidade — não passam pela matriz de paridade comercial com valor único dos dois lados, e cobrar de um o que não se cobra do outro faria o veredito medir escolha de escopo em vez de preço. A direção do desvio é declarável: são controles de valor comparável nas duas plataformas, de sorte que a omissão simétrica não move o sinal da diferença. Os itens `observabilidade` e `suporte` aparecem na Tabela A1 com valor zero por essa mesma convenção, e não por ausência de preço."
+}

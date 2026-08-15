@@ -1,0 +1,30 @@
+{
+  "_natureza": "emenda à lista selada — item `objeto` resolvido pela API da tela de provisionamento",
+  "_data": "2026-08-13",
+  "_como_foi_descoberto": "Diretriz do operador: abrir a calculadora pública no Chrome e capturar o JSON que a interface consome, nunca a página renderizada. Executado em `cloud.ibm.com/objectstorage/create` com leitura das requisições de rede; a tela chama `/objectstorage/provision/api/v1/pricing?plan=<id>&region=<regiao>&country=<pais>`. O JSON é então buscado POR CÓDIGO, com a região trocada para `br-sao`, e gravado com procedência — a página fica apenas como origem da descoberta.",
+
+  "por_que_isto_importa": {
+    "antes": "O item `objeto` estava resolvido apenas pela via (b), com UMA tarifa única de 10 USD por TB e por mês extraída da página de produto — o próprio manifesto marcava a linha como fraca, e ela não distinguia classe de armazenamento nem faixa.",
+    "depois": "A tabela completa de São Paulo, por classe (`standard`, `vault`, `cold`, `smart`), por faixa, e separando armazenamento, requisições classe A e B, recuperação e banda.",
+    "achado_material": "A saída de dados do Object Storage tem preço PRÓPRIO (`bandwidth`: 0,1935 / 0,1505 / 0,1075 USD por GB em br-sao) e é diferente do egress do VPC (`is.vpc.egress`: 0,115197 na primeira faixa). Como a XYZ é e-commerce e gestão de conteúdo digital, o vetor de demanda selado atribui 5 dos 6 TB mensais de saída à entrega de mídia a partir do objeto. Modelar os 6 TB pelo preço do VPC subestimaria o egress do lado IBM — e egress é um dos três itens que a tese nomeia como dominantes do delta."
+  },
+
+  "skus_a_precificar": {
+    "ibm": [],
+    "ibm_via_provisionamento": [
+      {"servico": "ibm-cloud-object-storage-br-sao",
+       "url": "https://cloud.ibm.com/objectstorage/provision/api/v1/pricing?plan=744bfc56-d12c-4866-88d5-dac9139e0e5d&region=br-sao&country=USA",
+       "regiao": "br-sao", "pais": "USA", "item_custo": "objeto",
+       "_plano": "744bfc56-d12c-4866-88d5-dac9139e0e5d — o plano `standard` do Cloud Object Storage, identificador lido da própria chamada da tela."},
+      {"servico": "ibm-cloud-object-storage-us-south",
+       "url": "https://cloud.ibm.com/objectstorage/provision/api/v1/pricing?plan=744bfc56-d12c-4866-88d5-dac9139e0e5d&region=us-south&country=USA",
+       "regiao": "us-south", "pais": "USA", "item_custo": "objeto",
+       "_papel": "Controle, não insumo da planilha: capturar a MESMA chamada em outra região prova que o parâmetro `region` de fato move o preço (São Paulo é cerca de 12% mais caro no armazenamento padrão). Sem esse contraste, um endpoint que ignorasse a região devolveria o preço dos Estados Unidos e ninguém notaria."}
+    ]
+  },
+
+  "_o_que_esta_emenda_nao_muda": [
+    "A via (b) do Object Storage (página de produto, 10 USD/TB-mês) permanece em disco e no manifesto. Não se apaga a evidência mais fraca: o contraste entre as duas mostra por que a tarifa única da página de marketing não serve para dimensionar.",
+    "watsonx.ai continua sem preço de São Paulo — o achado é de `geo_tags` no nível de serviço e nada aqui o toca."
+  ]
+}

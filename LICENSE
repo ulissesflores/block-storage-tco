@@ -1,0 +1,12 @@
+This repository is dual-licensed.
+
+- Source code (src/, tests/, run_all.py, make_provenance.py):
+  Apache License 2.0 — see LICENSES/Apache-2.0.txt
+
+- Documentation, derived tables (output/tabelas/) and figures (output/figuras/):
+  Creative Commons Attribution 4.0 International — see LICENSES/CC-BY-4.0.txt
+
+- Captured provider responses (data/): third-party content reproduced as evidence.
+  See NOTICE.
+
+SPDX-License-Identifier: Apache-2.0 AND CC-BY-4.0

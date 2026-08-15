@@ -1,0 +1,19 @@
+{
+  "_natureza": "decisão de projeto",
+  "_papel": "Fontes da segunda classe de evidência (D14, `pagina-publica`), para as quatro linhas que a API da IBM não serve. A razão de cada uma foi MEDIDA e está em projeto-tecnico.json -> skus_a_precificar.ibm_via_manual.",
+  "_regra": "Fonte que não renderiza preço no HTML servido FALHA na captura e o item volta para pendências com a razão. Nunca se digita o número.",
+  "fontes": [
+    {"servico": "ibm-watsonx-ai", "item_custo": "ia",
+     "url": "https://www.ibm.com/products/watsonx-ai/pricing",
+     "_nota_regiao": "O preço é o publicado para os planos do watsonx.ai. A região é declarada na planilha como fora de br-sao — os serviços não declaram São Paulo no Global Catalog (medido em 2026-08-13)."},
+    {"servico": "ibm-cloud-object-storage", "item_custo": "objeto",
+     "url": "https://www.ibm.com/products/cloud-object-storage/pricing",
+     "_nota": "O /pricing da API devolve 404 'Pricing mapping not available'."},
+    {"servico": "ibm-vpc-egress", "item_custo": "egress",
+     "url": "https://www.ibm.com/products/virtual-private-cloud/pricing",
+     "_nota": "Nenhuma métrica de rede no pricing da instância; VPC, IP flutuante e gateway público vêm com metrics nulo."},
+    {"servico": "ibm-databases-precos", "item_custo": "banco-gerenciado",
+     "url": "https://www.ibm.com/products/databases-for-postgresql/pricing",
+     "_nota": "O plano que declara br-sao não expõe preço; o que expõe preço não declara br-sao."}
+  ]
+}

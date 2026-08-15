@@ -1,0 +1,462 @@
+{
+  "_natureza": "coletado",
+  "servico": "aws-AWSELB-sa-east-1",
+  "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/20260720184950/sa-east-1/index.json",
+  "timestamp_utc": "2026-08-13T20:17:11+00:00",
+  "http_status": 200,
+  "bytes": 16547,
+  "via": "api",
+  "provedor": "aws",
+  "regiao": "sa-east-1",
+  "regional": true,
+  "pais": "USA",
+  "moeda": "USD",
+  "sha256_arquivo_completo": "5e4bbc4aff1a1f9cfd44f51a32da91f216f66400fbe111e662b89e3342a96c99",
+  "region_index_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AWSELB/current/region_index.json",
+  "region_index_http_status": 200,
+  "region_index_bytes": 16363,
+  "publicationDate": "2026-07-20T18:49:50Z",
+  "version": "20260720184950",
+  "produtos_no_arquivo_completo": 12,
+  "produtos_na_fatia": 12,
+  "conteudo": {
+    "products": {
+      "M97JTAMXU5MYHWUX": {
+        "sku": "M97JTAMXU5MYHWUX",
+        "productFamily": "Load Balancer",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "LoadBalancer hourly usage by Classic Load Balancer",
+          "usagetype": "SAE1-LoadBalancerUsage",
+          "operation": "LoadBalancing",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "57V3ETTKU499QBWM": {
+        "sku": "57V3ETTKU499QBWM",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "Used Application Load Balancer capacity units-hr",
+          "usagetype": "SAE1-LCUUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "AM7TGKSH4QQS9WMV": {
+        "sku": "AM7TGKSH4QQS9WMV",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Outposts",
+          "group": "ELB:Balancing",
+          "groupDescription": "LoadBalancer hourly usage by Application Load Balancer on Outposts",
+          "usagetype": "SAE1-Outposts-LoadBalancerUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "EVMJQS6G99GZAXM7": {
+        "sku": "EVMJQS6G99GZAXM7",
+        "productFamily": "Load Balancer-Network",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "Used Network Load Balancer capacity units-hr",
+          "usagetype": "SAE1-LCUUsage",
+          "operation": "LoadBalancing:Network",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "RS4QVNVD9SFX6AZC": {
+        "sku": "RS4QVNVD9SFX6AZC",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "TS hourly usage by Application Load Balancer",
+          "usagetype": "SAE1-TS-LoadBalancerUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "6KCHDVN5PV9Y8NSH": {
+        "sku": "6KCHDVN5PV9Y8NSH",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "Reserved Application Load Balancer capacity units-hr",
+          "usagetype": "SAE1-ReservedLCUUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "REA3Q343V6AS95CN": {
+        "sku": "REA3Q343V6AS95CN",
+        "productFamily": "Load Balancer-Gateway",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "Used Gateway Load Balancer capacity units-hr",
+          "usagetype": "SAE1-LCUUsage",
+          "operation": "LoadBalancing:Gateway",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "4AJP3GA9ECKSCY5M": {
+        "sku": "4AJP3GA9ECKSCY5M",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "LoadBalancer hourly usage by Application Load Balancer",
+          "usagetype": "SAE1-LoadBalancerUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "2A4AN5MBSHD5BAT7": {
+        "sku": "2A4AN5MBSHD5BAT7",
+        "productFamily": "Load Balancer-Gateway",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "LoadBalancer hourly usage by Gateway Load Balancer",
+          "usagetype": "SAE1-LoadBalancerUsage",
+          "operation": "LoadBalancing:Gateway",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "SJ7JZUWUJWFVHQX9": {
+        "sku": "SJ7JZUWUJWFVHQX9",
+        "productFamily": "Load Balancer-Network",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "LoadBalancer hourly usage by Network Load Balancer",
+          "usagetype": "SAE1-LoadBalancerUsage",
+          "operation": "LoadBalancing:Network",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "7HYHS76VNNVFPQZJ": {
+        "sku": "7HYHS76VNNVFPQZJ",
+        "productFamily": "Load Balancer",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "group": "ELB:Balancing",
+          "groupDescription": "Data processed by Classic Load Balancer",
+          "usagetype": "SAE1-DataProcessing-Bytes",
+          "operation": "LoadBalancing",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      },
+      "R986REK32RHXKA72": {
+        "sku": "R986REK32RHXKA72",
+        "productFamily": "Load Balancer-Application",
+        "attributes": {
+          "servicecode": "AWSELB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Outposts",
+          "group": "ELB:Balancing",
+          "groupDescription": "Used Application Load Balancer capacity On Outposts units-hr",
+          "usagetype": "SAE1-Outposts-LCUUsage",
+          "operation": "LoadBalancing:Application",
+          "regionCode": "sa-east-1",
+          "servicename": "Elastic Load Balancing"
+        }
+      }
+    },
+    "terms": {
+      "OnDemand": {
+        "M97JTAMXU5MYHWUX": {
+          "M97JTAMXU5MYHWUX.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "M97JTAMXU5MYHWUX",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "M97JTAMXU5MYHWUX.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "M97JTAMXU5MYHWUX.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.034 per LoadBalancer-hour (or partial hour)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0340000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "2A4AN5MBSHD5BAT7": {
+          "2A4AN5MBSHD5BAT7.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "2A4AN5MBSHD5BAT7",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "2A4AN5MBSHD5BAT7.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "2A4AN5MBSHD5BAT7.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.0189 per Gateway LoadBalancer-hour (or partial hour) in South America (Sao Paulo)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0189000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "RS4QVNVD9SFX6AZC": {
+          "RS4QVNVD9SFX6AZC.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "RS4QVNVD9SFX6AZC",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "RS4QVNVD9SFX6AZC.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "RS4QVNVD9SFX6AZC.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.0076 per associated Application load balancer Trust Store unit-hour ",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0076000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "4AJP3GA9ECKSCY5M": {
+          "4AJP3GA9ECKSCY5M.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "4AJP3GA9ECKSCY5M",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "4AJP3GA9ECKSCY5M.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "4AJP3GA9ECKSCY5M.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.034 per Application LoadBalancer-hour (or partial hour)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0340000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "AM7TGKSH4QQS9WMV": {
+          "AM7TGKSH4QQS9WMV.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "AM7TGKSH4QQS9WMV",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "AM7TGKSH4QQS9WMV.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "AM7TGKSH4QQS9WMV.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.034 per Hrs for Outposts-LoadBalancerUsage:LoadBalancing:Application in South America (Sao Paulo)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0340000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "EVMJQS6G99GZAXM7": {
+          "EVMJQS6G99GZAXM7.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "EVMJQS6G99GZAXM7",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "EVMJQS6G99GZAXM7.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "EVMJQS6G99GZAXM7.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.00825 per used Network load balancer capacity unit-hour (or partial hour)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "LCU-Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0082500000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "REA3Q343V6AS95CN": {
+          "REA3Q343V6AS95CN.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "REA3Q343V6AS95CN",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "REA3Q343V6AS95CN.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "REA3Q343V6AS95CN.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.0055 per used Gateway load balancer capacity unit-hour (or partial hour) in South America (Sao Paulo)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "LCU-Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0055000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "SJ7JZUWUJWFVHQX9": {
+          "SJ7JZUWUJWFVHQX9.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "SJ7JZUWUJWFVHQX9",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "SJ7JZUWUJWFVHQX9.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "SJ7JZUWUJWFVHQX9.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.034 per Network LoadBalancer-hour (or partial hour)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0340000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "7HYHS76VNNVFPQZJ": {
+          "7HYHS76VNNVFPQZJ.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "7HYHS76VNNVFPQZJ",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "7HYHS76VNNVFPQZJ.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "7HYHS76VNNVFPQZJ.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.011 per GB Data Processed by the LoadBalancer",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "GB",
+                "pricePerUnit": {
+                  "USD": "0.0110000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "6KCHDVN5PV9Y8NSH": {
+          "6KCHDVN5PV9Y8NSH.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "6KCHDVN5PV9Y8NSH",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "6KCHDVN5PV9Y8NSH.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "6KCHDVN5PV9Y8NSH.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.011 per reserved Application load balancer capacity unit-hour",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "ReservedLCU-Hr",
+                "pricePerUnit": {
+                  "USD": "0.0110000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "R986REK32RHXKA72": {
+          "R986REK32RHXKA72.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "R986REK32RHXKA72",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "R986REK32RHXKA72.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "R986REK32RHXKA72.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.0 per LCU-Hrs for Outposts-LCUUsage:LoadBalancing:Application in South America (Sao Paulo)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "LCU-Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0000000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "57V3ETTKU499QBWM": {
+          "57V3ETTKU499QBWM.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "57V3ETTKU499QBWM",
+            "effectiveDate": "2026-07-01T00:00:00Z",
+            "priceDimensions": {
+              "57V3ETTKU499QBWM.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "57V3ETTKU499QBWM.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.011 per used Application load balancer capacity unit-hour (or partial hour)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "LCU-Hrs",
+                "pricePerUnit": {
+                  "USD": "0.0110000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        }
+      }
+    }
+  }
+}

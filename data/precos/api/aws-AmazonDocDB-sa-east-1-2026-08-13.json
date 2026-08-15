@@ -1,0 +1,2540 @@
+{
+  "_natureza": "coletado",
+  "servico": "aws-AmazonDocDB-sa-east-1",
+  "url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDocDB/20260710172257/sa-east-1/index.json",
+  "timestamp_utc": "2026-08-13T20:17:07+00:00",
+  "http_status": 200,
+  "bytes": 110506,
+  "via": "api",
+  "provedor": "aws",
+  "regiao": "sa-east-1",
+  "regional": true,
+  "pais": "USA",
+  "moeda": "USD",
+  "sha256_arquivo_completo": "fab344ab9df4e7a196d215f5ad630ba86f34d4a25ddcfa037c6cefb2f0a9b886",
+  "region_index_url": "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonDocDB/current/region_index.json",
+  "region_index_http_status": 200,
+  "region_index_bytes": 5588,
+  "publicationDate": "2026-07-10T17:22:57Z",
+  "version": "20260710172257",
+  "produtos_no_arquivo_completo": 60,
+  "produtos_na_fatia": 50,
+  "conteudo": {
+    "products": {
+      "VKVF2KH2PX3ZU7RT": {
+        "sku": "VKVF2KH2PX3ZU7RT",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "2 x 1900 NVMe SSD",
+          "networkPerformance": "25 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "GHVNZ5T282YR9X7J": {
+        "sku": "GHVNZ5T282YR9X7J",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.t3.medium",
+          "currentGeneration": "Yes",
+          "instanceFamily": "General purpose",
+          "vcpu": "2",
+          "physicalProcessor": "Intel Skylake E5 2686 v5 (2.5 GHz)",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "4 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Low to Moderate",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.t3.medium",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "T3",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "AXR6SXJYK45PZNYM": {
+        "sku": "AXR6SXJYK45PZNYM",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "20 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "Y7W6UEJYKKBF438C": {
+        "sku": "Y7W6UEJYKKBF438C",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "12 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "5VWBQZRNJSUDSQJU": {
+        "sku": "5VWBQZRNJSUDSQJU",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.large",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "2",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "16 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.large",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "EJHVWZX7XUQ35BNH": {
+        "sku": "EJHVWZX7XUQ35BNH",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.24xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "96",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "768 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "25 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.24xl",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "192",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "CYKCPTCZUCCZM3VU": {
+        "sku": "CYKCPTCZUCCZM3VU",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "SX7J8DBCZXUBDG2W": {
+        "sku": "SX7J8DBCZXUBDG2W",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "25 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "P75H8BZB5HTBG4VE": {
+        "sku": "P75H8BZB5HTBG4VE",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.4xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "DP2SYV2ZQWKN96BJ": {
+        "sku": "DP2SYV2ZQWKN96BJ",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "20 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.12xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "Z3WDTJSSMJ5J3387": {
+        "sku": "Z3WDTJSSMJ5J3387",
+        "productFamily": "Database Storage",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "storageMedia": "SSD",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-ElasticStorageUsage",
+          "operation": "CreateCluster",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)"
+        }
+      },
+      "HJAGUKYZRGAGWWWU": {
+        "sku": "HJAGUKYZRGAGWWWU",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.2xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "GRAR3QMB2TD6S8FN": {
+        "sku": "GRAR3QMB2TD6S8FN",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "2 x 1425 NVMe SSD",
+          "networkPerformance": "20 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.12xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "ADXEU4M62S4WDGUU": {
+        "sku": "ADXEU4M62S4WDGUU",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.large",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "2",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "16 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.large",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "AFGJ3NXHKMWE4F3G": {
+        "sku": "AFGJ3NXHKMWE4F3G",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "1 x 950 NVMe SSD",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.4xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "E39XX2PF3P6GGCXP": {
+        "sku": "E39XX2PF3P6GGCXP",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.t3.medium",
+          "currentGeneration": "Yes",
+          "instanceFamily": "General purpose",
+          "vcpu": "2",
+          "physicalProcessor": "Intel Skylake E5 2686 v5 (2.5 GHz)",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "4 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Low to Moderate",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.t3.medium",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "T3",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "732ZFWCGH3KYMXJZ": {
+        "sku": "732ZFWCGH3KYMXJZ",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "6A289QD32EQCZVSN": {
+        "sku": "6A289QD32EQCZVSN",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.24xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "96",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "768 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "25 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.24xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "192",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "YR229U63R7NZQP9X": {
+        "sku": "YR229U63R7NZQP9X",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "W5ACWCJ4MPPJ35K7": {
+        "sku": "W5ACWCJ4MPPJ35K7",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "1 x 237 NVMe SSD",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "KXSMZYYPJNUDNJPZ": {
+        "sku": "KXSMZYYPJNUDNJPZ",
+        "productFamily": "System Operation",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "group": "I/O Operation",
+          "groupDescription": "Input/Output Operation",
+          "usagetype": "SAE1-StorageIOUsage",
+          "operation": "CreateDBInstance:0023",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)"
+        }
+      },
+      "98YKE8XHGNGXV5XY": {
+        "sku": "98YKE8XHGNGXV5XY",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.large",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "2",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "16 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.large",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "YTMS7DNMKUTPSF9S": {
+        "sku": "YTMS7DNMKUTPSF9S",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "SRCX2Z4VGATPTNKK": {
+        "sku": "SRCX2Z4VGATPTNKK",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.12xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "R67NTHMGBFWUSA4S": {
+        "sku": "R67NTHMGBFWUSA4S",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "1 x 474 NVMe SSD",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.2xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "9928UVXB9CM73A3U": {
+        "sku": "9928UVXB9CM73A3U",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.12xl",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "S34XX4J8Y2DZJDUH": {
+        "sku": "S34XX4J8Y2DZJDUH",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.2xl",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "Y2DYM85Q7PJUPZ8N": {
+        "sku": "Y2DYM85Q7PJUPZ8N",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "YC9957XP549V3YAC": {
+        "sku": "YC9957XP549V3YAC",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.t4g.medium",
+          "currentGeneration": "Yes",
+          "instanceFamily": "General purpose",
+          "vcpu": "2",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "4 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 5 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.t4g.medium",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "T4G",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "Q8S2Z5VFAU2TB8CG": {
+        "sku": "Q8S2Z5VFAU2TB8CG",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.12xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "2GUJQE85TQ8JK4QT": {
+        "sku": "2GUJQE85TQ8JK4QT",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "1 x 1900 NVMe SSD",
+          "networkPerformance": "12 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6gd.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "KWM5V9KEUS4VQG7N": {
+        "sku": "KWM5V9KEUS4VQG7N",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.xl",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "ABN9ZZ5FPCVUGHD4": {
+        "sku": "ABN9ZZ5FPCVUGHD4",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.2xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "XUEUKJQ3B65DJEDD": {
+        "sku": "XUEUKJQ3B65DJEDD",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.4xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "ZBMVF23W29EDWP46": {
+        "sku": "ZBMVF23W29EDWP46",
+        "productFamily": "Database Storage",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "storageMedia": "SSD",
+          "volumeType": "General Purpose",
+          "minVolumeSize": "10 GB",
+          "maxVolumeSize": "128 TB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-StorageUsage",
+          "operation": "CreateDBInstance:0023",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard"
+        }
+      },
+      "KG9FS9JBVBRF32FU": {
+        "sku": "KG9FS9JBVBRF32FU",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "JR5DEHGZA3FVZZDJ": {
+        "sku": "JR5DEHGZA3FVZZDJ",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.2xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "R9SVMEGYR56N8UCE": {
+        "sku": "R9SVMEGYR56N8UCE",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "HTEJXTW6B4ZWTHA4": {
+        "sku": "HTEJXTW6B4ZWTHA4",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6gd.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "NVMe SSD IO-Optimized",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6gd.4xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6GD",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "68QJ37CJ52EWZBQM": {
+        "sku": "68QJ37CJ52EWZBQM",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.12xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "48",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "384 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.12xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "96",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "42RH5P238TY6RYU2": {
+        "sku": "42RH5P238TY6RYU2",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.16xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "64",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "512 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "20 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.16xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "128",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "KU4AVBFC43GFYU4S": {
+        "sku": "KU4AVBFC43GFYU4S",
+        "productFamily": "Database Storage",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "storageMedia": "SSD",
+          "volumeType": "IO-Optimized-DocDB",
+          "minVolumeSize": "10 GB",
+          "maxVolumeSize": "128 TB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-IO-OptimizedStorageUsage",
+          "operation": "CreateDBInstance:0023",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized"
+        }
+      },
+      "MYTM368PXFZUJD3R": {
+        "sku": "MYTM368PXFZUJD3R",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.t4g.medium",
+          "currentGeneration": "Yes",
+          "instanceFamily": "General purpose",
+          "vcpu": "2",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "4 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 5 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.t4g.medium",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "T4G",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "E2SZ6EC8SANABM4T": {
+        "sku": "E2SZ6EC8SANABM4T",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.4xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "TD3B8KXGG2KST57G": {
+        "sku": "TD3B8KXGG2KST57G",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "XPBTG9S4NBVPJPH4": {
+        "sku": "XPBTG9S4NBVPJPH4",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.8xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "32",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "256 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.8xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "64",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "2VR4Z7JNGVG3T9WF": {
+        "sku": "2VR4Z7JNGVG3T9WF",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.large",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "2",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "16 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r5.large",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "4",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      },
+      "GHAY49KGZFWDGFH6": {
+        "sku": "GHAY49KGZFWDGFH6",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "4",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "32 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r6g.xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "8",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "D7RNNW23WVJE3KVV": {
+        "sku": "D7RNNW23WVJE3KVV",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r5.4xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "16",
+          "physicalProcessor": "Intel Xeon Platinum 8175",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "128 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "General Purpose",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsage:db.r5.4xl",
+          "operation": "CreateDBInstance:0023",
+          "enhancedNetworkingSupported": "Yes",
+          "instanceTypeFamily": "R5",
+          "normalizationSizeFactor": "32",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "Standard",
+          "volume_optimization": "General"
+        }
+      },
+      "HJCSGR4YEDRFCQ29": {
+        "sku": "HJCSGR4YEDRFCQ29",
+        "productFamily": "Database Instance",
+        "attributes": {
+          "servicecode": "AmazonDocDB",
+          "location": "South America (Sao Paulo)",
+          "locationType": "AWS Region",
+          "instanceType": "db.r6g.2xlarge",
+          "currentGeneration": "Yes",
+          "instanceFamily": "Memory optimized",
+          "vcpu": "8",
+          "physicalProcessor": "AWS Graviton2",
+          "clockSpeed": "Up to 3.1 GHz",
+          "memory": "64 GiB",
+          "instanceStorage": "EBS-Only",
+          "networkPerformance": "Up to 10 Gigabit",
+          "processorArchitecture": "64-bit",
+          "volumeType": "IO-Optimized-DocDB",
+          "engineCode": "23",
+          "databaseEngine": "Amazon DocumentDB",
+          "usagetype": "SAE1-InstanceUsageIOOptimized:db.r6g.2xl",
+          "operation": "CreateDBInstance:0023",
+          "instanceTypeFamily": "R6G",
+          "normalizationSizeFactor": "16",
+          "regionCode": "sa-east-1",
+          "servicename": "Amazon DocumentDB (with MongoDB compatibility)",
+          "storageType": "I/O-Optimized",
+          "volume_optimization": "IO-Optimized"
+        }
+      }
+    },
+    "terms": {
+      "OnDemand": {
+        "E39XX2PF3P6GGCXP": {
+          "E39XX2PF3P6GGCXP.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "E39XX2PF3P6GGCXP",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "E39XX2PF3P6GGCXP.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "E39XX2PF3P6GGCXP.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.160 per db.t3.medium instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.1600000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "KG9FS9JBVBRF32FU": {
+          "KG9FS9JBVBRF32FU.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "KG9FS9JBVBRF32FU",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "KG9FS9JBVBRF32FU.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "KG9FS9JBVBRF32FU.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$9.17 per db.r5.8xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "9.1680000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "P75H8BZB5HTBG4VE": {
+          "P75H8BZB5HTBG4VE.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "P75H8BZB5HTBG4VE",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "P75H8BZB5HTBG4VE.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "P75H8BZB5HTBG4VE.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$4.791325 per db.r6g.4xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "4.7913000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "TD3B8KXGG2KST57G": {
+          "TD3B8KXGG2KST57G.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "TD3B8KXGG2KST57G",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "TD3B8KXGG2KST57G.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "TD3B8KXGG2KST57G.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$8.7096 per db.r6g.8xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "8.7096000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "GHAY49KGZFWDGFH6": {
+          "GHAY49KGZFWDGFH6.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "GHAY49KGZFWDGFH6",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "GHAY49KGZFWDGFH6.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "GHAY49KGZFWDGFH6.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.0887 per db.r6g.xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.0887000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "YR229U63R7NZQP9X": {
+          "YR229U63R7NZQP9X.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "YR229U63R7NZQP9X",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "YR229U63R7NZQP9X.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "YR229U63R7NZQP9X.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.19757 per db.r6g.xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.1976000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "5VWBQZRNJSUDSQJU": {
+          "5VWBQZRNJSUDSQJU.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "5VWBQZRNJSUDSQJU",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "5VWBQZRNJSUDSQJU.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "5VWBQZRNJSUDSQJU.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.598785 per db.r6g.large IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.5988000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "W5ACWCJ4MPPJ35K7": {
+          "W5ACWCJ4MPPJ35K7.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "W5ACWCJ4MPPJ35K7",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "W5ACWCJ4MPPJ35K7.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "W5ACWCJ4MPPJ35K7.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.3282 per db.r6gd.xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.3282000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "98YKE8XHGNGXV5XY": {
+          "98YKE8XHGNGXV5XY.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "98YKE8XHGNGXV5XY",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "98YKE8XHGNGXV5XY.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "98YKE8XHGNGXV5XY.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.573 per db.r5.large instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.5730000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "SRCX2Z4VGATPTNKK": {
+          "SRCX2Z4VGATPTNKK.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "SRCX2Z4VGATPTNKK",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "SRCX2Z4VGATPTNKK.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "SRCX2Z4VGATPTNKK.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$13.0663 per db.r6g.12xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "13.0663000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "ABN9ZZ5FPCVUGHD4": {
+          "ABN9ZZ5FPCVUGHD4.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "ABN9ZZ5FPCVUGHD4",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "ABN9ZZ5FPCVUGHD4.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "ABN9ZZ5FPCVUGHD4.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.6564 per db.r6gd.2xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.6564000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "XUEUKJQ3B65DJEDD": {
+          "XUEUKJQ3B65DJEDD.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "XUEUKJQ3B65DJEDD",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "XUEUKJQ3B65DJEDD.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "XUEUKJQ3B65DJEDD.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$5.0435 per db.r5.4xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "5.0435000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "GHVNZ5T282YR9X7J": {
+          "GHVNZ5T282YR9X7J.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "GHVNZ5T282YR9X7J",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "GHVNZ5T282YR9X7J.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "GHVNZ5T282YR9X7J.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.176 per db.t3.medium IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.1760000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "R9SVMEGYR56N8UCE": {
+          "R9SVMEGYR56N8UCE.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "R9SVMEGYR56N8UCE",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "R9SVMEGYR56N8UCE.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "R9SVMEGYR56N8UCE.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$19.16112 per db.r6g.16xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "19.1611000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "SX7J8DBCZXUBDG2W": {
+          "SX7J8DBCZXUBDG2W.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "SX7J8DBCZXUBDG2W",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "SX7J8DBCZXUBDG2W.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "SX7J8DBCZXUBDG2W.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$21.2514 per db.r6gd.16xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "21.2514000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "GRAR3QMB2TD6S8FN": {
+          "GRAR3QMB2TD6S8FN.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "GRAR3QMB2TD6S8FN",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "GRAR3QMB2TD6S8FN.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "GRAR3QMB2TD6S8FN.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$15.9409 per db.r6gd.12xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "15.9409000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "XPBTG9S4NBVPJPH4": {
+          "XPBTG9S4NBVPJPH4.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "XPBTG9S4NBVPJPH4",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "XPBTG9S4NBVPJPH4.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "XPBTG9S4NBVPJPH4.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$10.0848 per db.r5.8xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "10.0848000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "CYKCPTCZUCCZM3VU": {
+          "CYKCPTCZUCCZM3VU.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "CYKCPTCZUCCZM3VU",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "CYKCPTCZUCCZM3VU.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "CYKCPTCZUCCZM3VU.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.3282 per db.r6gd.xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.3282000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "D7RNNW23WVJE3KVV": {
+          "D7RNNW23WVJE3KVV.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "D7RNNW23WVJE3KVV",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "D7RNNW23WVJE3KVV.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "D7RNNW23WVJE3KVV.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$4.585 per db.r5.4xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "4.5850000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "HTEJXTW6B4ZWTHA4": {
+          "HTEJXTW6B4ZWTHA4.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "HTEJXTW6B4ZWTHA4",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "HTEJXTW6B4ZWTHA4.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "HTEJXTW6B4ZWTHA4.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$5.314 per db.r6gd.4xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "5.3140000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "HJCSGR4YEDRFCQ29": {
+          "HJCSGR4YEDRFCQ29.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "HJCSGR4YEDRFCQ29",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "HJCSGR4YEDRFCQ29.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "HJCSGR4YEDRFCQ29.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.39514 per db.r6g.2xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.3951000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "JR5DEHGZA3FVZZDJ": {
+          "JR5DEHGZA3FVZZDJ.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "JR5DEHGZA3FVZZDJ",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "JR5DEHGZA3FVZZDJ.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "JR5DEHGZA3FVZZDJ.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.5212 per db.r5.2xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.5212000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "E2SZ6EC8SANABM4T": {
+          "E2SZ6EC8SANABM4T.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "E2SZ6EC8SANABM4T",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "E2SZ6EC8SANABM4T.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "E2SZ6EC8SANABM4T.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$4.35575 per db.r6g.4xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "4.3557500000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "YTMS7DNMKUTPSF9S": {
+          "YTMS7DNMKUTPSF9S.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "YTMS7DNMKUTPSF9S",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "YTMS7DNMKUTPSF9S.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "YTMS7DNMKUTPSF9S.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.2606 per db.r5.xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.2606000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "DP2SYV2ZQWKN96BJ": {
+          "DP2SYV2ZQWKN96BJ.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "DP2SYV2ZQWKN96BJ",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "DP2SYV2ZQWKN96BJ.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "DP2SYV2ZQWKN96BJ.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$15.9409 per db.r6gd.12xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "15.9409000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "2GUJQE85TQ8JK4QT": {
+          "2GUJQE85TQ8JK4QT.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "2GUJQE85TQ8JK4QT",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "2GUJQE85TQ8JK4QT.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "2GUJQE85TQ8JK4QT.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$10.6257 per db.r6gd.8xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "10.6257000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "ZBMVF23W29EDWP46": {
+          "ZBMVF23W29EDWP46.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "ZBMVF23W29EDWP46",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "ZBMVF23W29EDWP46.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "ZBMVF23W29EDWP46.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.19 per GB-month of consumed storage (Amazon DocumentDB)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "GB-Mo",
+                "pricePerUnit": {
+                  "USD": "0.1900000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "Y2DYM85Q7PJUPZ8N": {
+          "Y2DYM85Q7PJUPZ8N.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "Y2DYM85Q7PJUPZ8N",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "Y2DYM85Q7PJUPZ8N.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "Y2DYM85Q7PJUPZ8N.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$17.4192 per db.r6g.16xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "17.4192000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "42RH5P238TY6RYU2": {
+          "42RH5P238TY6RYU2.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "42RH5P238TY6RYU2",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "42RH5P238TY6RYU2.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "42RH5P238TY6RYU2.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$18.34 per db.r5.16xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "18.3360000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "732ZFWCGH3KYMXJZ": {
+          "732ZFWCGH3KYMXJZ.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "732ZFWCGH3KYMXJZ",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "732ZFWCGH3KYMXJZ.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "732ZFWCGH3KYMXJZ.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$9.58056 per db.r6g.8xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "9.5806000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "VKVF2KH2PX3ZU7RT": {
+          "VKVF2KH2PX3ZU7RT.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "VKVF2KH2PX3ZU7RT",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "VKVF2KH2PX3ZU7RT.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "VKVF2KH2PX3ZU7RT.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$21.2514 per db.r6gd.16xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "21.2514000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "S34XX4J8Y2DZJDUH": {
+          "S34XX4J8Y2DZJDUH.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "S34XX4J8Y2DZJDUH",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "S34XX4J8Y2DZJDUH.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "S34XX4J8Y2DZJDUH.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.292 per db.r5.2xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.2920000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "R67NTHMGBFWUSA4S": {
+          "R67NTHMGBFWUSA4S.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "R67NTHMGBFWUSA4S",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "R67NTHMGBFWUSA4S.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "R67NTHMGBFWUSA4S.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.6564 per db.r6gd.2xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.6564000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "YC9957XP549V3YAC": {
+          "YC9957XP549V3YAC.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "YC9957XP549V3YAC",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "YC9957XP549V3YAC.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "YC9957XP549V3YAC.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.17072 per db.t4g.medium IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.1707000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "ADXEU4M62S4WDGUU": {
+          "ADXEU4M62S4WDGUU.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "ADXEU4M62S4WDGUU",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "ADXEU4M62S4WDGUU.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "ADXEU4M62S4WDGUU.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.54435 per db.r6g.large instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.5443500000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "Q8S2Z5VFAU2TB8CG": {
+          "Q8S2Z5VFAU2TB8CG.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "Q8S2Z5VFAU2TB8CG",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "Q8S2Z5VFAU2TB8CG.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "Q8S2Z5VFAU2TB8CG.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$15.1294 per db.r5.12xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "15.1294000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "2VR4Z7JNGVG3T9WF": {
+          "2VR4Z7JNGVG3T9WF.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "2VR4Z7JNGVG3T9WF",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "2VR4Z7JNGVG3T9WF.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "2VR4Z7JNGVG3T9WF.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.6303 per db.r5.large IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.6303000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "HJAGUKYZRGAGWWWU": {
+          "HJAGUKYZRGAGWWWU.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "HJAGUKYZRGAGWWWU",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "HJAGUKYZRGAGWWWU.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "HJAGUKYZRGAGWWWU.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$2.1774 per db.r6g.2xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "2.1774000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "9928UVXB9CM73A3U": {
+          "9928UVXB9CM73A3U.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "9928UVXB9CM73A3U",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "9928UVXB9CM73A3U.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "9928UVXB9CM73A3U.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$13.754 per db.r5.12xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "13.7540000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "6A289QD32EQCZVSN": {
+          "6A289QD32EQCZVSN.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "6A289QD32EQCZVSN",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "6A289QD32EQCZVSN.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "6A289QD32EQCZVSN.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$30.2599 per db.r5.24xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "30.2599000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "KXSMZYYPJNUDNJPZ": {
+          "KXSMZYYPJNUDNJPZ.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "KXSMZYYPJNUDNJPZ",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "KXSMZYYPJNUDNJPZ.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "KXSMZYYPJNUDNJPZ.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.28 per 1 million I/O requests (Amazon DocumentDB)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "IOs",
+                "pricePerUnit": {
+                  "USD": "0.0000002800"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "AFGJ3NXHKMWE4F3G": {
+          "AFGJ3NXHKMWE4F3G.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "AFGJ3NXHKMWE4F3G",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "AFGJ3NXHKMWE4F3G.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "AFGJ3NXHKMWE4F3G.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$5.314 per db.r6gd.4xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "5.3140000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "KU4AVBFC43GFYU4S": {
+          "KU4AVBFC43GFYU4S.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "KU4AVBFC43GFYU4S",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "KU4AVBFC43GFYU4S.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "KU4AVBFC43GFYU4S.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.57 per GB-month of IO-Optimized consumed storage (Amazon DocumentDB)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "GB-Mo",
+                "pricePerUnit": {
+                  "USD": "0.5700000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "EJHVWZX7XUQ35BNH": {
+          "EJHVWZX7XUQ35BNH.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "EJHVWZX7XUQ35BNH",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "EJHVWZX7XUQ35BNH.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "EJHVWZX7XUQ35BNH.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$27.509 per db.r5.24xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "27.5090000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "Y7W6UEJYKKBF438C": {
+          "Y7W6UEJYKKBF438C.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "Y7W6UEJYKKBF438C",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "Y7W6UEJYKKBF438C.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "Y7W6UEJYKKBF438C.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$10.6257 per db.r6gd.8xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "10.6257000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "Z3WDTJSSMJ5J3387": {
+          "Z3WDTJSSMJ5J3387.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "Z3WDTJSSMJ5J3387",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "Z3WDTJSSMJ5J3387.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "Z3WDTJSSMJ5J3387.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.57 per GB-Mo for Elastic Storage Usage in South America (Sao Paulo)",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "GB-Mo",
+                "pricePerUnit": {
+                  "USD": "0.5700000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "KWM5V9KEUS4VQG7N": {
+          "KWM5V9KEUS4VQG7N.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "KWM5V9KEUS4VQG7N",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "KWM5V9KEUS4VQG7N.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "KWM5V9KEUS4VQG7N.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$1.146 per db.r5.xlarge instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "1.1460000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "MYTM368PXFZUJD3R": {
+          "MYTM368PXFZUJD3R.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "MYTM368PXFZUJD3R",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "MYTM368PXFZUJD3R.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "MYTM368PXFZUJD3R.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$0.1552 per db.t4g.medium instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "0.1552000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "68QJ37CJ52EWZBQM": {
+          "68QJ37CJ52EWZBQM.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "68QJ37CJ52EWZBQM",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "68QJ37CJ52EWZBQM.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "68QJ37CJ52EWZBQM.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$14.37293 per db.r6g.12xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "14.3729000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        },
+        "AXR6SXJYK45PZNYM": {
+          "AXR6SXJYK45PZNYM.JRTCKXETXF": {
+            "offerTermCode": "JRTCKXETXF",
+            "sku": "AXR6SXJYK45PZNYM",
+            "effectiveDate": "2026-06-01T00:00:00Z",
+            "priceDimensions": {
+              "AXR6SXJYK45PZNYM.JRTCKXETXF.6YS6EN2CT7": {
+                "rateCode": "AXR6SXJYK45PZNYM.JRTCKXETXF.6YS6EN2CT7",
+                "description": "$20.1696 per db.r5.16xlarge IO-Optimized instance hour (or partial hour) running Amazon DocumentDB",
+                "beginRange": "0",
+                "endRange": "Inf",
+                "unit": "Hrs",
+                "pricePerUnit": {
+                  "USD": "20.1696000000"
+                },
+                "appliesTo": []
+              }
+            },
+            "termAttributes": {}
+          }
+        }
+      }
+    }
+  }
+}

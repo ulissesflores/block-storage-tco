@@ -1,0 +1,904 @@
+{
+  "_natureza": "informado + decisão de projeto",
+  "_papel": "Entregável D2.5 em forma legível por código: as quatro configurações, o de-para dos 12 servidores por fase e por nuvem, a lista de SKUs a precificar, a matriz de paridade comercial (N1), a taxonomia de custo (N2) e a lista de serviços não-regionais (exceção do gate G-04). É selado no estágio `inputs` ANTES de qualquer captura; a prosa correspondente vive em ../../docs/projeto/PROJETO-TECNICO-E2.5.md e as figuras são geradas daqui, nunca redigidas à mão.",
+  "_regiao": "IBM br-sao / AWS sa-east-1 (D7). Três zonas de disponibilidade nas duas nuvens.",
+  "_moeda": "USD, país de faturamento USA nas duas nuvens (D12).",
+  "configuracoes": [
+    {
+      "id": "C1",
+      "nuvem": "ibm",
+      "fase": 1,
+      "titulo": "IBM Cloud — lift-and-shift com camada de segurança"
+    },
+    {
+      "id": "C2",
+      "nuvem": "aws",
+      "fase": 1,
+      "titulo": "AWS — lift-and-shift equivalente"
+    },
+    {
+      "id": "C3",
+      "nuvem": "ibm",
+      "fase": 2,
+      "titulo": "IBM Cloud — modernização e IA corporativa"
+    },
+    {
+      "id": "C4",
+      "nuvem": "aws",
+      "fase": 2,
+      "titulo": "AWS — modernização e IA corporativa"
+    }
+  ],
+  "regra_selecao_sku": {
+    "enunciado": "Para cada servidor, escolhe-se o MENOR SKU da família declarada, disponível na região, que satisfaça simultaneamente vCPU >= requerido e RAM >= requerida; havendo empate de capacidade, vence o menor preço capturado.",
+    "por_que_regra_e_nao_lista_fixa": "A diferenciação legítima entre as nuvens é a ESCADA DE PERFIS — a capacidade requerida arredonda para SKUs diferentes em cada catálogo, e isso é dado capturado, não palpite. Fixar o SKU à mão permitiria escolher o vencedor; fixar a regra e precificar a escada inteira faz o SKU ser derivado da evidência.",
+    "familia_por_razao_ram_vcpu": {
+      "4": "balanced — IBM bxf-* (1:4) / AWS família de propósito geral (1:4)",
+      "2": "compute — IBM cxf-* (1:2) / AWS família otimizada para computação (1:2)"
+    },
+    "geracao_aws": "Não fixada a priori: precifica-se a escada das gerações correntes disponíveis em sa-east-1 e a regra escolhe. Fixar 'm7i' antes de capturar seria afirmar disponibilidade não verificada."
+  },
+  "de_para": [
+    {
+      "id": "banco-1",
+      "tecnologia": "MySQL",
+      "vcpu": 4,
+      "ram_gb": 16,
+      "armazenamento_gb": 500,
+      "requisito": "Alta disponibilidade.",
+      "sla_morde": true,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 2,
+        "disco": "gen2-volume-10iops-tier",
+        "justificativa": "réplica síncrona em segunda zona de disponibilidade; o requisito é de nível de serviço, então a redundância entra no dimensionamento e não só no desenho"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 2,
+        "disco": "ebs-gp3",
+        "justificativa": "mesma topologia multi-AZ, para que a comparação não premie a nuvem com menos redundância"
+      },
+      "fase2_ibm": {
+        "servico": "Databases for MySQL",
+        "plano": "standard",
+        "ha": "incluída no plano",
+        "justificativa": "prêmio de serviço gerenciado troca a segunda máquina virtual por replicação operada pelo provedor"
+      },
+      "fase2_aws": {
+        "servico": "RDS for MySQL",
+        "plano": "Multi-AZ",
+        "ha": "Multi-AZ",
+        "justificativa": "equivalente funcional; Multi-AZ é o degrau que corresponde à HA do plano IBM"
+      }
+    },
+    {
+      "id": "banco-2",
+      "tecnologia": "MySQL",
+      "vcpu": 8,
+      "ram_gb": 32,
+      "armazenamento_gb": 1024,
+      "requisito": "Backups diários automáticos.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-general-purpose",
+        "justificativa": "carga analítica tolera disco de menor IOPS; o HDD do enunciado não tem equivalente em VPC e a classe econômica é a tradução honesta, declarada como tal"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "justificativa": "mesma classe de disco nos dois lados por paridade comercial"
+      },
+      "fase2_ibm": {
+        "servico": "Databases for MySQL",
+        "plano": "standard",
+        "ha": "não",
+        "justificativa": "backup automático diário é função nativa do serviço gerenciado — é o requisito especial deste servidor sendo atendido por plataforma, não por rotina própria"
+      },
+      "fase2_aws": {
+        "servico": "RDS for MySQL",
+        "plano": "Single-AZ",
+        "ha": "não",
+        "justificativa": "idem, com retenção de 30 dias igual à do lado IBM"
+      }
+    },
+    {
+      "id": "banco-3",
+      "tecnologia": "PostgreSQL",
+      "vcpu": 6,
+      "ram_gb": 24,
+      "armazenamento_gb": 700,
+      "requisito": "Segurança avançada e criptografia.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-general-purpose",
+        "chave": "Key Protect (BYOK)",
+        "justificativa": "6 vCPU não existe na escada: sobe para o degrau de 8. É exatamente o efeito de arredondamento que a regra de seleção mede"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "chave": "KMS (chave gerenciada pelo cliente)",
+        "justificativa": "mesmo arredondamento, escada diferente — a diferença de sobra de memória entre os dois degraus é dado capturado"
+      },
+      "fase2_ibm": {
+        "servico": "Databases for PostgreSQL",
+        "plano": "standard",
+        "chave": "Key Protect (BYOK)",
+        "justificativa": "criptografia em repouso com chave do cliente satisfaz o requisito especial sem código próprio"
+      },
+      "fase2_aws": {
+        "servico": "RDS for PostgreSQL",
+        "plano": "Single-AZ",
+        "chave": "KMS (chave gerenciada pelo cliente)",
+        "justificativa": "equivalente funcional na mesma classe de chave"
+      }
+    },
+    {
+      "id": "banco-4",
+      "tecnologia": "MongoDB",
+      "vcpu": 4,
+      "ram_gb": 16,
+      "armazenamento_gb": 1024,
+      "requisito": "Alta capacidade de escrita.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-custom",
+        "justificativa": "escrita intensiva é o único caso em que se paga IOPS provisionado na fase 1; sem isso o disco vira o gargalo e o desenho não atende o requisito"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3-iops-provisionado",
+        "justificativa": "mesmo IOPS-alvo dos dois lados, senão a comparação premia quem entregou menos desempenho"
+      },
+      "fase2_ibm": {
+        "servico": "Databases for MongoDB",
+        "plano": "standard",
+        "justificativa": "serviço gerenciado equivalente no catálogo IBM"
+      },
+      "fase2_aws": {
+        "servico": "DocumentDB",
+        "plano": "instância sob demanda",
+        "justificativa": "equivalente com compatibilidade de API MongoDB; a diferença de motor é registrada como ressalva no texto, não escondida"
+      }
+    },
+    {
+      "id": "banco-5",
+      "tecnologia": "Oracle Database",
+      "vcpu": 8,
+      "ram_gb": 32,
+      "armazenamento_gb": 2048,
+      "requisito": "Alta consistência e backups de baixa latência.",
+      "sla_morde": false,
+      "assimetria": "D11 — a política de nuvens autorizadas da Oracle nomeia AWS, Azure e GCP; a IBM não aparece. E não há Oracle gerenciado no catálogo IBM. Esta é a perna Oracle da tese.",
+      "fase1_ibm": {
+        "servico": "Bare Metal Server (VPC) OU VPC Virtual Server",
+        "familia": "bare-metal + bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-10iops-tier",
+        "justificativa": "os DOIS caminhos são precificados (convenção D13): a máquina virtual é o lift-and-shift literal, e o bare metal é a resposta de engenharia defensável quando o licenciamento se conta por núcleo físico. O menor bare metal disponível em br-sao tem 16 núcleos — o dobro do requisito — e esse degrau é achado, não escolha"
+      },
+      "fase1_aws": {
+        "servico": "EC2 (BYOL)",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "justificativa": "ambiente de nuvem autorizado pela Oracle: licenciamento por vCPU em locação compartilhada, sem exigir dedicação de hardware"
+      },
+      "fase2_ibm": {
+        "servico": "permanece Bare Metal Server (BYOL)",
+        "plano": "n/a",
+        "justificativa": "ACHADO, não omissão: a modernização deste servidor não acontece na IBM porque não existe oferta gerenciada equivalente. O texto afirma isso como fato verificado, e o custo do não-modernizar entra na comparação"
+      },
+      "fase2_aws": {
+        "servico": "RDS for Oracle",
+        "plano": "BYOL (primário) + Standard Edition Two com licença inclusa (sensibilidade)",
+        "justificativa": "primário BYOL para manter simetria de licença com a IBM; o cenário de licença inclusa é nomeado à parte porque só existe na edição Standard Two"
+      }
+    },
+    {
+      "id": "banco-6",
+      "tecnologia": "Redis",
+      "vcpu": 2,
+      "ram_gb": 8,
+      "armazenamento_gb": 100,
+      "requisito": "Alta velocidade de acesso.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-general-purpose",
+        "justificativa": "cache é servido de memória; o disco só persiste o instantâneo"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "justificativa": "idem"
+      },
+      "fase2_ibm": {
+        "servico": "Databases for Redis",
+        "plano": "standard",
+        "justificativa": "cache gerenciado na mesma zona das aplicações preserva a latência do requisito"
+      },
+      "fase2_aws": {
+        "servico": "ElastiCache for Redis",
+        "plano": "nó sob demanda",
+        "justificativa": "equivalente direto"
+      }
+    },
+    {
+      "id": "app-1",
+      "tecnologia": "Java",
+      "vcpu": 4,
+      "ram_gb": 8,
+      "armazenamento_gb": 250,
+      "requisito": "Escalabilidade horizontal.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "cxf",
+        "instancias": 2,
+        "disco": "gen2-volume-general-purpose",
+        "balanceador": "Application Load Balancer for VPC",
+        "justificativa": "razão memória/vCPU de 1:2 é família de computação; escalabilidade horizontal exige ao menos duas instâncias atrás de balanceador já na fase 1"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "compute-optimized",
+        "instancias": 2,
+        "disco": "ebs-gp3",
+        "balanceador": "Application Load Balancer",
+        "justificativa": "topologia idêntica"
+      },
+      "fase2_ibm": {
+        "servico": "IBM Kubernetes Service",
+        "plano": "worker pool",
+        "justificativa": "contêinerização pedida na Parte 2 item 1; o escalonamento horizontal passa a ser do orquestrador"
+      },
+      "fase2_aws": {
+        "servico": "Amazon EKS",
+        "plano": "cluster + worker pool",
+        "justificativa": "equivalente; o plano de controle é cobrado à parte nos dois catálogos"
+      }
+    },
+    {
+      "id": "app-2",
+      "tecnologia": "Java",
+      "vcpu": 2,
+      "ram_gb": 4,
+      "armazenamento_gb": 100,
+      "requisito": "Latência inferior a 200 ms.",
+      "sla_morde": true,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "cxf",
+        "instancias": 2,
+        "disco": "gen2-volume-general-purpose",
+        "balanceador": "Application Load Balancer for VPC",
+        "justificativa": "É ESTE o servidor que o modelo de filas descreve. O alvo de 200 ms restringe a utilização, e a folga necessária vira mais capacidade — o mecanismo da tese"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "compute-optimized",
+        "instancias": 2,
+        "disco": "ebs-gp3",
+        "balanceador": "Application Load Balancer",
+        "justificativa": "idem, mesmo alvo de latência"
+      },
+      "fase2_ibm": {
+        "servico": "Code Engine",
+        "plano": "standard",
+        "tensao": "N4",
+        "justificativa": "serverless para APIs é ordem literal do enunciado; a partida a frio conflita com os 200 ms e a reconciliação é instância mínima sempre quente, cujo custo entra na planilha"
+      },
+      "fase2_aws": {
+        "servico": "AWS Lambda",
+        "plano": "sob demanda",
+        "tensao": "N4",
+        "justificativa": "mesma ordem, mesma tensão, mesma mitigação — concorrência provisionada, precificada"
+      }
+    },
+    {
+      "id": "app-3",
+      "tecnologia": "PHP",
+      "vcpu": 2,
+      "ram_gb": 8,
+      "armazenamento_gb": 300,
+      "requisito": "Integração com serviços de terceiros.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-general-purpose",
+        "justificativa": "saída para terceiros exige gateway público, que entra na taxonomia de rede"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "justificativa": "idem, com NAT Gateway"
+      },
+      "fase2_ibm": {
+        "servico": "IBM Kubernetes Service",
+        "plano": "worker pool",
+        "justificativa": "o CMS passa a servir mídia do armazenamento de objetos, o que desloca custo de bloco para objeto e egress"
+      },
+      "fase2_aws": {
+        "servico": "Amazon EKS",
+        "plano": "worker pool",
+        "justificativa": "idem, com S3"
+      }
+    },
+    {
+      "id": "app-4",
+      "tecnologia": "Node.js",
+      "vcpu": 4,
+      "ram_gb": 16,
+      "armazenamento_gb": 200,
+      "requisito": "Alta capacidade de I/O.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-custom",
+        "justificativa": "segundo caso de IOPS provisionado, pelo requisito literal de I/O"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3-iops-provisionado",
+        "justificativa": "mesmo IOPS-alvo"
+      },
+      "fase2_ibm": {
+        "servico": "IBM Kubernetes Service",
+        "plano": "worker pool",
+        "justificativa": "mensageria em tempo real mantém conexão persistente — não é candidata a serverless, e dizer isso é análise, não omissão"
+      },
+      "fase2_aws": {
+        "servico": "Amazon EKS",
+        "plano": "worker pool",
+        "justificativa": "idem"
+      }
+    },
+    {
+      "id": "app-5",
+      "tecnologia": "Python",
+      "vcpu": 6,
+      "ram_gb": 24,
+      "armazenamento_gb": 500,
+      "requisito": "Alta capacidade de processamento.",
+      "sla_morde": false,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "bxf",
+        "instancias": 1,
+        "disco": "gen2-volume-general-purpose",
+        "justificativa": "segundo servidor de 6 vCPU: sobe para o degrau de 8 na escada"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "general-purpose",
+        "instancias": 1,
+        "disco": "ebs-gp3",
+        "justificativa": "mesmo arredondamento, escada própria"
+      },
+      "fase2_ibm": {
+        "servico": "IBM Kubernetes Service",
+        "plano": "worker pool (carga de lote)",
+        "justificativa": "relatórios são carga intermitente: em contêiner com escalonamento, deixa de pagar máquina ociosa 24 horas"
+      },
+      "fase2_aws": {
+        "servico": "Amazon EKS",
+        "plano": "worker pool (carga de lote)",
+        "justificativa": "idem"
+      }
+    },
+    {
+      "id": "app-6",
+      "tecnologia": "Java",
+      "vcpu": 2,
+      "ram_gb": 4,
+      "armazenamento_gb": 150,
+      "requisito": "Alta disponibilidade e tolerância a falhas.",
+      "sla_morde": true,
+      "fase1_ibm": {
+        "servico": "VPC Virtual Server",
+        "familia": "cxf",
+        "instancias": 2,
+        "disco": "gen2-volume-general-purpose",
+        "balanceador": "Application Load Balancer for VPC",
+        "justificativa": "duas zonas de disponibilidade: autenticação indisponível derruba a loja inteira, e o requisito é de nível de serviço"
+      },
+      "fase1_aws": {
+        "servico": "EC2",
+        "familia": "compute-optimized",
+        "instancias": 2,
+        "disco": "ebs-gp3",
+        "balanceador": "Application Load Balancer",
+        "justificativa": "idem"
+      },
+      "fase2_ibm": {
+        "servico": "IBM Kubernetes Service",
+        "plano": "worker pool (mínimo 2 réplicas em zonas distintas)",
+        "justificativa": "a tolerância a falhas passa a ser propriedade do orquestrador, com réplicas espalhadas por zona"
+      },
+      "fase2_aws": {
+        "servico": "Amazon EKS",
+        "plano": "worker pool (mínimo 2 réplicas em zonas distintas)",
+        "justificativa": "idem"
+      }
+    }
+  ],
+  "servicos_compartilhados": {
+    "fase1": {
+      "ibm": [
+        "VPC com 3 zonas",
+        "Application Load Balancer for VPC",
+        "Public Gateway",
+        "Floating IP",
+        "Key Protect (chaves)",
+        "Cloud Object Storage (backups)",
+        "Activity Tracker e Log Analysis",
+        "IAM com grupos de acesso",
+        "Security Groups e Network ACL",
+        "VPN site-to-site para a janela de migração"
+      ],
+      "aws": [
+        "VPC com 3 zonas",
+        "Application Load Balancer",
+        "NAT Gateway",
+        "Elastic IP",
+        "KMS (chaves)",
+        "S3 (backups)",
+        "CloudTrail e CloudWatch Logs",
+        "IAM com funções",
+        "Security Groups e Network ACL",
+        "Site-to-Site VPN para a janela de migração"
+      ]
+    },
+    "fase2": {
+      "ibm": [
+        "IBM Kubernetes Service (plano de controle)",
+        "Code Engine",
+        "Cloud Object Storage",
+        "watsonx.ai (Studio e Runtime)",
+        "Secrets Manager",
+        "Virtual Private Endpoints"
+      ],
+      "aws": [
+        "Amazon EKS (plano de controle)",
+        "AWS Lambda e API Gateway",
+        "S3",
+        "Amazon Bedrock",
+        "Secrets Manager",
+        "VPC Endpoints (PrivateLink)"
+      ]
+    }
+  },
+  "camada_ia": {
+    "escolha_ibm": "watsonx.ai (Studio + Runtime), modelos da família Granite",
+    "escolha_aws": "Amazon Bedrock",
+    "aplicabilidade_na_xyz": [
+      "busca semântica e enriquecimento de catálogo sobre os dados do CMS (app-3) e do e-commerce (app-1)",
+      "assistente de atendimento com geração aumentada por recuperação sobre a base de conteúdo",
+      "detecção de anomalia em transações, apoiada nos dados financeiros do banco-5"
+    ],
+    "achado_de_disponibilidade": {
+      "afirmacao": "No Global Catalog da IBM, em 2026-08-13, os serviços data-science-experience (watsonx.ai Studio), pm-20 (watsonx.ai Runtime), aiopenscale (watsonx.governance) e lakehouse (watsonx.data) declaram geo_tags = [au-syd, ca-tor, eu-de, eu-gb, jp-tok, us-south]. br-sao NÃO consta em nenhum deles.",
+      "graduacao": "FATO sobre o nó consultado, com data. NÃO se afirma 'o serviço não existe em São Paulo' — afirma-se 'não declarado no Global Catalog da IBM em 2026-08-13'. A documentação oficial de disponibilidade regional devolveu HTTP 403 a este ambiente e à validação independente, e isso fica registrado.",
+      "contraste_aws": "O índice de preços da AWS lista sa-east-1 para AmazonBedrock (verificado em 2026-08-13, HTTP 200).",
+      "evidencia_crua": "00-material-fonte/precos/probe-e2.5-2026-08-13/",
+      "consequencia_de_projeto": "Na IBM, a camada de IA fica fora do país e o tráfego de inferência cruza fronteira; na AWS, permanece em sa-east-1. Isto ativa o regime de transferência internacional de dados da LGPD e é exatamente o item do enunciado que pede como reduzir riscos de vazamento — além de confirmar o isolamento da camada de IA como item dominante do delta, que é o que a tese já afirmava."
+    },
+    "reducao_de_risco_de_vazamento": [
+      "ponto de extremidade privado (Virtual Private Endpoint / PrivateLink), sem trânsito pela internet pública",
+      "mascaramento e tokenização de dados pessoais ANTES da inferência: o texto enviado ao modelo não carrega identificador direto",
+      "chave gerenciada pelo cliente para os artefatos e índices da camada de recuperação",
+      "isolamento de projeto e de credencial: a camada de IA não recebe credencial dos bancos de produção",
+      "registro de auditoria de prompt e resposta, com retenção declarada",
+      "cláusula contratual de não uso dos dados do cliente para treinamento",
+      "quando a inferência sai do país: base legal e salvaguardas de transferência internacional da LGPD, com o encarregado ciente e o registro de operações atualizado"
+    ]
+  },
+  "plano_ondas": [
+    {
+      "onda": 0,
+      "nome": "Fundação e segurança",
+      "conteudo": "conta, IAM, VPC de 3 zonas, chaves, registro de auditoria, conectividade com o ambiente atual",
+      "corte": "nenhum",
+      "risco": "baixo"
+    },
+    {
+      "onda": 1,
+      "nome": "Aplicações sem estado",
+      "conteudo": "app-1, app-3, app-5",
+      "corte": "janela de troca de DNS",
+      "risco": "baixo",
+      "justificativa": "começa pelo que se pode reverter com uma entrada de DNS — a onda também valida a fundação em produção"
+    },
+    {
+      "onda": 2,
+      "nome": "Bancos não críticos",
+      "conteudo": "banco-2, banco-4, banco-6",
+      "corte": "replicação e virada em janela noturna",
+      "risco": "médio"
+    },
+    {
+      "onda": 3,
+      "nome": "Núcleo transacional",
+      "conteudo": "banco-1, banco-3, app-2, app-6",
+      "corte": "replicação contínua, virada com reversão ensaiada",
+      "risco": "alto",
+      "justificativa": "os três servidores em que o nível de serviço morde estão aqui; a onda só começa depois de as anteriores estarem estáveis"
+    },
+    {
+      "onda": 4,
+      "nome": "Financeiro",
+      "conteudo": "banco-5 (Oracle)",
+      "corte": "janela estendida com congelamento de fechamento",
+      "risco": "alto",
+      "justificativa": "é o único servidor cuja licença muda de regime ao mudar de nuvem; vai por último para que a decisão de licenciamento não bloqueie as demais"
+    },
+    {
+      "onda": 5,
+      "nome": "Modernização",
+      "conteudo": "bancos gerenciados, contêineres, serverless",
+      "corte": "por serviço, com convivência",
+      "risco": "médio"
+    },
+    {
+      "onda": 6,
+      "nome": "IA corporativa",
+      "conteudo": "camada de IA com dados mascarados",
+      "corte": "nenhum (novo serviço)",
+      "risco": "médio",
+      "justificativa": "entra por último porque depende dos dados já modernizados e do inventário de dados pessoais concluído"
+    }
+  ],
+  "skus_a_precificar": {
+    "_regra": "Precifica-se a ESCADA inteira das famílias candidatas, e a regra de seleção deriva o SKU de cada servidor. O conjunto abaixo é a lista selada; capturar fora dela exige nova selagem.",
+    "ibm": [
+      {
+        "servico": "is.instance",
+        "planos": [
+          "bxf-2x8",
+          "bxf-4x16",
+          "bxf-8x32",
+          "bxf-16x64"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": "instance-hours",
+        "item_custo": "compute"
+      },
+      {
+        "servico": "is.instance",
+        "planos": [
+          "cxf-2x4",
+          "cxf-4x8",
+          "cxf-8x16",
+          "cxf-16x32"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": "instance-hours",
+        "item_custo": "compute"
+      },
+      {
+        "servico": "is.bare-metal-server",
+        "planos": [
+          "mx3-metal-16x128",
+          "mx3d-metal-16x128",
+          "vx3-metal-16x256",
+          "ux3-metal-16x512"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": "metal",
+        "item_custo": "compute-oracle"
+      },
+      {
+        "servico": "is.volume",
+        "planos": [
+          "gen2-volume-custom",
+          "gen2-volume-general-purpose",
+          "gen2-volume-10iops-tier",
+          "gen2-volume-5iops-tier"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": "volume",
+        "item_custo": "bloco"
+      },
+      {
+        "servico": "is.load-balancer",
+        "planos": [
+          "gen2-load-balancer",
+          "network-load-balancer-gen2"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": null,
+        "item_custo": "rede"
+      },
+      {
+        "servico": "containers-kubernetes",
+        "planos": [
+          "containers-kubernetes-cluster",
+          "containers-kubernetes-vpc-bxf-4x16",
+          "containers-kubernetes-vpc-bxf-8x32"
+        ],
+        "regiao": "br-sao",
+        "metrica_exigida": null,
+        "item_custo": "contêineres",
+        "_nota": "medido em 2026-08-13: o plano do CLUSTER não expõe métrica com preço (plano de controle sem cobrança), enquanto o trabalhador de VPC expõe part-iks.vpc.bxf.<perfil> por hora e part-iks.disk por GB-hora. Do lado AWS, o plano de controle do EKS é cobrado por hora — assimetria real que o modelo tem de refletir, não normalizar. A família de planos clássica (`4x16-shared-instance`) tem faixas por quantidade e NÃO é a usada: a arquitetura é VPC."
+      },
+      {
+        "servico": "codeengine",
+        "planos": [
+          "standard"
+        ],
+        "regiao": null,
+        "metrica_exigida": null,
+        "item_custo": "serverless"
+      },
+      {
+        "servico": "databases-for-mysql",
+        "planos": [
+          "standard-gen2"
+        ],
+        "regiao": null,
+        "metrica_exigida": null,
+        "item_custo": "banco-gerenciado",
+        "papel": "corroboracao"
+      },
+      {
+        "servico": "databases-for-postgresql",
+        "planos": [
+          "standard-gen2"
+        ],
+        "regiao": null,
+        "metrica_exigida": null,
+        "item_custo": "banco-gerenciado",
+        "papel": "corroboracao"
+      },
+      {
+        "servico": "databases-for-mongodb",
+        "planos": [
+          "standard-gen2"
+        ],
+        "regiao": null,
+        "metrica_exigida": null,
+        "item_custo": "banco-gerenciado",
+        "papel": "corroboracao"
+      },
+      {
+        "servico": "databases-for-redis",
+        "planos": [
+          "standard-gen2"
+        ],
+        "regiao": null,
+        "metrica_exigida": null,
+        "item_custo": "banco-gerenciado",
+        "papel": "corroboracao"
+      }
+    ],
+    "_achado_dos_bancos_gerenciados": {
+      "medido_em": "2026-08-13",
+      "fato": "Nos quatro serviços de banco gerenciado da IBM, o plano que DECLARA br-sao ('standard') expõe ZERO métrica com preço, e o plano que CARREGA preço ('standard-gen2', 12 a 13 métricas com valor em USD) NÃO declara br-sao. Medido plano a plano pela travessia de três saltos.",
+      "consequencia": "O preço do banco gerenciado da IBM não é atribuível a São Paulo pelo caminho de API. A linha da planilha vem da via (b) — estimador público com a região selecionada, que é literalmente o que o enunciado autoriza ('calculadora pública') — e a captura por API do plano 'standard-gen2' entra como CORROBORAÇÃO do patamar, declarada como não-regional. Duas classes de evidência na mesma linha, ambas visíveis (D14).",
+      "por_que_isso_nao_e_desculpa": "A alternativa seria capturar 'standard-gen2' e apresentá-lo como preço de São Paulo. Isso passaria em todos os gates e seria falso."
+    },
+    "ibm_via_manual": [
+      {
+        "item_custo": "banco-gerenciado",
+        "servico": "Databases for MySQL / PostgreSQL / MongoDB / Redis",
+        "razao": "o plano que declara br-sao não expõe preço e o plano precificado não declara br-sao — medido nos quatro serviços em 2026-08-13",
+        "fonte": "estimador público da IBM Cloud, com São Paulo selecionado"
+      },
+      {
+        "item_custo": "objeto",
+        "servico": "Cloud Object Storage",
+        "razao": "o /pricing do plano devolve 404 'Pricing mapping not available' — medido em 2026-08-13",
+        "fonte": "estimador público da IBM Cloud"
+      },
+      {
+        "item_custo": "egress",
+        "servico": "transferência de saída",
+        "razao": "nenhuma métrica de rede no pricing da instância br-sao; VPC, IP flutuante e gateway público vêm com metrics nulo — medido em 2026-08-13",
+        "fonte": "estimador público da IBM Cloud"
+      },
+      {
+        "item_custo": "ia",
+        "servico": "watsonx.ai",
+        "razao": "os planos precificados não declaram br-sao; o preço entra pela região onde o serviço é declarado, com a fronteira explicitada",
+        "fonte": "estimador público / página de preços da IBM"
+      }
+    ],
+    "aws": [
+      {
+        "servico": "AmazonEC2",
+        "regiao": "sa-east-1",
+        "fatia": "instâncias de propósito geral e otimizadas para computação, Linux, locação compartilhada, sob demanda; e volumes EBS gp3",
+        "item_custo": "compute + bloco"
+      },
+      {
+        "servico": "AmazonRDS",
+        "regiao": "sa-east-1",
+        "fatia": "MySQL, PostgreSQL e Oracle (BYOL e Standard Edition Two com licença inclusa), sob demanda",
+        "item_custo": "banco-gerenciado + licenca"
+      },
+      {
+        "servico": "AmazonElastiCache",
+        "regiao": "sa-east-1",
+        "fatia": "nós Redis sob demanda",
+        "item_custo": "banco-gerenciado"
+      },
+      {
+        "servico": "AmazonDocDB",
+        "regiao": "sa-east-1",
+        "fatia": "instâncias sob demanda e armazenamento",
+        "item_custo": "banco-gerenciado"
+      },
+      {
+        "servico": "AmazonEKS",
+        "regiao": "sa-east-1",
+        "fatia": "horas de plano de controle",
+        "item_custo": "contêineres"
+      },
+      {
+        "servico": "AWSLambda",
+        "regiao": "sa-east-1",
+        "fatia": "requisições, GB-segundo e concorrência provisionada",
+        "item_custo": "serverless"
+      },
+      {
+        "servico": "AmazonS3",
+        "regiao": "sa-east-1",
+        "fatia": "armazenamento padrão e requisições",
+        "item_custo": "objeto"
+      },
+      {
+        "servico": "AWSDataTransfer",
+        "regiao": "sa-east-1",
+        "fatia": "saída para a internet",
+        "item_custo": "egress"
+      },
+      {
+        "servico": "AWSELB",
+        "regiao": "sa-east-1",
+        "fatia": "balanceador de aplicação: horas e unidades de capacidade",
+        "item_custo": "rede"
+      },
+      {
+        "servico": "AmazonBedrock",
+        "regiao": "sa-east-1",
+        "fatia": "inferência por token dos modelos disponíveis",
+        "item_custo": "ia"
+      }
+    ]
+  },
+  "paridade_comercial": {
+    "_papel": "Causa N1 do pré-mortem: comparar IBM com desconto de compromisso contra AWS sob demanda faria o veredito virar artefato do modelo de desconto. Cada dimensão abaixo tem UM valor, igual nas duas nuvens, e o cenário primário é o de menor compromisso.",
+    "dimensoes": [
+      {
+        "dimensao": "prazo de compromisso",
+        "valor": "sob demanda nas duas nuvens",
+        "sensibilidade": "cenário nomeado com compromisso de um ano dos dois lados"
+      },
+      {
+        "dimensao": "modelo de licença do Oracle",
+        "valor": "licença própria (BYOL) nas duas nuvens",
+        "sensibilidade": "cenário nomeado com licença inclusa, que só existe na edição Standard Two da AWS"
+      },
+      {
+        "dimensao": "sistema operacional",
+        "valor": "Linux sem subscrição paga nas duas nuvens",
+        "sensibilidade": "nenhuma — imagem com subscrição fica fora do escopo"
+      },
+      {
+        "dimensao": "classe de disco",
+        "valor": "SSD de propósito geral; IOPS provisionado apenas em banco-4 e app-4, com o mesmo alvo nos dois lados",
+        "sensibilidade": "nenhuma"
+      },
+      {
+        "dimensao": "tier de suporte",
+        "valor": "plano básico sem custo nas duas nuvens",
+        "sensibilidade": "nenhuma"
+      },
+      {
+        "dimensao": "retenção de backup",
+        "valor": "30 dias nas duas nuvens",
+        "sensibilidade": "nenhuma"
+      },
+      {
+        "dimensao": "alta disponibilidade",
+        "valor": "redundância em duas zonas onde o requisito especial morde (banco-1, app-6); instância única nos demais",
+        "sensibilidade": "nenhuma"
+      },
+      {
+        "dimensao": "volumetria de egress e objeto",
+        "valor": "a mesma nas duas nuvens, vinda do vetor de demanda pré-registrado",
+        "sensibilidade": "nenhuma"
+      },
+      {
+        "dimensao": "moeda e país de faturamento",
+        "valor": "dólar dos Estados Unidos, país USA nas duas nuvens (D12)",
+        "sensibilidade": "nota de rodapé com câmbio datado, sem entrar no total"
+      },
+      {
+        "dimensao": "horizonte",
+        "valor": "36 meses, 730 horas por mês",
+        "sensibilidade": "nenhuma"
+      }
+    ]
+  },
+  "taxonomia_custo": {
+    "_papel": "Causa N2: a XYZ é e-commerce e conteúdo digital, carga cuja fatura é dominada por saída de dados e armazenamento de objetos. Todo item aparece na planilha COM número ou COM 'não aplicável' declarado e justificado — nunca omitido.",
+    "itens": [
+      "compute",
+      "bloco",
+      "objeto",
+      "egress",
+      "licencas",
+      "premio-gerenciado",
+      "backup",
+      "suporte",
+      "rede-ip-balanceador",
+      "observabilidade"
+    ]
+  },
+  "servicos_nao_regionais": {
+    "_papel": "Exceção nomeada do gate G-04 (região única). Estes serviços são PRECIFICADOS sem região por construção do catálogo — o gate reprovaria uma saída correta. A planilha carrega uma coluna 'região do preço' por linha, e estas linhas a preenchem com 'não-regional (declarado)'.",
+    "_disponibilidade_e_preco_sao_coisas_diferentes": "Os quatro bancos gerenciados e o Code Engine DECLARAM br-sao em geo_tags — estão disponíveis em São Paulo. O que não é regionalizado é o PREÇO: o documento de pricing tem deployment_region nulo. Confundir as duas coisas produziria a afirmação falsa de que o serviço não existe na região.",
+    "ibm": [
+      "codeengine",
+      "cloud-object-storage",
+      "databases-for-mysql",
+      "databases-for-postgresql",
+      "databases-for-mongodb",
+      "databases-for-redis"
+    ],
+    "aws": [],
+    "evidencia": "00-material-fonte/precos/probe-br-sao-2026-08-13/ — deployment_region nulo nos planos precificados e 404 de mapeamento de preço no Object Storage, medidos em 2026-08-13"
+  },
+  "conjunto_minimo_publicavel": {
+    "_papel": "D15: sem isto, um dos quatro cenários poderia sair furado e passar em todos os gates.",
+    "regra": "Um cenário é publicável se, e somente se, (i) TODOS os dez itens da taxonomia estiverem resolvidos — com preço e classe de evidência declarada, ou com 'não aplicável' explícito e justificado — e (ii) os itens dominantes abaixo tiverem NÚMERO, nunca 'não aplicável'.",
+    "dominantes": [
+      "compute",
+      "bloco",
+      "objeto",
+      "egress",
+      "banco-gerenciado",
+      "compute-oracle",
+      "ia"
+    ],
+    "consequencia_da_violacao": "O cenário não entra na planilha nem no texto; a lacuna é declarada no corpo como limitação nomeada."
+  },
+  "arquitetura_modelada_pelo_modelo_de_latencia": {
+    "declaracao": "O modelo de filas descreve a FASE 1 — app-2 em máquina virtual (família cxf / otimizada para computação), atrás de balanceador.",
+    "por_que": "Causa N4: sem esta declaração, a curva de espera descreveria a arquitetura que a fase 2 descarta. A fase 2 (serverless) é tratada por custo de invocação e pela reconciliação explícita da partida a frio com o alvo de 200 ms, não pela mesma curva.",
+    "ressalva_a_declarar_no_texto": "G/G/1 por instância superestima a espera frente a um pool com fila compartilhada. Como o mesmo modelo se aplica às duas nuvens, a comparação não se quebra — mas a ressalva é escrita, não deixada para o avaliador encontrar."
+  },
+  "_nota_recorte_publico": "`plano_seguranca_conta` foi retirado desta cópia pública: é prosa do corpo do artigo e nenhum módulo publicado o lê. Todo o resto está íntegro."
+}

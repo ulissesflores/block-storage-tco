@@ -1,0 +1,10 @@
+cenario,nuvem,fase,tco_36m,delta_vs_primario_pct,observacao
+primario,ibm,1,384802.1927,0.0000,convenção do pré-registro
+primario,aws,1,286970.0366,0.0000,convenção do pré-registro
+primario,ibm,2,429733.1319,0.0000,convenção do pré-registro
+primario,aws,2,349419.2658,0.0000,convenção do pré-registro
+oracle-ibm-bare-metal,ibm,1,447322.3127,16.2473,"D13: o menor bare metal de br-sao tem 16 núcleos, o dobro do requisito do banco-5"
+oracle-ibm-bare-metal,ibm,2,492253.2519,14.5486,"D13: o menor bare metal de br-sao tem 16 núcleos, o dobro do requisito do banco-5"
+oracle-aws-licenca-inclusa,aws,2,376435.1058,7.7316,só existe na edição Standard Two da AWS; não há equivalente na IBM
+graviton-aws,aws,1,273761.7086,-4.6027,"ARM admitido do lado AWS, sem contrapartida no catálogo IBM de br-sao"
+graviton-aws,aws,2,334092.7698,-4.3863,"ARM admitido do lado AWS, sem contrapartida no catálogo IBM de br-sao"

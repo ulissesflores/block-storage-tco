@@ -1,0 +1,288 @@
+{
+  "_natureza": "coletado",
+  "servico": "ibm-cloud-object-storage-br-sao",
+  "url": "https://cloud.ibm.com/objectstorage/provision/api/v1/pricing?plan=744bfc56-d12c-4866-88d5-dac9139e0e5d&region=br-sao&country=USA",
+  "timestamp_utc": "2026-08-13T20:59:05+00:00",
+  "http_status": 200,
+  "bytes": 2277,
+  "via": "api",
+  "provedor": "ibm",
+  "fonte": "API da tela de provisionamento (cloud.ibm.com)",
+  "pais": "USA",
+  "moeda": "USD",
+  "grupos": [
+    "acceleratedArchive",
+    "archive",
+    "aspera",
+    "backup_restore",
+    "backup_storage",
+    "bandwidth",
+    "classa",
+    "classb",
+    "retrieval",
+    "smartCold",
+    "smartCool",
+    "smartHot",
+    "storage"
+  ],
+  "conteudo": {
+    "country": "USA",
+    "currency": "USD",
+    "prices": {
+      "acceleratedArchive": {
+        "restore": [
+          {
+            "price": 0.053922,
+            "quantity_tier": 999999999
+          }
+        ],
+        "storage": [
+          {
+            "price": 0.00674025,
+            "quantity_tier": 999999999
+          }
+        ]
+      },
+      "archive": {
+        "restore": [
+          {
+            "price": 0.026961,
+            "quantity_tier": 999999999
+          }
+        ],
+        "storage": [
+          {
+            "price": 0.001684388475,
+            "quantity_tier": 999999999
+          }
+        ]
+      },
+      "aspera": {
+        "egress": [
+          {
+            "price": 0.08987,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0.0674025,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0.044935,
+            "quantity_tier": 999999999
+          }
+        ],
+        "ingress": [
+          {
+            "price": 0,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0,
+            "quantity_tier": 999999999
+          }
+        ]
+      },
+      "backup_restore": {
+        "backup": [
+          {
+            "price": 0.0264,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "backup_storage": {
+        "backup": [
+          {
+            "price": 0.066,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "classa": {
+        "cold": [
+          {
+            "price": 0.028084375,
+            "quantity_tier": 1
+          }
+        ],
+        "smart": [
+          {
+            "price": 0.005616875,
+            "quantity_tier": 1
+          }
+        ],
+        "standard": [
+          {
+            "price": 0.005616875,
+            "quantity_tier": 1
+          }
+        ],
+        "vault": [
+          {
+            "price": 0.01123375,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "bandwidth": {
+        "cold": [
+          {
+            "price": 0.1935,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0.1505,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0.1075,
+            "quantity_tier": 999999999
+          }
+        ],
+        "smart": [
+          {
+            "price": 0.1935,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0.1505,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0.1075,
+            "quantity_tier": 999999999
+          }
+        ],
+        "standard": [
+          {
+            "price": 0.1935,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0.1505,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0.1075,
+            "quantity_tier": 999999999
+          }
+        ],
+        "vault": [
+          {
+            "price": 0.1935,
+            "quantity_tier": 50000
+          },
+          {
+            "price": 0.1505,
+            "quantity_tier": 150000
+          },
+          {
+            "price": 0.1075,
+            "quantity_tier": 999999999
+          }
+        ]
+      },
+      "classb": {
+        "cold": [
+          {
+            "price": 0.028084375,
+            "quantity_tier": 1
+          }
+        ],
+        "smart": [
+          {
+            "price": 0.005616875,
+            "quantity_tier": 1
+          }
+        ],
+        "standard": [
+          {
+            "price": 0.0044935,
+            "quantity_tier": 1
+          }
+        ],
+        "vault": [
+          {
+            "price": 0.01123375,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "retrieval": {
+        "cold": [
+          {
+            "price": 0.05616875,
+            "quantity_tier": 1
+          }
+        ],
+        "vault": [
+          {
+            "price": 0.01123375,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "storage": {
+        "cold": [
+          {
+            "price": 0.0080883,
+            "quantity_tier": 499999
+          },
+          {
+            "price": 0.0080883,
+            "quantity_tier": 999999999
+          }
+        ],
+        "standard": [
+          {
+            "price": 0.0296571,
+            "quantity_tier": 499999
+          },
+          {
+            "price": 0.026961,
+            "quantity_tier": 999999999
+          }
+        ],
+        "vault": [
+          {
+            "price": 0.0161766,
+            "quantity_tier": 499999
+          },
+          {
+            "price": 0.0134805,
+            "quantity_tier": 999999999
+          }
+        ]
+      },
+      "smartCold": {
+        "smart": [
+          {
+            "price": 0.0101,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "smartCool": {
+        "smart": [
+          {
+            "price": 0.0162,
+            "quantity_tier": 1
+          }
+        ]
+      },
+      "smartHot": {
+        "smart": [
+          {
+            "price": 0.0283,
+            "quantity_tier": 1
+          }
+        ]
+      }
+    }
+  }
+}

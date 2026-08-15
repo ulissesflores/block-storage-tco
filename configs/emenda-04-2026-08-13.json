@@ -1,0 +1,68 @@
+{
+  "_natureza": "emenda ao pré-registro",
+  "_data": "2026-08-13",
+  "_etapa": "E7 — figuras e tabelas do corpo",
+  "_papel": "Declara, ANTES de gerar figura ou tabela, as três premissas que nascem nesta etapa e que o vetor selado não cobria. O pré-registro e o projeto técnico NÃO são reescritos: a identidade em bytes deles continua provando que o compromisso precede os dados. Emenda existe para que premissa nova apareça como premissa, e não escondida dentro do código que desenha a figura.",
+
+  "regra_do_ponto_de_operacao_iso_sla": {
+    "_problema": "O `tco-resumo.csv` traz o método iso-SLA em TODA a grade pré-registrada (1,00 a 3,00), mas nada no repositório dizia QUAL multiplicador é o ponto de operação que vai à tabela de síntese e à figura de TCO empilhado. Escolher um a olho reintroduziria exatamente o vício que a adjudicação do validador nº 2 matou: parâmetro sem fonte que seleciona o resultado.",
+    "_solucao": "O ponto de operação iso-SLA passa a ser DERIVADO, nunca escolhido: é o menor multiplicador da grade pré-registrada cujo percentil 95 do tempo de resposta da Aplicação 2 não excede os 200 ms do requisito especial, sob as premissas já seladas em `premissas-carga.json`.",
+    "criterio": "min { m em grade_sensibilidade.multiplicador_headroom : P95_resposta(m) <= api_rest.alvo_latencia_ms }",
+    "modelo": {
+      "espera": "Kingman (1961), G/G/1: Wq = (rho/(1-rho)) * ((Ca^2 + Cs^2)/2) * E[S]",
+      "utilizacao": "rho(m) = pico_rps * E[S] / (vcpu_especificado(app-2) * m). Em m = 1 reproduz exatamente o valor selado em premissas-carga.json/_nota_estabilidade: 60 * 0,025 / 2 = 0,75.",
+      "percentil": "P95_resposta = (Wq + E[S]) * ln(1/(1-0,95)). Sob a convergência da distribuição da espera para a exponencial em tráfego pesado (Kingman, 1962), o tempo de resposta tem cauda exponencial de média Wq + E[S]. A forma é EXATA em M/M/1 para qualquer utilização — com Ca^2 = Cs^2 = 1 a expressão colapsa em E[S]/(1-rho), o resultado clássico —, e é a generalização natural de Kingman fora dele.",
+      "_por_que_nao_P95(W)+E[S]": "somar o percentil da espera à média do serviço mistura duas escalas e não é nem cota superior nem inferior; a forma adotada trata resposta como uma variável só, que é o que o requisito de 200 ms mede."
+    },
+    "ponto_avaliado": {
+      "cv_chegada": "api_rest.cv_chegada (1,0)",
+      "cv_servico": "api_rest.cv_servico (1,2)",
+      "_por_que_este_ponto": "`premissas-carga.json` sela 1,2 como A suposição de coeficiente de variação do serviço; a grade `grade_sensibilidade.cv_servico` é sensibilidade em torno dela, e é relatada por inteiro, nunca recortada."
+    },
+    "direcao_do_erro_declarada": "O multiplicador derivado EMPURRA a utilização para baixo, isto é, para FORA do regime de tráfego pesado em que a aproximação exponencial é assintoticamente exata. Nesse regime a aproximação SUPERESTIMA a cauda, porque em G/G/1 com rho < 1 a espera tem um átomo em zero de massa aproximadamente 1 - rho que a exponencial ignora. O erro, portanto, é conservador: o sistema real cumpre o alvo com folga maior que a calculada. Isto vai escrito no corpo, não deixado para o avaliador achar.",
+    "ressalva_herdada": "Permanece válida a ressalva já selada no pré-registro §4: um modelo G/G/1 por instância superestima a espera frente a um conjunto de instâncias com fila compartilhada. Como o mesmo modelo se aplica às duas nuvens, a comparação não se quebra."
+  },
+
+  "duracao_das_ondas": {
+    "_natureza": "suposição declarada",
+    "_papel": "`plano_ondas` (selado em projeto-tecnico.json) fixa o CONTEÚDO, o corte e o risco de cada onda, mas não tem duração — e o cronograma é figura exigida pelo enunciado (projeto de implementação com etapas). As durações abaixo são suposição de projeto, não medição, e é assim que a legenda da figura as declara.",
+    "_unidade": "semanas",
+    "_sequenciamento": "estritamente sequencial, por decisão de risco já selada: a onda 1 valida a fundação em produção, a onda 3 só começa depois de as anteriores estarem estáveis e a onda 6 depende dos dados já modernizados e do inventário de dados pessoais concluído (plano_ondas, ondas 1, 3 e 6). Paralelizar contrariaria o plano selado para ganhar estética de figura.",
+    "ondas": [
+      {"onda": 0, "semanas": 4, "_justificativa": "conta, IAM, três zonas, chaves e registro de auditoria antes de qualquer carga; é o item que o enunciado cobra como melhores práticas de segurança da conta"},
+      {"onda": 1, "semanas": 3, "_justificativa": "três aplicações sem estado, reversíveis por entrada de DNS"},
+      {"onda": 2, "semanas": 4, "_justificativa": "três bancos não críticos, com replicação e virada em janela noturna"},
+      {"onda": 3, "semanas": 6, "_justificativa": "a mais longa da fase 1: concentra os três servidores em que o nível de serviço morde, com reversão ensaiada"},
+      {"onda": 4, "semanas": 4, "_justificativa": "Oracle, janela estendida com congelamento de fechamento contábil"},
+      {"onda": 5, "semanas": 8, "_justificativa": "modernização serviço a serviço com convivência; é a onda de maior superfície e a única em que dois ambientes coexistem"},
+      {"onda": 6, "semanas": 6, "_justificativa": "camada de IA com mascaramento e inventário de dados pessoais concluído"}
+    ],
+    "marcos": [
+      {"nome": "Fim da fase 1 — lift-and-shift concluído", "ao_fim_da_onda": 4},
+      {"nome": "Fim da fase 2 — modernização e IA em produção", "ao_fim_da_onda": 6}
+    ]
+  },
+
+  "inventario_de_figuras": {
+    "_papel": "O inventário travado no STATE fixa teto de 6 figuras, sendo a sexta CONDICIONAL. Esta emenda declara o critério de decisão ANTES de desenhar, para que a decisão não seja tomada olhando o resultado.",
+    "figuras_incondicionais": [
+      "arquitetura da fase 1, painel duplo IBM | AWS",
+      "arquitetura da fase 2, painel duplo, com o isolamento da camada de IA embutido",
+      "cronograma de ondas",
+      "TCO de 36 meses empilhado por item, duas nuvens x dois métodos de dimensionamento",
+      "utilização x tempo de resposta (Kingman), com o ponto de operação derivado marcado"
+    ],
+    "figura_6_condicional": {
+      "conteudo": "isolamento da camada de IA emancipado em figura própria",
+      "criterio_de_emancipacao": "só nasce se o detalhe embutido na figura 2 ficar ilegível na largura útil de A4 (16,5 cm com as margens de 2,54 cm), medido como corpo de texto abaixo de 7 pt na figura renderizada em 300 dpi",
+      "_por_que_um_criterio_mecanico": "'ficou feio' é julgamento que se ajusta ao que se quer concluir; tamanho de fonte na largura útil é medível"
+    },
+    "norma_de_legenda": {
+      "fonte": "manual-apa-agtu.md §6",
+      "regra": "rótulo e título ACIMA do elemento; linha 'Fonte:' ABAIXO, obrigatória mesmo em material do próprio autor; nota explicativa abaixo da fonte",
+      "consequencia_tecnica": "a legenda NÃO é desenhada dentro do PNG — vive no texto, em Times New Roman como o corpo. O código emite os blocos de legenda em Markdown junto das figuras, e o paper os cola como parágrafos próprios."
+    }
+  },
+
+  "_o_que_esta_emenda_nao_muda": "Nenhum preço, nenhum SKU, nenhum total de TCO. `projeto-tecnico.json`, `premissas-carga.json` e `caso-xyz.json` não foram tocados; os quatro totais de 36 meses travados por TestNumerosPublicados permanecem idênticos byte a byte no CSV."
+}

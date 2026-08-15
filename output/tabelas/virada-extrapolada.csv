@@ -1,0 +1,3 @@
+fase,virada,multiplicador,limite,detalhe
+1,não alcançada,4.0000,escada capturada esgotada,banco-1 fase 1 IBM: a escada capturada não alcança 16.2 vCPU / 64.8 GB (maior degrau: 16x64). Capturar o degrau maior ou declarar a limitação — o modelo NÃO sub
+2,não alcançada,4.0000,escada capturada esgotada,banco-1 base VM IBM: a escada capturada não alcança 16.2 vCPU / 64.8 GB (maior degrau: 16x64). Capturar o degrau maior ou declarar a limitação — o modelo NÃO su

@@ -1,0 +1,61 @@
+{
+  "_natureza": "gerado",
+  "_aviso": "carga sintética ilustrativa, não telemetria da empresa XYZ, que é fictícia. O único dado real deste trabalho é o PREÇO.",
+  "_papel_no_selo": "Este arquivo é o VETOR DE DEMANDA do pré-registro (causa N3 do pré-mortem). Ele sela ANTES da captura justamente para que a premissa não possa ser escolhida depois de ver qual nuvem vence; o teste do modelo de TCO trava estes valores como caso de teste conhecido.",
+  "_nota_estabilidade": "rho = pico_rps * (tempo_servico_medio_ms/1000) / vcpu(app-2)=2 => 60*0,025/2 = 0,75. Escolhido dentro de [0,70; 0,85] para que a fila seja estável (rho < 1) e ainda assim fique no regime de tráfego pesado que a aproximação de Kingman exige.",
+
+  "api_rest": {
+    "_alvo": "app-2 — APIs REST (Java), 2 vCPU, requisito especial 'Latência inferior a 200 ms'",
+    "pico_rps": 60,
+    "_justificativa_pico_rps": "suposição declarada: ~5,2 milhões de requisições/dia no patamar de pico sustentado, plausível para e-commerce de médio porte; não medido na XYZ.",
+    "media_rps": 24,
+    "_justificativa_media_rps": "suposição declarada: 40% do pico, razão média/pico usual em tráfego de varejo com concentração noturna; governa o custo por invocação da fase 2 (serverless), não o dimensionamento da fase 1.",
+    "tempo_servico_medio_ms": 25,
+    "_justificativa_tempo_servico_medio_ms": "suposição declarada: serviço de API REST em Java com acesso a cache (banco-6, Redis) na maioria das rotas; não medido na XYZ.",
+    "payload_resposta_kb": 12,
+    "_justificativa_payload_resposta_kb": "suposição declarada: resposta JSON de catálogo/carrinho com imagens por referência, não embutidas; governa a parcela de egress atribuída à API.",
+    "cv_chegada": 1.0,
+    "_justificativa_cv_chegada": "suposição declarada: coeficiente de variação 1,0 equivale a chegadas de Poisson, hipótese padrão e conservadora para tráfego web agregado.",
+    "cv_servico": 1.2,
+    "_justificativa_cv_servico": "suposição declarada: leve superdispersão sobre o exponencial por mistura de rotas baratas e caras no mesmo endpoint.",
+    "alvo_latencia_ms": 200,
+    "_justificativa_alvo_latencia_ms": "não é suposição: valor literal do requisito especial da Aplicação 2 no enunciado do estudo de caso.",
+    "percentil_alvo": 95,
+    "_justificativa_percentil_alvo": "suposição declarada: o enunciado diz 'latência inferior a 200 ms' sem nomear percentil; adota-se P95 e o regime é declarado no texto (Kingman, 1962), nunca implícito."
+  },
+
+  "serverless_fase2": {
+    "_alvo": "app-2 migrada para serverless na fase 2 (IBM Code Engine / AWS Lambda), conforme Parte 2 item 1 do enunciado",
+    "invocacoes_mes": 62208000,
+    "_justificativa_invocacoes_mes": "derivado, não suposto: media_rps (24) x 2.592.000 s/mês (30 dias). Registrado explicitamente para que o teste possa travá-lo.",
+    "duracao_media_ms": 25,
+    "_justificativa_duracao_media_ms": "igual ao tempo_servico_medio_ms da fase 1 — mesma rota, mesmo trabalho; qualquer diferença seria suposição sobre reescrita, que o enunciado não pede.",
+    "memoria_mb": 512,
+    "_justificativa_memoria_mb": "suposição declarada: menor degrau que acomoda uma JVM enxuta ou runtime equivalente; abaixo disso a partida a frio piora e agrava a tensão N4 com o alvo de 200 ms.",
+    "_nota_n4": "TENSÃO DECLARADA (causa N4): o enunciado manda serverless para as APIs e exige latência inferior a 200 ms. A partida a frio conflita com o alvo. O texto reconcilia nomeando a mitigação (instâncias mínimas sempre quentes / concorrência provisionada) e o custo dela; o modelo de latência de filas descreve a arquitetura da FASE 1 (máquina virtual), declarado em projeto-tecnico.json."
+  },
+
+  "dados_e_trafego": {
+    "_alvo": "taxonomia de custo N2 — a XYZ é e-commerce E gestão de conteúdo digital; sem objeto e egress a comparação financeira não tem chão",
+    "objeto_armazenado_tb": 20,
+    "_justificativa_objeto_armazenado_tb": "suposição declarada: acervo de imagens de catálogo e vídeo de produto de um varejista de médio porte; não medido na XYZ.",
+    "objeto_crescimento_mes_pct": 3.0,
+    "_justificativa_objeto_crescimento_mes_pct": "suposição declarada: crescimento composto do acervo ao longo dos 36 meses do TCO.",
+    "egress_objeto_tb_mes": 5.0,
+    "_justificativa_egress_objeto_tb_mes": "suposição declarada: entrega de mídia ao usuário final a partir do armazenamento de objetos; é o item que domina a fatura de conteúdo digital e o motivo de N2 existir.",
+    "egress_aplicacao_tb_mes": 1.0,
+    "_justificativa_egress_aplicacao_tb_mes": "derivado da API mais tráfego das demais aplicações: 62,2 M invocações x 12 KB ~= 0,71 TB/mês, arredondado para 1,0 TB com as outras cinco aplicações.",
+    "bloco_crescimento_mes_pct": 1.5,
+    "_justificativa_bloco_crescimento_mes_pct": "suposição declarada: crescimento dos volumes de bloco dos 12 servidores sobre a linha de base de 6.896 GB do enunciado.",
+    "retencao_backup_dias": 30,
+    "_justificativa_retencao_backup_dias": "suposição declarada: retenção padrão de mercado; entra na paridade comercial porque retenção diferente entre as nuvens falsearia a comparação."
+  },
+
+  "grade_sensibilidade": {
+    "_papel": "Pré-registrada para que a condição de quebra da tese valha PARA TODA A GRADE, nunca para um ponto escolhido depois de ver o resultado. Kingman dá espera proporcional a rho/(1-rho): calibrar rho perto de 0,9 faz o delta estourar e perto de 0,5 faz o delta sumir — sem a grade, o autor escolheria se a própria tese sobrevive.",
+    "rho_alvo": [0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
+    "cv_servico": [1.0, 1.2, 1.5, 2.0],
+    "multiplicador_headroom": [1.0, 1.25, 1.5, 1.75, 2.0, 2.5, 3.0],
+    "_justificativa_multiplicador_headroom": "eixo do entregável principal: o PONTO DE VIRADA é o multiplicador de capacidade sobre o dimensionamento por especificação que faz o veredito trocar de nuvem. Esse número é função apenas dos preços capturados e da escada de perfis — invariante à carga suposta."
+  }
+}

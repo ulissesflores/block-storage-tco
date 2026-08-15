@@ -1,0 +1,85 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Block storage decides the bill: audited public-cloud price capture and a deterministic 36-month TCO model"
+abstract: >-
+  Raw price bodies captured on 2026-08-13 from the IBM Cloud Global Catalog (br-sao) and
+  the AWS Price List (sa-east-1), the code that captured them, and a deterministic
+  36-month total-cost-of-ownership model for a twelve-server migration under two sizing
+  methods. For this workload AWS is cheaper in both phases, and the gap is produced by a
+  single line item: block storage, USD 110,507 apart over 36 months — more than the total
+  gap between the providers. Every published number is asserted by a test; the captured
+  evidence recomputes to the stage hashes of the study's sealed provenance chain.
+type: software
+authors:
+  - family-names: Flores
+    given-names: Carlos Ulisses
+    orcid: "https://orcid.org/0000-0002-6034-7765"
+    affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
+    website: "https://ulissesflores.com"
+version: 1.0.0
+date-released: 2026-08-15
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+repository-code: "https://github.com/ulissesflores/block-storage-tco"
+url: "https://github.com/ulissesflores/block-storage-tco"
+keywords:
+  - cloud computing
+  - total cost of ownership
+  - public cloud pricing
+  - IBM Cloud
+  - Amazon Web Services
+  - block storage
+  - reproducible research
+  - provenance
+  - queueing theory
+references:
+  - type: article
+    authors:
+      - family-names: Kingman
+        given-names: John Frank Charles
+    title: "The single server queue in heavy traffic"
+    journal: "Mathematical Proceedings of the Cambridge Philosophical Society"
+    volume: 57
+    issue: 4
+    start: 902
+    end: 904
+    year: 1961
+    doi: "10.1017/S0305004100036094"
+  - type: article
+    authors:
+      - family-names: Kingman
+        given-names: John Frank Charles
+    title: "On queues in heavy traffic"
+    journal: "Journal of the Royal Statistical Society: Series B"
+    volume: 24
+    issue: 2
+    start: 383
+    end: 392
+    year: 1962
+    doi: "10.1111/j.2517-6161.1962.tb00465.x"
+  - type: report
+    authors:
+      - family-names: Laurie
+        given-names: Ben
+      - family-names: Langley
+        given-names: Adam
+      - family-names: Kasper
+        given-names: Emilia
+    title: "Certificate Transparency (RFC 6962)"
+    year: 2013
+    doi: "10.17487/RFC6962"
+  - type: article
+    authors:
+      - family-names: Haber
+        given-names: Stuart
+      - family-names: Stornetta
+        given-names: W. Scott
+    title: "How to time-stamp a digital document"
+    journal: "Journal of Cryptology"
+    volume: 3
+    issue: 2
+    start: 99
+    end: 111
+    year: 1991
+    doi: "10.1007/BF00196791"
