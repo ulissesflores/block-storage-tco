@@ -2,7 +2,7 @@
   "hash_alg": "sha256",
   "merkle": "RFC 6962 MTH, domain separation 0x00 leaf / 0x01 node",
   "nfiles": 121,
-  "tree_hash": "42ef713b4731a72f09537813d48ca2e6d32bc0d51cdcfc676078bac4fb4d06ef",
+  "tree_hash": "a2f934ea092d1f0b2ec15ed9d89deac982861fba49e13877beb2f08b0ed48faf",
   "sealed_chain": {
     "run_id": "20260815-apendice-b-v21",
     "root": "f82aacb7ebf6cb86138e80f1ecdf420a9676d33b725205686800cdf97555cce3",
@@ -21,7 +21,7 @@
     }
   },
   "files": {
-    ".github/workflows/ci.yml": "f57568c59051e603dfbc3310ecb05cc5a71194c5d8de9e304583f45d8eac99a8",
+    ".github/workflows/ci.yml": "129573bed2bebc596304224142245dc2b2597afc19b1ff867af0876c7e90cd57",
     ".gitignore": "6a4d9b5ffe6d5c2fa271c58838ac79eb2fd3de368d6e6e6b236102fe7ab2b21c",
     ".zenodo.json": "39c0fe30fd5ef07ac8edb710f28de965080b62673345705b28423a4c0b348dc1",
     "CHANGELOG.md": "ff69f704321616b84af24f0c3571ac06421a446f6de5785f6244550ca7a9a18f",
