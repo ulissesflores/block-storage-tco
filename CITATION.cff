@@ -32,6 +32,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21957640
     description: Version DOI of v1.1.0
+  - type: doi
+    value: 10.5281/zenodo.21959147
+    description: Version DOI of v1.2.0
 repository-code: "https://github.com/ulissesflores/block-storage-tco"
 url: "https://github.com/ulissesflores/block-storage-tco"
 keywords:
