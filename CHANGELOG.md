@@ -4,6 +4,26 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] — 2026-08-15
+
+Second round of external audit — seven independent reports on the same artefact. What they found
+here is fixed below; no captured evidence and no computed number changed, and `environment` and
+`data` keep the hashes a third party recomputes from this tree.
+
+### Fixed
+
+- **Framing.** The deposit notes and `ADR-001` described the article as assessed coursework
+  submitted to an institution. That sentence is what links a private text to a public artefact and
+  buys nothing — the scope rule already states the text is not deposited here.
+- **Stale pointers.** `README.md` still folded the recomputed stage hashes into the previous run's
+  ROOT, and `PROVENANCE.md` still counted thirty-two sealed runs against thirty-four in the ledger.
+- **Chain.** The ledger and the sealed-chain block now name run `20260815-auditoria-r2-v24`
+  (root `4c565c68…`, link `9167dcf6…`), which seals the corrected presentation strings of the
+  table generator.
+- **Table A2 columns.** The capacity columns carried the server's *requirement*, not the capacity of
+  the selected profile, which made `postgresql-isolated-8-32` read as 6 vCPU / 24 GB. Renamed, and
+  the dash rule is stated in the note.
+
 ## [1.2.0] — 2026-08-15
 
 Round of external audit. Three independent reviewers audited the article and this repository on the
