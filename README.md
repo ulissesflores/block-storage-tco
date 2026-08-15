@@ -181,7 +181,7 @@ tests/                 61 tests: published numbers, laws, determinism, integrity
   title     = {Block storage decides the bill: audited public-cloud price capture
                and a deterministic 36-month TCO model},
   year      = {2026},
-  version   = {1.0.0},
+  version   = {1.1.0},
   doi       = {10.5281/zenodo.21955051},
   publisher = {Zenodo},
   url       = {https://doi.org/10.5281/zenodo.21955051}

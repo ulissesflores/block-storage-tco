@@ -4,6 +4,20 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-08-15
+
+Presentation pass on the article that this repository supports. No captured evidence, no computed
+result and no figure changed: the `environment` and `data` stages keep the same hashes
+(`e116b39d…`, `d1221100…`) that a third party can recompute from this tree.
+
+### Changed
+
+- **Chain ledger** gains run `20260815-p2r2-notas-v22` (root `f01f021c…`, link `b988abc2…`), which
+  seals the edited presentation strings of the table and figure generators. The `code` stage hash
+  moves; `environment` and `data` do not.
+- **Divergence table** records the new sealed hash of `src/figuras.py`. The published copy of that
+  file is **unchanged** — the edit touched `legendas()`, which this repository does not carry.
+
 ## [1.0.0] — 2026-08-15
 
 First public release of the evidence and computation behind the case study.
