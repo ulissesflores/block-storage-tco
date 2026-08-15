@@ -2,7 +2,7 @@
   "hash_alg": "sha256",
   "merkle": "RFC 6962 MTH, domain separation 0x00 leaf / 0x01 node",
   "nfiles": 121,
-  "tree_hash": "360bfe9e60cc8e85eb61273f9211d261ad6cfba8701dc097b4efb7238c7f4fb7",
+  "tree_hash": "47b44dea82dbc784c68029ea8c6ab4e37050765f7d8e50c72b3dc49966a1094f",
   "sealed_chain": {
     "run_id": "20260815-apendice-b-v21",
     "root": "f82aacb7ebf6cb86138e80f1ecdf420a9676d33b725205686800cdf97555cce3",
@@ -33,7 +33,7 @@
     "NOTICE": "ca9c5748c56aa69857ff8e13a6f45095e8bde8e8153c1d6edd77472ace41cd9b",
     "PREREGISTRATION.md": "1b24eeca541dfa8264bb3ad3bdfd1066d0eda0f7ab5577c650eaf17c56d90c17",
     "PROVENANCE.md": "77a8df104771f6f780861d4e00133ba345fed82d6d26dc5c3daad8851577e4d7",
-    "README.md": "b350fba8d728b8753d2ea765255b9ee5f6eb867b99ebd2b625d801ae45e63ec9",
+    "README.md": "bb8ca7bfbcfdc3348e539395301e6e2e06d669d5b602808bd190e4a3ba3fec8c",
     "REPRODUCIBILITY.md": "337755a93d9d70575e987a894dc769611eeb3000f24e235551e2e08c4fad0f78",
     "codemeta.json": "a8a5d90292e16dd69abc10b672dd14c4023d0e099d8362ecf575b4d08efd9965",
     "configs/caso-xyz.json": "27e4649317c6a7a24dc321fce4799bc4f68c2a0503e98d7dfe11427e00fc85f0",

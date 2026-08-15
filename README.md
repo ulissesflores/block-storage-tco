@@ -4,7 +4,7 @@
 
 **Two public clouds, one migration, 36 months: the block-storage line alone is USD 110,507 apart — more than the entire gap between the two providers.**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21955051.svg)](https://doi.org/10.5281/zenodo.21955051)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21955051-blue.svg)](https://doi.org/10.5281/zenodo.21955051)
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![License: CC BY 4.0](https://img.shields.io/badge/data%20%26%20docs-CC--BY--4.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
