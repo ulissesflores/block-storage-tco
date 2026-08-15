@@ -94,8 +94,8 @@ provenance chain**, recomputed here from the published files. See [`PROVENANCE.m
 
 | Phase | IBM Cloud (USD) | AWS (USD) | Gap (USD) | Gap (%) | Lower |
 |---|---:|---:|---:|---:|---|
-| 1 — lift-and-shift | 384,802.19 | 286,970.04 | 97,832.16 | 34.1% | AWS |
-| 2 — modernisation | 429,733.13 | 349,419.27 | 80,313.87 | 23.0% | AWS |
+| 1 — lift-and-shift | 384,802.19 | 286,970.04 | 97,832.15 | 34.1% | AWS |
+| 2 — modernisation | 429,733.13 | 349,419.27 | 80,313.86 | 23.0% | AWS |
 
 Where the gap comes from, phase 1 ([`output/tabelas/tco-por-item.csv`](output/tabelas/tco-por-item.csv)):
 
@@ -181,7 +181,7 @@ tests/                 61 tests: published numbers, laws, determinism, integrity
   title     = {Block storage decides the bill: audited public-cloud price capture
                and a deterministic 36-month TCO model},
   year      = {2026},
-  version   = {1.1.0},
+  version   = {1.2.0},
   doi       = {10.5281/zenodo.21955051},
   publisher = {Zenodo},
   url       = {https://doi.org/10.5281/zenodo.21955051}

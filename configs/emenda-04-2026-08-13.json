@@ -58,7 +58,7 @@
       "_por_que_um_criterio_mecanico": "'ficou feio' é julgamento que se ajusta ao que se quer concluir; tamanho de fonte na largura útil é medível"
     },
     "norma_de_legenda": {
-      "fonte": "manual-apa-agtu.md §6",
+      "fonte": "institutional style manual, section on tables and figures",
       "regra": "rótulo e título ACIMA do elemento; linha 'Fonte:' ABAIXO, obrigatória mesmo em material do próprio autor; nota explicativa abaixo da fonte",
       "consequencia_tecnica": "a legenda NÃO é desenhada dentro do PNG — vive no texto, em Times New Roman como o corpo. O código emite os blocos de legenda em Markdown junto das figuras, e o paper os cola como parágrafos próprios."
     }

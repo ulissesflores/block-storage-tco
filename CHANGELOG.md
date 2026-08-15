@@ -4,6 +4,28 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-08-15
+
+Round of external audit. Three independent reviewers audited the article and this repository on the
+same artefact; what they found here is fixed below. No captured evidence and no computed number
+changed: `environment` and `data` keep the hashes a third party recomputes from this tree.
+
+### Fixed
+
+- **Confidentiality.** `configs/emenda-04-2026-08-13.json` cited the institution's internal style
+  manual by filename, which carried a course identifier in lowercase and survived a case-sensitive
+  sanitisation sweep. The public copy now cites the rule, not the filename; the divergence is
+  declared in `divergences.tsv`, and the sweep is case-insensitive from now on.
+- **Published difference.** The Results table showed 97,832.16 and 80,313.87 — the rounded
+  difference of the raw totals. The article publishes the subtraction of the **printed** totals,
+  which is the arithmetic a reader redoes on the page: 97,832.15 and 80,313.86. The README and the
+  test that locks these numbers now assert that convention.
+- **Chain pointer.** `PROVENANCE.md` and `provenance.json` still named the previous run as head of
+  the chain while the article cited the current one. Both now name run
+  `20260815-auditoria-externa-v23` (root `ff31be04…`, link `a6b8227a…`).
+- **Citation metadata.** `CITATION.cff` described `10.5281/zenodo.21955052` as the release
+  candidate; Zenodo records it as v1.0.0. Relabelled, and the v1.1.0 version DOI added.
+
 ## [1.1.0] — 2026-08-15
 
 Presentation pass on the article that this repository supports. No captured evidence, no computed

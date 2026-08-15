@@ -37,9 +37,9 @@ Head of the chain at the time of publication:
 
 | Field | Value |
 |---|---|
-| Run | `20260815-apendice-b-v21` |
-| ROOT | `f82aacb7ebf6cb86138e80f1ecdf420a9676d33b725205686800cdf97555cce3` |
-| `chain_head` | `bcf6a403ef20a3a9d0e40568720cff4ed322bf14d7a39b1cdf93f11b421715e2` |
+| Run | `20260815-auditoria-externa-v23` |
+| ROOT | `ff31be04d5ab3c51766f8cabcdf7ff5aba49f4036c72084c0105642e65af125f` |
+| `chain_head` | `a6b8227a8e47e2f98f5522becd86f26b5c98f76d3f2b3bbfa69f8a4eca8a315f` |
 | `stage_environment` | `e116b39d689216d7ee6b936adc6133dd8532071fa07ce16c39fa2c379b1e543d` |
 | `stage_data` | `d1221100a76ce4e0bdd90dedd20e029d063a3b46d7a31f9bb706b63173d5ca95` |
 

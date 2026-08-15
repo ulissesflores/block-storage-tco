@@ -63,10 +63,14 @@ class TestManchete(unittest.TestCase):
 
     def test_diferencas_publicadas(self) -> None:
         total = total_por_nuvem()
-        f1 = total[("1", "ibm")] - total[("1", "aws")]
-        f2 = total[("2", "ibm")] - total[("2", "aws")]
-        self.assertAlmostEqual(f1, 97832.16, places=2)
-        self.assertAlmostEqual(f2, 80313.87, places=2)
+        # The published difference is the subtraction of the PRINTED totals, which is the
+        # arithmetic a reader redoes on the page — not the rounded difference of the raw values.
+        # Rounding first differs by one cent (97,832.16 vs 97,832.15) and an external audit
+        # caught the two documents disagreeing about it.
+        f1 = round(total[("1", "ibm")], 2) - round(total[("1", "aws")], 2)
+        f2 = round(total[("2", "ibm")], 2) - round(total[("2", "aws")], 2)
+        self.assertAlmostEqual(f1, 97832.15, places=2)
+        self.assertAlmostEqual(f2, 80313.86, places=2)
         self.assertAlmostEqual(100 * f1 / total[("1", "aws")], 34.1, places=1)
         self.assertAlmostEqual(100 * f2 / total[("2", "aws")], 23.0, places=1)
 
