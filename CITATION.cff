@@ -17,10 +17,18 @@ authors:
     affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
     website: "https://ulissesflores.com"
 version: 1.0.0
+doi: 10.5281/zenodo.21955051
 date-released: 2026-08-15
 license:
   - Apache-2.0
   - CC-BY-4.0
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21955051
+    description: Concept DOI — always resolves to the latest version
+  - type: doi
+    value: 10.5281/zenodo.21955052
+    description: Version DOI of the release candidate that minted the record
 repository-code: "https://github.com/ulissesflores/block-storage-tco"
 url: "https://github.com/ulissesflores/block-storage-tco"
 keywords:

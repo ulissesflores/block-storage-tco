@@ -4,6 +4,7 @@
 
 **Two public clouds, one migration, 36 months: the block-storage line alone is USD 110,507 apart — more than the entire gap between the two providers.**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21955051.svg)](https://doi.org/10.5281/zenodo.21955051)
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![License: CC BY 4.0](https://img.shields.io/badge/data%20%26%20docs-CC--BY--4.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
@@ -176,17 +177,20 @@ tests/                 61 tests: published numbers, laws, determinism, integrity
 
 ```bibtex
 @software{flores_block_storage_tco,
-  author  = {Flores, Carlos Ulisses},
-  title   = {Block storage decides the bill: audited public-cloud price capture
-             and a deterministic 36-month TCO model},
-  year    = {2026},
-  url     = {https://github.com/ulissesflores/block-storage-tco}
+  author    = {Flores, Carlos Ulisses},
+  title     = {Block storage decides the bill: audited public-cloud price capture
+               and a deterministic 36-month TCO model},
+  year      = {2026},
+  version   = {1.0.0},
+  doi       = {10.5281/zenodo.21955051},
+  publisher = {Zenodo},
+  url       = {https://doi.org/10.5281/zenodo.21955051}
 }
 ```
 
+The DOI above is the **concept DOI**: it always resolves to the latest version. To pin the exact
+contents you read, cite the version DOI of that release instead — it is listed on the Zenodo record.
 Machine-readable metadata: [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json).
-A DOI will be minted from the GitHub release; when it exists, cite the **concept DOI** to always
-resolve to the latest version, or the **version DOI** to pin the exact contents you read.
 
 ## License
 

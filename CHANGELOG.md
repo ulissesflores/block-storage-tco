@@ -7,6 +7,8 @@ All notable changes to this repository are documented here. The format follows
 ## [1.0.0] — 2026-08-15
 
 First public release of the evidence and computation behind the case study.
+Archived on Zenodo: concept DOI [10.5281/zenodo.21955051](https://doi.org/10.5281/zenodo.21955051), minted from the
+`v1.0.0-rc1` deposit (version DOI 10.5281/zenodo.21955052).
 
 ### Added
 
