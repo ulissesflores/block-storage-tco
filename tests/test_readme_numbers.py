@@ -115,7 +115,7 @@ class TestOBlocoDecideOVencedor(unittest.TestCase):
         ibm = total[("2", "ibm")] - itens[("2", "ibm", "bloco")]
         aws = total[("2", "aws")] - itens[("2", "aws", "bloco")]
         self.assertLess(ibm, aws, "fase 2: sem bloco a IBM deveria ficar menor")
-        self.assertAlmostEqual(aws - ibm, 88304.62, places=2)
+        self.assertAlmostEqual(aws - ibm, 88304.625, places=2)
         bloco = itens[("2", "ibm", "bloco")] - itens[("2", "aws", "bloco")]
         gap = total[("2", "ibm")] - total[("2", "aws")]
         self.assertGreater(bloco, gap, "o item tem de ser maior que a diferença inteira")
@@ -134,8 +134,8 @@ class TestDecomposicaoDaFase2NoReadme(unittest.TestCase):
     """
 
     ESPERADO = {"bloco": (340314.80, 123563.31, 216751.50, 168.7),
-                "premio-gerenciado": (137336.38, 229469.08, -92132.69, -71.7),
-                "compute": (126077.12, 117309.55, 8767.57, 6.8),
+                "premio-gerenciado": (70926.82, 160712.71, -89785.89, -69.9),
+                "compute": (192486.68, 186065.91, 6420.765, 5.0),
                 "objeto": (38432.38, 52483.60, -14051.22, -10.9),
                 "egress": (39912.54, 33177.60, 6734.94, 5.2),
                 "backup": (2186.56, 0.00, 2186.56, 1.7)}

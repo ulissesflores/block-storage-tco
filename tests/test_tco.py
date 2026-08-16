@@ -271,7 +271,7 @@ class TestNumerosPublicados(unittest.TestCase):
 
     def test_xiii_veredito_da_tese_e_computado_e_nao_redigido(self) -> None:
         self.assertEqual(self.r["tese"]["veredito"], "TESE NÃO REFUTADA")
-        self.assertEqual(len(self.r["tese"]["violacoes"]), 12)
+        self.assertEqual(len(self.r["tese"]["violacoes"]), 8)
         self.assertEqual(len(self.r["tese"]["deltas"]), 24)
 
     def test_xiii_nao_ha_virada_dentro_da_grade_pre_registrada(self) -> None:

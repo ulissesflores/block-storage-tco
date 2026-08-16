@@ -117,8 +117,8 @@ And phase 2, where both clouds pay for the same number of data replicas — shar
 | Cost item | IBM Cloud (USD) | AWS (USD) | Difference (USD) | Share of gap |
 |---|---:|---:|---:|---:|
 | Block storage | 340,314.80 | 123,563.31 | **+216,751.50** | 168.7% |
-| Managed-service premium | 137,336.38 | 229,469.08 | −92,132.69 | −71.7% |
-| Compute | 126,077.12 | 117,309.55 | **+8,767.57** | 6.8% |
+| Managed-service premium | 70,926.82 | 160,712.71 | −89,785.89 | −69.9% |
+| Compute | 192,486.68 | 186,065.91 | **+6,420.77** | 5.0% |
 | Object storage | 38,432.38 | 52,483.60 | −14,051.22 | −10.9% |
 | Data transfer out | 39,912.54 | 33,177.60 | **+6,734.94** | 5.2% |
 | Backup | 2,186.56 | 0.00 | **+2,186.56** | 1.7% |
@@ -196,7 +196,7 @@ tests/                 61 tests: published numbers, laws, determinism, integrity
   title     = {Block storage decides the bill: audited public-cloud price capture
                and a deterministic 36-month TCO model},
   year      = {2026},
-  version   = {1.7.0},
+  version   = {1.7.1},
   doi       = {10.5281/zenodo.21955051},
   publisher = {Zenodo},
   url       = {https://doi.org/10.5281/zenodo.21955051}

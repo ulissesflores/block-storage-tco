@@ -23,7 +23,7 @@ linked to the previous run's head (`chain_head = H(0x02 || prev_head || ROOT)`),
 Haber–Stornetta construction. The domain-separation bytes — `0x00` for a leaf, `0x01` for an
 interior node, `0x02` for a chain link — are what stop a leaf from being passed off as a node.
 
-**Thirty-seven runs** were sealed between 2026-08-13 and 2026-08-15. The full ledger, hashes only, is in
+**Forty-two runs** were sealed between 2026-08-13 and 2026-08-16. The full ledger, hashes only, is in
 [`docs/chain-ledger.tsv`](docs/chain-ledger.tsv). Three of its properties are worth reading directly,
 because they are the ones that could not be faked after the fact:
 
@@ -95,7 +95,7 @@ succeed.
 
 ## 4. Divergences: what is not byte-identical to the sealed copy, and why
 
-Of the 96 files carried over from the sealed working tree, **82 are byte-identical** and **14 are
+Of the 97 files carried over from the sealed working tree, **83 are byte-identical** and **14 are
 not**. Every one of the thirteen is listed here with both digests, and the machine-readable form is
 [`divergences.tsv`](divergences.tsv). All 46 captured price bodies and all 4 raw HTML evidence files
 are in the byte-identical group; **no captured evidence was edited**.

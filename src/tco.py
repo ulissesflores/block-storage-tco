@@ -341,8 +341,12 @@ class Modelo:
         n = par_fase1.get("instancias", 1)     # continuidade: mesma redundância da fase 1
         gb = servidor["armazenamento_gb"]
 
-        # o custo da mesma capacidade em máquina virtual — base da decomposição do prêmio
-        base_vm = self.fase1_equivalente(nuvem, servidor, par_fase1, mult)
+        # o custo da mesma capacidade em máquina virtual — base da decomposição do prêmio. Onde o
+        # serviço gerenciado factura réplicas declaradas (emendas 07 e 08), a base recebe o MESMO
+        # número, para que `premio-gerenciado` isole a gestão em vez de misturar gestão e réplica.
+        replicas = self.replicas_aws(servidor["id"]) if servidor["id"] in \
+            self.redundancia["replicas_por_servidor"] else None
+        base_vm = self.fase1_equivalente(nuvem, servidor, par_fase1, mult, instancias=replicas)
 
         if "Bare Metal" in servico or servico.startswith("permanece"):
             saida = self.oracle_ibm(servidor, mult)
@@ -409,10 +413,18 @@ class Modelo:
         return {"usd_mes": degrau["usd_hora"] * HORAS_MES * n, "sku": degrau["sku"],
                 "arquivo": degrau["tarifa"].arquivo}
 
-    def fase1_equivalente(self, nuvem: str, servidor: dict, par: dict, mult: float) -> dict:
-        """O que a mesma capacidade custaria em máquina virtual — base do prêmio do gerenciado."""
+    def fase1_equivalente(self, nuvem: str, servidor: dict, par: dict, mult: float,
+                          instancias: int | None = None) -> dict:
+        """O que a mesma capacidade custaria em máquina virtual — base do prêmio do gerenciado.
+
+        `instancias` sobrepõe a redundância da fase 1 quando o serviço gerenciado factura um
+        número declarado de réplicas: senão o item `premio-gerenciado` somaria, ao prêmio de
+        GESTÃO, o custo das réplicas extras — duas coisas diferentes num rótulo só. A troca move
+        valor entre `compute` e `premio-gerenciado` e **não altera total algum**; é decomposição,
+        não preço.
+        """
         vcpu, ram = requisito(servidor, mult)
-        n = par.get("instancias", 1)
+        n = instancias if instancias is not None else par.get("instancias", 1)
         if nuvem == "ibm":
             degrau = escolher(self.escada(("ibm", "vm", FAMILIA_IBM[par["familia"]])), vcpu, ram,
                               f"{servidor['id']} base VM IBM")

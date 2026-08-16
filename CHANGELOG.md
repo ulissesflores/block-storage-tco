@@ -4,6 +4,28 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1] — 2026-08-16
+
+Two defects that the previous release introduced, plus two reconciliations. Nothing here changes a
+total: `environment` and `data` keep their sealed hashes and the four 36-month figures are the same.
+
+### Fixed
+
+- **`premio-gerenciado` was conflating two things.** With replicas priced on both sides, the item
+  subtracted a one- or two-instance VM baseline from a two- or three-replica managed service, so the
+  "management premium" silently absorbed the cost of the extra replicas. The baseline now carries
+  the same replica count, which isolates management. It is a decomposition: value moves between
+  `compute` and `premio-gerenciado` and **no total changes** — phase 2 IBM Cloud stays at
+  686,676.61 and AWS at 558,229.74.
+- **Design and price diverged on the AWS side without saying so.** The sealed mapping names a
+  two-zone deployment while the sheet applies the replica unit. In two replicas the readings
+  coincide, because AWS itself charges two zones at twice the unit rate; in three, the named
+  deployment does not cover the ladder. Now declared in the note of Table 2, the same way the
+  Oracle handicap has been declared since v1.0.0.
+- `PROVENANCE.md` said thirty-seven runs and 82 byte-identical files; the ledger has **42** and the
+  divergence table **83**. Both reconciled.
+- Chain run `20260816-premio-isolado-v31` (root `30970fff…`, link `1d36b95d…`).
+
 ## [1.7.0] — 2026-08-16
 
 **Redundancy parity.** An external audit found that phase 2 compared an IBM Cloud cluster of two or
