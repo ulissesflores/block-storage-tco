@@ -8,7 +8,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![License: CC BY 4.0](https://img.shields.io/badge/data%20%26%20docs-CC--BY--4.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
-[![tests](https://img.shields.io/badge/tests-63_passing-brightgreen.svg)](tests/)
+[![tests](https://img.shields.io/badge/tests-65_passing-brightgreen.svg)](tests/)
 [![provenance](https://img.shields.io/badge/provenance-SHA--256_chain-informational.svg)](PROVENANCE.md)
 
 </div>
@@ -110,6 +110,18 @@ Where the gap comes from, phase 1 ([`output/tabelas/tco-por-item.csv`](output/ta
 | Data transfer out | 39,912.54 | 33,177.60 | +6,734.94 |
 | Backup | 5,761.07 | 7,867.37 | −2,106.30 |
 | Network, IP and load balancer | 3,644.01 | 3,547.80 | +96.21 |
+
+And phase 2, where modernisation moves managed databases onto the provider's own service
+([`output/tabelas/decomposicao-do-gap.csv`](output/tabelas/decomposicao-do-gap.csv)):
+
+| Cost item | IBM Cloud (USD) | AWS (USD) | Difference (USD) | Share of gap |
+|---|---:|---:|---:|---:|
+| Block storage | 340,314.80 | 71,539.32 | **+268,775.48** | 79.7% |
+| Managed-service premium | 137,336.38 | 72,682.60 | **+64,653.79** | 19.2% |
+| Compute | 126,077.12 | 117,309.55 | **+8,767.57** | 2.6% |
+| Object storage | 38,432.38 | 52,483.60 | −14,051.22 | −4.2% |
+| Data transfer out | 39,912.54 | 33,177.60 | **+6,734.94** | 2.0% |
+| Backup | 2,186.56 | 0.00 | **+2,186.56** | 0.6% |
 
 ![36-month TCO decomposed by cost item](output/figuras/figura-4-tco-empilhado.png)
 

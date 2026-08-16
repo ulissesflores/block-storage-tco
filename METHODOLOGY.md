@@ -113,6 +113,16 @@ Three modelling decisions carry more weight than the rest, and each is declared:
    (0.1935 USD/GB in the first tier) and is **not** the VPC egress price (0.115197 USD/GB). Five of
    the six monthly terabytes are media served from object storage; modelling all six at the VPC rate
    would understate IBM's egress. A test locks the fact that the two prices are distinct.
+4. **Managed databases are billed per cluster member.** The captured node prices *per host*, and the
+   IBM Cloud Standard plan provisions three data members for MySQL and MongoDB and two for
+   PostgreSQL and Redis; disk follows the multiplier each product page declares, which for MongoDB
+   is **two** even though the member count is three. Backup on those services is zero by the
+   documented allowance — backup storage equal to the total disk provisioned, at no cost — the same
+   treatment the AWS side receives. Counts, multipliers, the allowance and the SHA-256 of every
+   source page live in [`configs/emenda-07-2026-08-16.json`](configs/emenda-07-2026-08-16.json);
+   the pages themselves are the provider's text and are not redistributed here. The modelled backup
+   volume is **one full copy** on both sides, not the provider default of one daily copy retained
+   for thirty days, so that line is a floor rather than a central estimate.
 
 ## 5. What is measured, what is informed, what is generated
 

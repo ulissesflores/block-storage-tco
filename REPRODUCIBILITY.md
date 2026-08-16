@@ -18,7 +18,7 @@ and why `run_all.py` never writes into `data/`.
 python3 run_all.py
 ```
 
-Rebuilds the cost model, the queueing model and the managed-database counterfactual; runs the whole
+Rebuilds the cost model and the queueing model; runs the whole
 test suite; verifies `checksums.sha256` and the bridge to the sealed chain. No third-party package
 is imported at any point of this track — the three figure-geometry cases, which read constants
 from the plotting module, report as skipped and everything else runs.

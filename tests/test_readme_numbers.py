@@ -123,6 +123,39 @@ class TestOBlocoDecideOVencedor(unittest.TestCase):
             self.assertLess(total[(fase, "aws")], total[(fase, "ibm")])
 
 
+class TestDecomposicaoDaFase2NoReadme(unittest.TestCase):
+    """The phase-2 breakdown table printed in the README, item by item.
+
+    Same rule as the rest of this file: a number on the page is a case here. This table only
+    exists from v1.6.0, when the member/disk correction made phase 2 the interesting half.
+    """
+
+    ESPERADO = {"bloco": (340314.80, 71539.32, 268775.48, 79.7),
+                "premio-gerenciado": (137336.38, 72682.60, 64653.79, 19.2),
+                "compute": (126077.12, 117309.55, 8767.57, 2.6),
+                "objeto": (38432.38, 52483.60, -14051.22, -4.2),
+                "egress": (39912.54, 33177.60, 6734.94, 2.0),
+                "backup": (2186.56, 0.00, 2186.56, 0.6)}
+
+    def test_a_tabela_da_fase_2_bate_com_o_csv(self) -> None:
+        itens = por_item()
+        with (TABELAS / "decomposicao-do-gap.csv").open(encoding="utf-8") as f:
+            dec = {l["item_custo"]: (float(l["delta_usd_36m"]), float(l["pct_do_gap"]))
+                   for l in csv.DictReader(f) if l["fase"] == "2"}
+        for item, (ibm, aws, delta, pct) in self.ESPERADO.items():
+            with self.subTest(item=item):
+                self.assertAlmostEqual(itens[("2", "ibm", item)], ibm, places=2)
+                self.assertAlmostEqual(itens[("2", "aws", item)], aws, places=2)
+                self.assertAlmostEqual(dec[item][0], delta, places=2)
+                self.assertAlmostEqual(dec[item][1], pct, places=1)
+
+    def test_as_participacoes_somam_cem_por_cento(self) -> None:
+        with (TABELAS / "decomposicao-do-gap.csv").open(encoding="utf-8") as f:
+            pcts = [float(l["pct_do_gap"]) for l in csv.DictReader(f) if l["fase"] == "2"]
+        # the CSV stores rounded shares, so the sum lands within a ten-thousandth of 100
+        self.assertAlmostEqual(sum(pcts), 100.0, delta=0.001)
+
+
 class TestVereditoEstavelNaGrade(unittest.TestCase):
     """The claim that the ranking never changes across the pre-registered sweep."""
 

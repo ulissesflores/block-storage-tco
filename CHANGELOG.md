@@ -63,6 +63,17 @@ keep their sealed hashes, and only `code`, `inputs` and `scores` move.
   `TestOBlocoDecideOVencedor` now asserts what each phase actually does.
 - Chain run `20260816-decomposicao-do-gap-v29` (root `aa010fb4…`, link `375c44ae…`).
 
+### Documentation
+
+- `README.md` gains the **phase-2 breakdown** beside the phase-1 one — phase 2 is where the
+  correction lands, and printing only phase 1 would leave the interesting half unshown. Two new
+  cases in `tests/test_readme_numbers.py` lock every cell of it against the CSV.
+- `METHODOLOGY.md` §4 documents managed databases as a fourth declared modelling decision: member
+  counts, the per-page disk multiplier, the backup allowance, and the modelled backup volume of one
+  full copy against the provider default of thirty daily copies.
+- `REPRODUCIBILITY.md` no longer announces a counterfactual step that `run_all.py` stopped running.
+- `docs/adr/ADR-001` drops the retired module from the published-code inventory.
+
 ## [1.5.0] — 2026-08-16
 
 Content pass on the article the repository supports. No captured evidence and no computed number
