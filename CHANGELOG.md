@@ -4,6 +4,21 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] — 2026-08-16
+
+Content pass on the article the repository supports. No captured evidence and no computed number
+changed; `environment` and `data` keep their sealed hashes.
+
+### Changed
+
+- The note of Table 5 now states the **mechanism** behind each requirement it declares satisfied,
+  and states explicitly what the table does *not* claim: no measured throughput, only contracted
+  resource and price.
+- The note of Table A2 records that the member counterfactual is **computed and sealed**
+  (`output/tabelas/sensibilidade-membros.csv`), not asserted, and that it doubles the host tariff
+  only — disk and backup stay as captured, so the published figure is a floor twice over.
+- Chain run `20260816-conteudo-r4-v26` (root `d364fabf…`, link `5507e814…`).
+
 ## [1.4.0] — 2026-08-16
 
 Third round of external audit. Fixes here are metadata and prose; no captured evidence and no

@@ -42,7 +42,7 @@ LEAF = b"\x00"
 NODE = b"\x01"
 
 #: Stage hashes sealed by the study's internal chain, run
-#: ``20260816-auditoria-r3-v25`` (ROOT ``fa537655…``, chain head ``f8b52f9e…``).
+#: ``20260816-conteudo-r4-v26`` (ROOT ``d364fabf…``, chain head ``5507e814…``).
 #: Only the stages whose files are published byte for byte are listed — the others
 #: cannot be recomputed from this repository and are therefore not asserted here.
 SELO_INTERNO = {
@@ -212,9 +212,9 @@ def construir(raiz: Path = RAIZ) -> dict:
         "nfiles": len(pares),
         "tree_hash": tree_hash(pares),
         "sealed_chain": {
-            "run_id": "20260816-auditoria-r3-v25",
-            "root": "fa537655be84f83edc467e2e11b76c84a089e3399640e266b6bbaedc34d6f78b",
-            "chain_head": "f8b52f9ee0686c55c8f7ccffb31c2c3297b270c40d181557fb28e47aa7c49a85",
+            "run_id": "20260816-conteudo-r4-v26",
+            "root": "d364fabf30d3e0a3c827c70e1903417e83b9df2c3b35460662565ba91b68bdcf",
+            "chain_head": "5507e814f37258d553202062f685cbeb6b0836c9ecee7be6470ef3db4458c34e",
             "stages_verifiable_here": ponte,
         },
         "files": dict(pares),
