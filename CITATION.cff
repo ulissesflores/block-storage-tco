@@ -16,7 +16,7 @@ authors:
     orcid: "https://orcid.org/0000-0002-6034-7765"
     affiliation: "Codex Hash Research Laboratory, Codex Hash Ltda., Brazil"
     website: "https://ulissesflores.com"
-version: 1.5.0
+version: 1.6.0
 doi: 10.5281/zenodo.21955051
 date-released: 2026-08-15
 license:
@@ -44,6 +44,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21966944
     description: Version DOI of v1.5.0
+  - type: doi
+    value: 10.5281/zenodo.21968512
+    description: Version DOI of v1.6.0 — the deposit that archives the recomputed primary scenario
 repository-code: "https://github.com/ulissesflores/block-storage-tco"
 url: "https://github.com/ulissesflores/block-storage-tco"
 keywords:
