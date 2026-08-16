@@ -2,7 +2,7 @@
   "hash_alg": "sha256",
   "merkle": "RFC 6962 MTH, domain separation 0x00 leaf / 0x01 node",
   "nfiles": 121,
-  "tree_hash": "d8fce0e590d65bf1f375aff39d3b83355737ae6b55f70c636fe2870486126ea0",
+  "tree_hash": "25d7d3ce46c2ab2b61a4abaebffca1d5e2659e3413fef8ca41408728d5d22e56",
   "sealed_chain": {
     "run_id": "20260815-auditoria-r2-v24",
     "root": "4c565c687db28c9c16a7bad3710794920ec239566d002f1ec124fc7c5884ca5a",
@@ -33,7 +33,7 @@
     "NOTICE": "ca9c5748c56aa69857ff8e13a6f45095e8bde8e8153c1d6edd77472ace41cd9b",
     "PREREGISTRATION.md": "1b24eeca541dfa8264bb3ad3bdfd1066d0eda0f7ab5577c650eaf17c56d90c17",
     "PROVENANCE.md": "737d7a1b573c9999c96050752c8dbe71c20d53f1f120bb4b48672bda9031f9cf",
-    "README.md": "c5a681a4322ff8f6fadca53f2671c336f6f965b8380b8527efbfa91d75c122d4",
+    "README.md": "13e42715318b450240010ff6d33cdfde1eeed2a2069aab91acd4e43cb5f5f3aa",
     "REPRODUCIBILITY.md": "337755a93d9d70575e987a894dc769611eeb3000f24e235551e2e08c4fad0f78",
     "codemeta.json": "92a54a0196a4c540813f2275dc22472d9a40df31acf7d8cacaa01676deda0d4d",
     "configs/caso-xyz.json": "27e4649317c6a7a24dc321fce4799bc4f68c2a0503e98d7dfe11427e00fc85f0",

@@ -192,6 +192,12 @@ The DOI above is the **concept DOI**: it always resolves to the latest version. 
 contents you read, cite the version DOI of that release instead — it is listed on the Zenodo record.
 Machine-readable metadata: [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json).
 
+> **Why the tag and `main` differ by one commit.** Zenodo mints a version DOI *from* the GitHub
+> release, so the tagged tree cannot contain its own version DOI — it does not exist yet when the
+> tag is cut. Each release is therefore followed by a single backfill commit on `main` that records
+> the freshly minted identifier in `CITATION.cff`. The difference is expected and touches metadata
+> only: no result, evidence or hash changes.
+
 ## License
 
 Code under [Apache-2.0](LICENSES/Apache-2.0.txt); data, figures and documentation under
