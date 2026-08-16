@@ -244,7 +244,7 @@ class TestNumerosPublicados(unittest.TestCase):
     """
 
     TCO_36M = {(1, "ibm"): 384802.19, (1, "aws"): 286970.04,
-               (2, "ibm"): 429733.13, (2, "aws"): 349419.27}
+               (2, "ibm"): 686676.61, (2, "aws"): 349419.27}
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -262,11 +262,11 @@ class TestNumerosPublicados(unittest.TestCase):
 
     def test_xiii_o_delta_encolhe_quando_o_headroom_cresce(self) -> None:
         """O mecanismo da tese, medido: o método de dimensionamento move o veredito na direção
-        da virada — de 23,0% para 7,7% na fase 2 — sem cruzar dentro da grade."""
+        da virada — de 96,5% para 80,4% na fase 2 — sem cruzar dentro da grade."""
         fase2 = sorted((l for l in self.r["grade"]["linhas"] if l["fase"] == 2),
                        key=lambda l: l["multiplicador"])
-        self.assertAlmostEqual(fase2[0]["delta_pct_sobre_menor"], 22.99, places=1)
-        self.assertAlmostEqual(fase2[-1]["delta_pct_sobre_menor"], 7.68, places=1)
+        self.assertAlmostEqual(fase2[0]["delta_pct_sobre_menor"], 96.52, places=1)
+        self.assertAlmostEqual(fase2[-1]["delta_pct_sobre_menor"], 80.36, places=1)
         self.assertLess(fase2[-1]["delta_pct_sobre_menor"], fase2[0]["delta_pct_sobre_menor"])
 
     def test_xiii_veredito_da_tese_e_computado_e_nao_redigido(self) -> None:
@@ -330,40 +330,69 @@ class TestCoberturaDaTaxonomia(unittest.TestCase):
         self.assertEqual({linha["vencedor"] for linha in self.r["ia"]}, {"aws"})
 
 
-class TestSensibilidadeMembros(unittest.TestCase):
-    """Trava o contrafactual de membros que o corpo publica (plano r2, item 6).
+class TestCorrecaoDeMembrosEDisco(unittest.TestCase):
+    """(xv) A correção da emenda 07, travada contra a fonte primária que a autoriza.
 
-    Os dois números do texto — 42,9% e a monotonicidade — nascem aqui. Sem esta trava, o corpo
-    citaria um contrafactual que ninguém recomputa, que é o defeito que o gate de números existe
-    para pegar.
+    Substitui o antigo `TestSensibilidadeMembros`, que travava um CONTRAFACTUAL sob hipótese
+    declarada de dois hosts. A hipótese deixou de ser necessária em 16/08/2026, quando o operador
+    imprimiu as páginas do IBM Cloud Docs que o `WebFetch` não alcança: a contagem de membros é
+    fato documentado, entrou no cenário primário, e o que precisa de trava agora é a correção —
+    não a especulação sobre ela.
     """
 
     @classmethod
     def setUpClass(cls) -> None:
-        sys.path.insert(0, str(RAIZ / "src"))
-        import sensibilidade_membros            # noqa: E402
-        cls.mod = sensibilidade_membros
-        cls.r = sensibilidade_membros.calcular()
+        cls.em = CFG["membros"]
+        cls.dim = {}
+        for l in tco.executar(RAIZ, escrever=False)["base"][(2, "ibm")]["detalhe"]:
+            if l["papel"] == "gerenciado" and l["sku"].startswith(("databases-for-",
+                                                                   "postgresql-isolated")):
+                cls.dim[l["servidor"]] = l
 
-    def test_afeta_os_cinco_bancos_gerenciados_e_nada_mais(self) -> None:
-        """Kubernetes e Code Engine não entram: a acusação é sobre `IBM Cloud Databases`."""
-        self.assertEqual(self.r["linhas_afetadas"], 5)
-        self.assertAlmostEqual(self.r["mensal_capturado_usd"], 1929.2246, places=3)
+    def test_xv_membros_vem_da_emenda_e_nao_do_corpo_do_codigo(self) -> None:
+        self.assertEqual(self.em["membros_por_motor"],
+                         {"_unidade": self.em["membros_por_motor"]["_unidade"],
+                          "_verbatim_ancora": self.em["membros_por_motor"]["_verbatim_ancora"],
+                          "mysql": 3, "postgresql": 2, "mongodb": 3, "redis": 2})
 
-    def test_o_delta_da_fase_2_sobe_de_23_para_42_9(self) -> None:
-        self.assertAlmostEqual(self.r["delta_pct_base"], 22.985, places=2)
-        self.assertAlmostEqual(self.r["delta_pct_contrafactual"], 42.861, places=2)
+    def test_xv_o_disco_do_mongodb_NAO_segue_a_contagem_de_membros(self) -> None:
+        """A armadilha desta correção: o MongoDB tem 3 membros e disco de ao menos 2x.
 
-    def test_o_contrafactual_nao_inverte_o_veredito_e_e_monotonico(self) -> None:
-        """A hipótese só pode afastar a IBM: com três hosts, a diferença cresce de novo."""
-        self.assertEqual(self.r["vencedor_base"], self.r["vencedor_contrafactual"], "aws")
-        base = self.r["delta_pct_contrafactual"]
-        self.mod.FATOR_HIPOTESE = 3
-        try:
-            maior = self.mod.calcular()["delta_pct_contrafactual"]
-        finally:
-            self.mod.FATOR_HIPOTESE = 2
-        self.assertGreater(maior, base)
+        Aplicar membros como multiplicador de disco nos quatro motores encareceria a IBM ainda
+        mais — ou seja, empurraria na direcao do veredito ja publicado, que e onde um erro passa
+        despercebido. O teste existe para que essa extrapolacao nao volte em silencio.
+        """
+        d = self.em["multiplicador_de_disco_por_motor"]
+        self.assertEqual((d["mysql"], d["postgresql"], d["mongodb"], d["redis"]), (3, 2, 2, 2))
+        self.assertEqual(self.em["membros_por_motor"]["mongodb"], 3)
+        self.assertNotEqual(d["mongodb"], self.em["membros_por_motor"]["mongodb"])
+
+    def test_xv_a_tarifa_de_host_do_modelo_e_a_capturada_vezes_os_membros(self) -> None:
+        """Vetores lidos do disco: preco capturado x membros documentados = linha do modelo."""
+        for servidor, servico, metrica, membros in (
+                ("banco-1", "databases-for-mysql", "databases-for-mysql-4-16", 3),
+                ("banco-2", "databases-for-mysql", "databases-for-mysql-8-32", 3),
+                ("banco-3", "databases-for-postgresql", "postgresql-isolated-8-32", 2),
+                ("banco-4", "databases-for-mongodb", "databases-for-mongodb-4-16", 3),
+                ("banco-6", "databases-for-redis", "databases-for-redis-4-16", 2)):
+            capturado = CAT.ibm(servico, "standard", metrica).preco
+            self.assertAlmostEqual(self.dim[servidor]["usd_mes"], capturado * membros, places=4,
+                                   msg=servidor)
+            self.assertIn(f"x{membros}".replace("x", "\u00d7"), self.dim[servidor]["sku"])
+
+    def test_xv_o_backup_do_gerenciado_e_zero_por_FRANQUIA_documentada(self) -> None:
+        """Zero por franquia declarada na pagina do provedor, nunca por lacuna de captura.
+
+        A metrica de backup CONTINUA capturada e legivel — o que mudou foi a regra de cobranca,
+        e e por isso que o teste le a tarifa antes de exigir o zero: se ela sumisse da captura, o
+        zero passaria a ter outra causa e este teste diria que esta tudo bem.
+        """
+        self.assertEqual(self.em["franquia_de_backup"]["custo_no_cenario_primario_usd_mes"], 0.0)
+        self.assertEqual(self.em["franquia_de_backup"]["excedente_usd_por_gb_mes"], 0.03)
+        for servico in ("databases-for-mysql", "databases-for-postgresql",
+                        "databases-for-mongodb", "databases-for-redis"):
+            self.assertGreater(CAT.ibm(servico, "standard", "-backup").preco, 0.0)
+
 
 
 if __name__ == "__main__":

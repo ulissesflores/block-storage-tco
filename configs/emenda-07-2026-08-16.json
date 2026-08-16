@@ -1,0 +1,152 @@
+{
+  "_natureza": "emenda ao modelo de custo — CORREÇÃO do banco gerenciado da IBM em três frentes (tarifa de host por membro, disco pelo multiplicador declarado, franquia de backup), com fonte primária do provedor impressa em PDF e preservada em disco",
+  "_data": "2026-08-16",
+  "_etapa": "E9.24 — recompute do cenário primário depois de a evidência ficar completa",
+  "_por_que_arquivo_novo": "O `projeto-tecnico.json` está selado no estágio `inputs` e a sua identidade em bytes é parte da prova de que o dimensionamento foi declarado ANTES da captura de preços; as emendas 01 a 06 também estão seladas. Acrescentar campos em qualquer um deles apagaria essa fronteira. A correção entra como arquivo próprio e datado, também dentro de `inputs`, e `tco.py` a lê — nunca digita a constante no corpo do código. Mesmo padrão das emendas 01, 05 e 06.",
+  "_estatuto_epistemico": "FATO DOCUMENTADO EM FONTE PRIMÁRIA DO PROVEDOR, não suposição declarada. As três correções estão escritas nas páginas oficiais do IBM Cloud Docs, impressas em PDF pelo operador em 15 e 16 de agosto de 2026 depois de o `WebFetch` do agente falhar por tempo esgotado contra `cloud.ibm.com/docs`. Os oito PDFs, com soma SHA-256 e data de última atualização declarada por cada página, estão listados em `fontes` e preservados em `00-material-fonte/docs-provedores/`. O verbatim consolidado, lido e conferido linha a linha, está em `VERBATIM-ibm-postgresql-members-2026-08-15.md` na mesma pasta.",
+  "_verificacao_ao_vivo_2026_08_16": "As quatro páginas citadas pelo artigo foram abertas no navegador em 16/08/2026 — o mesmo caminho que já resolvera a captura do Object Storage na E3 (d) — e o conteúdo servido bateu com o dos PDFs impressos pelo operador. Isso faz duas coisas: confirma que os endereços resolvem (a regra da casa proíbe referência com URL não testado, e o `WebFetch` deste ambiente não alcança o domínio) e sobe a classe de evidência de página-impressa para página-conferida-na-origem. Títulos exatos, lidos da própria página: MySQL 'Scaling disk, RAM, and CPU'; MongoDB 'Scaling disk, memory, and CPU'; Redis e PostgreSQL 'Adding disk, memory, and CPU'; e 'Pricing' na página de preços do PostgreSQL.",
+  "_o_que_esta_emenda_retrata": "Até a versão 1.5.0 o artigo declarava, como limitação, que não fora possível verificar em fonte pública quantos membros o plano `standard` provisiona, e o contrafactual de membros (`sensibilidade_membros.py`) rodava sob hipótese declarada de dois hosts para todos os motores. A documentação primária tornou a hipótese desnecessária e mostrou que ela era, além de hipótese, errada para MySQL e MongoDB (três membros). A limitação sai do artigo e vira número no cenário primário.",
+  "_por_que_os_dois_sinais_sao_opostos": "Membros e disco ENCARECEM a IBM; a franquia de backup a BARATEIA. O resultado líquido só é conhecido depois de computar, e por isso se computa em vez de anunciar direção.",
+  "membros_por_motor": {
+    "_unidade": "número de membros de dados do cluster no plano `standard` — multiplica a TARIFA DE HOST capturada (`standard-br-sao`, por host e por mês)",
+    "_verbatim_ancora": "\"Members is the number of members of your database. For <motor>, members are set to N.\"",
+    "mysql": 3,
+    "postgresql": 2,
+    "mongodb": 3,
+    "redis": 2
+  },
+  "multiplicador_de_disco_por_motor": {
+    "_unidade": "fator sobre a capacidade de armazenamento declarada do servidor na linha de base do enunciado",
+    "_regra": "vale o multiplicador que CADA PÁGINA declara para disco, nunca a contagem de membros aplicada por analogia",
+    "_por_que_nao_e_a_contagem_de_membros": "O MongoDB tem TRÊS membros de dados e a sua página declara, para disco, \"the total amount of disk that you use is at least twice the size of your data set\" — dois, não três. Usar membros como multiplicador de disco nos quatro motores seria extrapolar a partir do caso do MySQL, que é o único em que os dois números coincidem. Extrapolar aqui produziria um número maior e favorável ao veredito já publicado, o que é exatamente a direção em que um erro passa despercebido.",
+    "mysql": 3,
+    "postgresql": 2,
+    "mongodb": 2,
+    "redis": 2,
+    "_verbatim_mysql": "\"Your data is replicated to all data members so the total amount of disk that you use is at least three times the size of your data set.\"",
+    "_verbatim_mongodb": "\"the total amount of disk that you use is at least twice the size of your data set\"",
+    "_verbatim_postgresql": "\"Storage shows the amount of disk space that is allocated to your service. Each member gets an equal share of the allocated space. Your data is replicated across all the data members\" — com dois membros, o fator é dois",
+    "_verbatim_redis": "\"Databases for Redis deployments have two data members in a cluster\" — com dois membros e a mesma regra de partilha igual, o fator é dois"
+  },
+  "franquia_de_backup": {
+    "_aplica_a": "os quatro bancos gerenciados da IBM na fase 2 (`databases-for-*`, plano `standard`). NÃO se aplica ao Oracle em bare metal, cuja cópia vai para armazenamento de objetos e continua cobrada.",
+    "_regra": "a instância vem com armazenamento de cópia de segurança igual ao disco total provisionado, sem custo; cobra-se apenas o excedente",
+    "_verbatim_a": "\"Instances come with backup storage equal to their total disk space at no cost.\"",
+    "_verbatim_b": "\"You receive your total disk space purchased, per database, in free backup storage. […] If your backup storage utilization is greater than 60 GB for the month (in this scenario), you are charged an overage of $0.03/month per gigabyte.\"",
+    "excedente_usd_por_gb_mes": 0.03,
+    "custo_no_cenario_primario_usd_mes": 0.0,
+    "_por_que_zero": "O VOLUME modelado neste trabalho é UMA cópia completa, declarado na emenda 03 §backup ('uma cópia completa do armazenamento de cada banco'), porque o incremento diário exigiria taxa de mudança que o enunciado não fornece. Uma cópia completa é, por construção, menor que o disco provisionado depois desta emenda (que passa a ser duas ou três vezes o conjunto de dados), logo cabe inteira na franquia, não há excedente e a linha é zero — exatamente o tratamento que o lado AWS já recebia desde a emenda 03, e pela mesma natureza de razão (franquia documentada, não lacuna de captura).",
+    "_limitacao_que_a_leitura_ao_vivo_revelou_e_que_o_pdf_nao_trazia": "A página de preços declara também o PADRÃO do provedor: 'By default, Cloud Databases provides a daily backup that is stored for 30 days. These backups, and any on-demand backups you make, all count toward the above allocation' — e mostra a aritmética: um banco com 15 GB de dados acumula 15 x 30 = 450 GB de cópia e paga (450 - 60) x 0,03 por mês. Sob esse padrão, e não sob o volume modelado, a franquia seria estourada: a condição para custo nulo é dados x 30 <= disco provisionado, isto é, um multiplicador de replicação de trinta, ao passo que o documentado é dois ou três. A DISTÂNCIA entre o padrão do provedor e o volume modelado é PRÉ-EXISTENTE a esta emenda — o modelo já tarifava uma cópia, nunca trinta, e a retenção de 30 dias está selada em `premissas-carga.json` desde o pré-registro. Esta emenda não a cria nem a resolve; registra-a com a fonte que agora existe. A simplificação é simétrica: incide igual nas duas nuvens, cujas franquias têm a mesma estrutura (armazenamento de cópia igual ao provisionado), e a franquia da IBM é proporcionalmente MAIOR justamente porque o disco provisionado dela passou a ser duas ou três vezes o conjunto de dados. O artigo declara isso como limitação nomeada, e a linha de cópia dos bancos gerenciados é PISO nas duas nuvens, jamais estimativa central.",
+    "_assimetria_que_isto_conserta": "Antes desta emenda o modelo cobrava da IBM a métrica de cópia capturada (5.761,07 · 7.867,37 · 6.072,43 nas configurações C1, C2 e C3) e creditava franquia zero à AWS. Dois auditores externos, em rodadas diferentes, chamaram o tratamento de assimétrico; a documentação primária mostra que estavam certos."
+  },
+  "_o_que_esta_emenda_nao_faz": [
+    "não muda a regra selada de seleção de degrau: o par (vCPU, RAM) exigido continua sendo o do servidor, e o degrau continua sendo o mais barato que o satisfaz — a correção é de tarifa e de volume, nunca de redimensionamento;",
+    "não toca nenhum preço capturado: todos os valores continuam vindo dos corpos crus em `data/precos/`;",
+    "não altera coisa alguma do lado AWS, cuja franquia de cópia já estava declarada na emenda 03;",
+    "não toca a fase 1 nem o Oracle em bare metal — os bancos da fase 1 são máquina virtual mais bloco, e a cópia do Oracle vai para armazenamento de objetos."
+  ],
+  "fontes": [
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-mysql-resources-scaling-2026-08-16.pdf",
+      "sha256": "269dd5c6dbdcf92e869d2fc53166efc2108c3b970dbd94ee85dcbfdce8a17589",
+      "titulo": "Scaling disk, RAM, and CPU (Databases for MySQL)",
+      "last_updated_declarado": "2026-03-03",
+      "impresso_em": "2026-08-16",
+      "url": "https://cloud.ibm.com/docs/databases-for-mysql?topic=databases-for-mysql-resources-scaling",
+      "sustenta": [
+        "membros_por_motor.mysql",
+        "multiplicador_de_disco_por_motor.mysql"
+      ],
+      "conferida_ao_vivo_em": "2026-08-16"
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-postgresql-resources-scaling-2026-08-15.pdf",
+      "sha256": "de81ea6da4a35ad2c72087f1f4fa29487cb72b8b629818fdcc98983f98cf1ccc",
+      "titulo": "Adding disk, memory, and CPU (Databases for PostgreSQL)",
+      "last_updated_declarado": "2026-03-03",
+      "impresso_em": "2026-08-15",
+      "url": "https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-resources-scaling",
+      "sustenta": [
+        "membros_por_motor.postgresql",
+        "multiplicador_de_disco_por_motor.postgresql"
+      ],
+      "conferida_ao_vivo_em": "2026-08-16"
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-mongodb-resources-scaling-2026-08-16.pdf",
+      "sha256": "33fb0fa80c54650ac095913588d9135f0dc7867aeefd2afdfb8746f846eeb522",
+      "titulo": "Scaling disk, memory, and CPU (Databases for MongoDB)",
+      "last_updated_declarado": "2026-03-03",
+      "impresso_em": "2026-08-16",
+      "url": "https://cloud.ibm.com/docs/databases-for-mongodb?topic=databases-for-mongodb-resources-scaling",
+      "sustenta": [
+        "membros_por_motor.mongodb",
+        "multiplicador_de_disco_por_motor.mongodb"
+      ],
+      "conferida_ao_vivo_em": "2026-08-16"
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-redis-resources-scaling-2026-08-16.pdf",
+      "sha256": "a1f6c4d8a36e2963374b0cf0bf8939910dc4cb0c1fd71cba86fad3306ee36222",
+      "titulo": "Adding disk, memory, and CPU (Databases for Redis)",
+      "last_updated_declarado": "2026-03-03",
+      "impresso_em": "2026-08-16",
+      "url": "https://cloud.ibm.com/docs/databases-for-redis?topic=databases-for-redis-resources-scaling",
+      "sustenta": [
+        "membros_por_motor.redis",
+        "multiplicador_de_disco_por_motor.redis"
+      ],
+      "conferida_ao_vivo_em": "2026-08-16"
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-postgresql-pricing-2026-08-16.pdf",
+      "sha256": "f61d3b4acb4cbab51a4dd9a1511a9ef0e491fc992c84b5960212811f483c6c73",
+      "titulo": "Pricing (Databases for PostgreSQL)",
+      "last_updated_declarado": "2026-01-27",
+      "impresso_em": "2026-08-16",
+      "url": "https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-pricing",
+      "sustenta": [
+        "membros_por_motor.postgresql",
+        "franquia_de_backup"
+      ],
+      "_frase_que_fecha_a_questao": "\"A Databases for PostgreSQL Standard plan deploys as one highly available PostgreSQL cluster with two data members, with your data replicated on both members. It's priced based on the total amount of disk storage, RAM and backup storage that is allocated to deployments, prorated hourly.\" — é o plano `standard`, o mesmo da captura deste trabalho (`standard-br-sao`).",
+      "conferida_ao_vivo_em": "2026-08-16"
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-databases-for-postgresql-pricing-backups-2026-08-16.pdf",
+      "sha256": "24456b6028e333ecb92ea3f6eea105bbbd49be5f08516b542a6dbc2c0472ea38",
+      "titulo": "Pricing — seção Backups pricing (Databases for PostgreSQL)",
+      "last_updated_declarado": "2026-01-27",
+      "impresso_em": "2026-08-16",
+      "url": "https://cloud.ibm.com/docs/databases-for-postgresql?topic=databases-for-postgresql-pricing",
+      "sustenta": [
+        "franquia_de_backup"
+      ]
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-cloud-databases-managing-backups-2026-08-16.pdf",
+      "sha256": "269a9d47c137ea72b8dd6137e0c9ae6036222fa02c095e3b770d3440c4f9f6a5",
+      "titulo": "Managing Cloud Databases backups",
+      "last_updated_declarado": "2026-07-28",
+      "impresso_em": "2026-08-16",
+      "url": null,
+      "_nota_url": "O PDF impresso não carrega o endereço da página no texto, e o `WebFetch` não alcança `cloud.ibm.com/docs` deste ambiente — o identificador do tópico não foi verificado e por isso não é afirmado. A evidência que sustenta a regra é o próprio PDF preservado, com soma SHA-256, título e data de última atualização declarada pela página.",
+      "sustenta": [
+        "franquia_de_backup"
+      ]
+    },
+    {
+      "arquivo": "00-material-fonte/docs-provedores/ibm-cloud-databases-managing-backups-b-2026-08-16.pdf",
+      "sha256": "c88a3e77edb6ee5b5d68d84123e79e547479f0f91fc30143ef584c4cbf9ef5cf",
+      "titulo": "Managing Cloud Databases backups (segunda impressão, seção Tip)",
+      "last_updated_declarado": "2026-07-28",
+      "impresso_em": "2026-08-16",
+      "url": null,
+      "_nota_url": "Idem à entrada anterior.",
+      "sustenta": [
+        "franquia_de_backup"
+      ]
+    }
+  ],
+  "_por_que_os_pdfs_nao_sao_redistribuidos": "Os oito PDFs listados em `fontes` NÃO são redistribuídos no repositório público: são páginas de documentação do provedor, cujo texto é dele, e republicá-las excederia o que este trabalho precisa. O que é publicado — e é o que torna a afirmação conferível por terceiro — são a soma SHA-256, o título, a data de última atualização declarada pela página e o endereço, todos nesta emenda: quem abrir o mesmo endereço e imprimir a página pode comparar o conteúdo com o verbatim citado aqui. Por isso os caminhos do campo `arquivo` apontam para a árvore interna e não resolvem no clone público; o teste que confere as somas contra o disco fica fora da cópia pública pela mesma razão, com a divergência declarada no build."
+}

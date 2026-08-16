@@ -58,7 +58,7 @@ class TestManchete(unittest.TestCase):
         total = total_por_nuvem()
         self.assertAlmostEqual(total[("1", "ibm")], 384802.19, places=2)
         self.assertAlmostEqual(total[("1", "aws")], 286970.04, places=2)
-        self.assertAlmostEqual(total[("2", "ibm")], 429733.13, places=2)
+        self.assertAlmostEqual(total[("2", "ibm")], 686676.61, places=2)
         self.assertAlmostEqual(total[("2", "aws")], 349419.27, places=2)
 
     def test_diferencas_publicadas(self) -> None:
@@ -70,9 +70,9 @@ class TestManchete(unittest.TestCase):
         f1 = round(total[("1", "ibm")], 2) - round(total[("1", "aws")], 2)
         f2 = round(total[("2", "ibm")], 2) - round(total[("2", "aws")], 2)
         self.assertAlmostEqual(f1, 97832.15, places=2)
-        self.assertAlmostEqual(f2, 80313.86, places=2)
+        self.assertAlmostEqual(f2, 337257.34, places=2)
         self.assertAlmostEqual(100 * f1 / total[("1", "aws")], 34.1, places=1)
-        self.assertAlmostEqual(100 * f2 / total[("2", "aws")], 23.0, places=1)
+        self.assertAlmostEqual(100 * f2 / total[("2", "aws")], 96.5, places=1)
 
     def test_o_bloco_e_maior_que_a_diferenca_total(self) -> None:
         itens, total = por_item(), total_por_nuvem()
@@ -87,15 +87,35 @@ class TestManchete(unittest.TestCase):
 
 
 class TestOBlocoDecideOVencedor(unittest.TestCase):
-    """The counterfactual behind the title: take block storage out and the ranking flips."""
+    """The counterfactual behind the title: take block storage out and see whether it flips.
 
-    def test_sem_bloco_a_ibm_fica_mais_barata_nas_duas_fases(self) -> None:
+    Until v1.5.0 it flipped in BOTH phases. The member/disk correction of v1.6.0 changed that,
+    and the honest reading is now split: block storage still is the largest single driver in both
+    phases, but in phase 2 it no longer decides the ranking on its own, because the managed
+    premium grew alongside it. Asserting the old claim would be forcing a result the evidence
+    stopped supporting — so the test asserts what each phase actually does.
+    """
+
+    def test_na_fase_1_retirar_o_bloco_inverte_o_ranking(self) -> None:
         itens, total = por_item(), total_por_nuvem()
-        for fase, esperado in (("1", 12674.44), ("2", 42324.92)):
-            ibm = total[(fase, "ibm")] - itens[(fase, "ibm", "bloco")]
-            aws = total[(fase, "aws")] - itens[(fase, "aws", "bloco")]
-            self.assertLess(ibm, aws, f"fase {fase}: sem bloco a IBM deveria ficar menor")
-            self.assertAlmostEqual(aws - ibm, esperado, places=2)
+        ibm = total[("1", "ibm")] - itens[("1", "ibm", "bloco")]
+        aws = total[("1", "aws")] - itens[("1", "aws", "bloco")]
+        self.assertLess(ibm, aws)
+        self.assertAlmostEqual(aws - ibm, 12674.44, places=2)
+
+    def test_na_fase_2_o_bloco_domina_mas_ja_nao_decide_sozinho(self) -> None:
+        itens, total = por_item(), total_por_nuvem()
+        ibm = total[("2", "ibm")] - itens[("2", "ibm", "bloco")]
+        aws = total[("2", "aws")] - itens[("2", "aws", "bloco")]
+        self.assertLess(aws, ibm, "fase 2: sem bloco a AWS segue mais barata")
+        self.assertAlmostEqual(ibm - aws, 68481.86, places=2)
+        # dominance is still measurable, and it is the claim the README makes
+        bloco = itens[("2", "ibm", "bloco")] - itens[("2", "aws", "bloco")]
+        premio = itens[("2", "ibm", "premio-gerenciado")] - itens[("2", "aws", "premio-gerenciado")]
+        gap = total[("2", "ibm")] - total[("2", "aws")]
+        self.assertAlmostEqual(100 * bloco / gap, 79.7, places=1)
+        self.assertAlmostEqual(100 * premio / gap, 19.2, places=1)
+        self.assertGreater(bloco, premio)
 
     def test_com_bloco_a_aws_vence_nas_duas_fases(self) -> None:
         total = total_por_nuvem()

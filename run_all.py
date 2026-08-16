@@ -75,7 +75,6 @@ def main(argv: list[str] | None = None) -> int:
         ("cost model (36-month TCO, four configurations, turning-point sweep)",
          [py, "src/tco.py"]),
         ("queueing model (Kingman G/G/1, iso-SLA operating point)", [py, "src/filas.py"]),
-        ("counterfactual on managed-database members", [py, "src/sensibilidade_membros.py"]),
     ]
     if args.figures:
         etapas.append(("figures", [py, "src/figuras.py"]))

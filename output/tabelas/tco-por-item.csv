@@ -22,12 +22,12 @@ C2,aws,1,rede-ip-balanceador,98.5500,3547.8000
 C2,aws,1,observabilidade,0.0000,0.0000
 C2,aws,1,ia,0.0000,0.0000
 C3,ibm,2,compute,3502.1422,126077.1193
-C3,ibm,2,bloco,4107.3322,194178.1087
+C3,ibm,2,bloco,7198.4734,340314.8049
 C3,ibm,2,objeto,607.3774,38432.3790
 C3,ibm,2,egress,1108.6817,39912.5422
 C3,ibm,2,licencas,0.0000,0.0000
-C3,ibm,2,premio-gerenciado,628.9924,22643.7278
-C3,ibm,2,backup,168.6787,6072.4347
+C3,ibm,2,premio-gerenciado,3814.8995,137336.3813
+C3,ibm,2,backup,60.7377,2186.5587
 C3,ibm,2,suporte,0.0000,0.0000
 C3,ibm,2,rede-ip-balanceador,41.6939,1500.9800
 C3,ibm,2,observabilidade,0.0000,0.0000

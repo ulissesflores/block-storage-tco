@@ -23,7 +23,6 @@ ibm,databases-for-mongodb-32-128,Instance-Hour,2747.0578,até 1: 2747.0578,br-sa
 ibm,databases-for-mongodb-4-16,Instance-Hour,343.3822,até 1: 343.3822,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
 ibm,databases-for-mongodb-8-32,Instance-Hour,686.7644,até 1: 686.7644,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
 ibm,databases-for-mongodb-8-64,Instance-Hour,982.3761,até 1: 982.3761,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
-ibm,databases-for-mongodb-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
 ibm,databases-for-mongodb-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-mongodb-standard-br-sao-2026-08-13.json
 ibm,databases-for-mysql-16-64,Instance-Hour,1217.7336,até 1: 1217.7336,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
 ibm,databases-for-mysql-30-240,Instance-Hour,3261.965,até 1: 3261.965,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
@@ -31,12 +30,10 @@ ibm,databases-for-mysql-32-128,Instance-Hour,2435.4671,até 1: 2435.4671,br-sao,
 ibm,databases-for-mysql-4-16,Instance-Hour,304.4334,até 1: 304.4334,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
 ibm,databases-for-mysql-8-32,Instance-Hour,608.8668,até 1: 608.8668,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
 ibm,databases-for-mysql-8-64,Instance-Hour,869.8572,até 1: 869.8572,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
-ibm,databases-for-mysql-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
 ibm,databases-for-mysql-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-mysql-standard-br-sao-2026-08-13.json
 ibm,databases-for-postgresql-16-64,Instance-Hour,870.8559,até 1: 870.8559,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
 ibm,databases-for-postgresql-30-240,Instance-Hour,2285.747,até 1: 2285.747,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
 ibm,databases-for-postgresql-8-64,Instance-Hour,609.5326,até 1: 609.5326,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
-ibm,databases-for-postgresql-backup,Gigabyte-Month,0.03225,até 1: 0.03225,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
 ibm,databases-for-postgresql-disk,Gigabyte-Month,0.6346,até 1: 0.6346,br-sao,api-versionada,data/precos/api/ibm-databases-for-postgresql-standard-br-sao-2026-08-13.json
 ibm,databases-for-redis-16-64,Instance-Hour,948.45696,até 1: 948.45696,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
 ibm,databases-for-redis-30-240,Instance-Hour,2489.4276,até 1: 2489.4276,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
@@ -44,7 +41,6 @@ ibm,databases-for-redis-32-128,Instance-Hour,1896.91392,até 1: 1896.91392,br-sa
 ibm,databases-for-redis-4-16,Instance-Hour,237.11424,até 1: 237.11424,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
 ibm,databases-for-redis-8-32,Instance-Hour,474.22848,até 1: 474.22848,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
 ibm,databases-for-redis-8-64,Instance-Hour,663.84736,até 1: 663.84736,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
-ibm,databases-for-redis-backup,Gigabyte-Month,0.03193,até 1: 0.03193,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
 ibm,databases-for-redis-disk,Gigabyte-Month,0.6283,até 1: 0.6283,br-sao,api-versionada,data/precos/api/ibm-databases-for-redis-standard-br-sao-2026-08-13.json
 ibm,gpt-oss-120b / Open AI,—,0.159,até ∞: 0.159,não-regional (declarado),pagina-publica,data/precos/manual/ibm-watsonx-ai-2026-08-13.json
 ibm,is.volume.10iopstier.GB,Gigabyte-Hour,0.001090462,até 1: 0.001090462,br-sao,api-versionada,data/precos/api/ibm-is.volume-gen2-volume-10iops-tier-br-sao-2026-08-13.json

@@ -4,6 +4,65 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] — 2026-08-16
+
+**Primary scenario recomputed.** Provider documentation that earlier versions could not reach —
+`WebFetch` times out against `cloud.ibm.com/docs`; the pages were printed to PDF and then confirmed
+live in a browser — settles the managed-database question this repository had carried as a named
+limitation since v1.2.0. Three corrections, with **opposite signs**, now run in the primary
+scenario instead of in a counterfactual. Captured evidence is untouched: `environment` and `data`
+keep their sealed hashes, and only `code`, `inputs` and `scores` move.
+
+### Changed
+
+- **Host tariff times members.** The captured node prices *per host*, and the Standard plan
+  provisions **three** data members for MySQL and MongoDB and **two** for PostgreSQL and Redis.
+  The model multiplies accordingly. This raises IBM Cloud.
+- **Disk by the multiplier each page declares** — three for MySQL, two for MongoDB, PostgreSQL and
+  Redis. Note that MongoDB has *three* members but declares disk of "at least twice the size of
+  your data set": using the member count as a disk multiplier would extrapolate beyond the source,
+  in the direction that inflates the already-published gap. This raises IBM Cloud.
+- **Managed-database backup is now zero, by documented allowance** — "instances come with backup
+  storage equal to their total disk space at no cost" — the same treatment the AWS side already
+  had. Two external auditors had called the previous asymmetry out; the primary source shows they
+  were right. This lowers IBM Cloud.
+- **Net effect, computed rather than announced:** phase-2 IBM Cloud goes from USD 429,733.13 to
+  **686,676.61**, and the phase-2 gap from **23.0% to 96.5%**. Phase 1 is unchanged — it has no
+  managed database. The winner does not change on any of the fourteen sweep rows.
+- Per item, 36 months: block storage 194,178 -> **340,315**; managed premium 22,644 -> **137,336**;
+  backup 6,072.43 -> **2,186.56** (what remains is the Oracle copy in object storage).
+- The Oracle bare-metal sensitivity on phase 2 falls from 14.5% to **9.1%**, because the primary
+  scenario it is measured against grew.
+
+### Removed
+
+- `src/sensibilidade_membros.py` and `output/tabelas/sensibilidade-membros.csv`. They measured,
+  under a declared hypothesis of two hosts, what is now documented fact inside the primary
+  scenario; keeping them would double-count the correction. `tests/test_tco.py` replaces
+  `TestSensibilidadeMembros` with `TestCorrecaoDeMembrosEDisco`, which locks the multipliers
+  against `configs/emenda-07-2026-08-16.json`, matches captured tariff times members against the
+  model row, and asserts that MongoDB's disk multiplier is **not** its member count.
+
+### Notes
+
+- **Limitation kept, and named.** The same pricing page states the provider default: one daily
+  backup retained for thirty days, all of it counting against the allowance. This work models
+  **one full copy** in both clouds, as declared in `configs/emenda-03-2026-08-13.json` since
+  pre-registration, because a daily increment would need a change rate the case does not give.
+  The backup line is therefore a **floor** on both sides, not a central estimate.
+- The provider documentation PDFs are **not redistributed** — the text is the provider's. What is
+  published is what makes the claim checkable: SHA-256, title, declared last-updated date and URL
+  of each page, in `configs/emenda-07-2026-08-16.json`.
+- New sealed output `output/tabelas/decomposicao-do-gap.csv`: the gap between the two clouds
+  decomposed by cost item, in dollars and as a share. The article states which item produces
+  the difference; until now that claim rested on reading a stacked figure. In phase 2 block
+  storage is **79.7%** of the gap and the managed premium **19.2%**.
+- **Headline claim narrowed, because the evidence narrowed it.** Removing block storage still
+  reverses the ranking in phase 1 (IBM Cloud would be USD 12,674.44 cheaper), but no longer in
+  phase 2 (AWS stays ahead by USD 68,481.86): the managed premium grew alongside it.
+  `TestOBlocoDecideOVencedor` now asserts what each phase actually does.
+- Chain run `20260816-decomposicao-do-gap-v29` (root `aa010fb4…`, link `375c44ae…`).
+
 ## [1.5.0] — 2026-08-16
 
 Content pass on the article the repository supports. No captured evidence and no computed number
@@ -17,6 +76,8 @@ changed; `environment` and `data` keep their sealed hashes.
 - The note of Table A2 records that the member counterfactual is **computed and sealed**
   (`output/tabelas/sensibilidade-membros.csv`), not asserted, and that it doubles the host tariff
   only — disk and backup stay as captured, so the published figure is a floor twice over.
+  *(Superseded in 1.6.0: the counterfactual became documented fact in the primary scenario, and
+  both the script and the CSV were removed.)*
 - Chain run `20260816-conteudo-r4-v26` (root `d364fabf…`, link `5507e814…`).
 
 ## [1.4.0] — 2026-08-16

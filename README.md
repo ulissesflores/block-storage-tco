@@ -8,18 +8,21 @@
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![License: CC BY 4.0](https://img.shields.io/badge/data%20%26%20docs-CC--BY--4.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
-[![tests](https://img.shields.io/badge/tests-61_passing-brightgreen.svg)](tests/)
+[![tests](https://img.shields.io/badge/tests-63_passing-brightgreen.svg)](tests/)
 [![provenance](https://img.shields.io/badge/provenance-SHA--256_chain-informational.svg)](PROVENANCE.md)
 
 </div>
 
 > [!IMPORTANT]
 > **Finding.** For a twelve-server migration priced in São Paulo on 13 August 2026, AWS is cheaper
-> than IBM Cloud by **USD 97,832.15 over 36 months** in phase 1 (34.1%) and **USD 80,313.86** in phase 2
-> (23.0%). The item that produces the gap is **block storage** — USD 181,525 against USD 71,019, a
-> difference of **USD 110,506.59**, larger than the total gap. Compute, the line everyone compares,
-> runs the other way: IBM Cloud is **USD 3,348 cheaper** over the same horizon. The verdict does not
-> flip anywhere in the pre-registered sizing grid: 24 of 24 points favour the same provider.
+> than IBM Cloud by **USD 97,832.15 over 36 months** in phase 1 (34.1%) and **USD 337,257.34** in phase 2
+> (96.5%). The item that produces the gap is **block storage** — in phase 1, USD 181,525 against
+> USD 71,019, a difference of **USD 110,506.59**, larger than the whole gap, so removing that one
+> line reverses the ranking. In phase 2 block storage is still the largest single driver, at
+> **79.7%** of the gap, but it no longer decides alone: the managed-database premium accounts for a
+> further **19.2%**. Compute, the line everyone compares, runs the other way in phase 1: IBM Cloud
+> is **USD 3,348 cheaper** over the same horizon. The verdict does not flip anywhere in the
+> pre-registered sizing grid: 14 of 14 points favour the same provider.
 
 This repository is the **evidence and computation** behind a case study on migrating an on-premises
 estate to public cloud. It contains the raw price bodies captured from the providers' public
@@ -95,7 +98,7 @@ provenance chain**, recomputed here from the published files. See [`PROVENANCE.m
 | Phase | IBM Cloud (USD) | AWS (USD) | Gap (USD) | Gap (%) | Lower |
 |---|---:|---:|---:|---:|---|
 | 1 — lift-and-shift | 384,802.19 | 286,970.04 | 97,832.15 | 34.1% | AWS |
-| 2 — modernisation | 429,733.13 | 349,419.27 | 80,313.86 | 23.0% | AWS |
+| 2 — modernisation | 686,676.61 | 349,419.27 | 337,257.34 | 96.5% | AWS |
 
 Where the gap comes from, phase 1 ([`output/tabelas/tco-por-item.csv`](output/tabelas/tco-por-item.csv)):
 

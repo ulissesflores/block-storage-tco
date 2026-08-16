@@ -72,7 +72,7 @@ def carregar(raiz: Path = RAIZ) -> dict:
         return json.loads((raiz / "configs" / nome).read_text(encoding="utf-8"))
     return {"caso": js("caso-xyz.json"), "projeto": js("projeto-tecnico.json"),
             "premissas": js("premissas-carga.json"), "emenda": js("emenda-03-2026-08-13.json"),
-            "catalogo": Catalogo(raiz)}
+            "membros": js("emenda-07-2026-08-16.json"), "catalogo": Catalogo(raiz)}
 
 
 # --------------------------------------------------------------------------- #
@@ -185,6 +185,7 @@ class Modelo:
         self.cat: Catalogo = cfg["catalogo"]
         self.caso, self.projeto = cfg["caso"], cfg["projeto"]
         self.premissas, self.emenda = cfg["premissas"], cfg["emenda"]
+        self.membros = cfg["membros"]
         # cenários de sensibilidade nomeados ANTES de capturar (pré-registro §5 e emenda 03);
         # o cenário primário é o dicionário vazio, e é o que alimenta as tabelas do corpo.
         self.opcoes = {"arm": False, "oracle_ibm": None, "oracle_aws_licenca": None} | (opcoes or {})
@@ -342,11 +343,21 @@ class Modelo:
             motor = servico.split()[-1].lower()
             degrau = escolher(self.escada(("ibm", "gerenciado", f"databases-for-{motor}")),
                               vcpu, ram, f"{servidor['id']} fase 2 IBM")
-            total = degrau["usd_mes"]
-            disco = self.cat.ibm(f"databases-for-{motor}", "standard", "-disk").custo(gb)
-            backup = self.cat.ibm(f"databases-for-{motor}", "standard", "-backup").custo(gb)
+            # emenda 07: as três correções que a documentação primária da IBM autoriza, e só elas.
+            # (i) a tarifa capturada é POR HOST e o plano `standard` provisiona vários membros de
+            # dados; (ii) o disco é alocado POR MEMBRO, mas o fator é o que cada página declara —
+            # o MongoDB tem três membros e disco de ao menos duas vezes o conjunto de dados, de
+            # sorte que usar membros como multiplicador de disco extrapolaria; (iii) a cópia de
+            # segurança é gratuita até o disco provisionado, e a regra selada de retenção é uma
+            # cópia completa, logo a linha é zero — o mesmo tratamento por franquia que o lado AWS
+            # já recebia em `gerenciado_aws`, que é a simetria que dois auditores cobraram.
+            membros = self.membros["membros_por_motor"][motor]
+            mult_disco = self.membros["multiplicador_de_disco_por_motor"][motor]
+            total = degrau["usd_mes"] * membros
+            disco = self.cat.ibm(f"databases-for-{motor}", "standard", "-disk").custo(gb * mult_disco)
+            backup = self.membros["franquia_de_backup"]["custo_no_cenario_primario_usd_mes"]
             arquivo = degrau["tarifa"].arquivo
-            sku = degrau["sku"]
+            sku = f"{degrau['sku']} ×{membros}"
         elif servico.startswith("RDS for") or servico == "DocumentDB" or "ElastiCache" in servico:
             total, disco, backup, sku, arquivo = self.gerenciado_aws(servidor, servico, vcpu, ram, gb)
         elif "Kubernetes" in servico or "EKS" in servico:
@@ -847,8 +858,21 @@ def executar(raiz: Path = RAIZ, escrever: bool = True) -> dict:
             if linha not in trilha:
                 trilha.append(linha)
 
+    # decomposição da diferença entre as nuvens, por item — o MECANISMO, computado.
+    # O corpo afirma qual item produz a diferença; até a v1.5.0 essa afirmação repousava numa
+    # leitura da figura empilhada. Emiti-la como CSV é o que permite ao gate G-05 casar o
+    # percentual do texto com um número selado, em vez de deixá-lo passar por coincidência.
+    decomposicao = []
+    for f in (1, 2):
+        gap = base[(f, "ibm")]["total_36m"] - base[(f, "aws")]["total_36m"]
+        for item in list(TAXONOMIA) + ["ia"]:
+            d = base[(f, "ibm")]["tco"].get(item, 0.0) - base[(f, "aws")]["tco"].get(item, 0.0)
+            decomposicao.append({"fase": f, "item_custo": item, "delta_usd_36m": d,
+                                 "pct_do_gap": d / gap * 100 if gap else 0.0})
+
     saidas = {
         "tco-resumo.csv": resumo,
+        "decomposicao-do-gap.csv": decomposicao,
         "tco-por-item.csv": por_item,
         "tco-por-item-grade.csv": por_item_grade,
         "dimensionamento.csv": detalhe,
