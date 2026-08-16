@@ -52,7 +52,10 @@ identifiers:
     description: Version DOI of v1.6.1
   - type: doi
     value: 10.5281/zenodo.21968891
-    description: Version DOI of v1.7.0 — the deposit the article cites
+    description: Version DOI of v1.7.0
+  - type: doi
+    value: 10.5281/zenodo.21968989
+    description: Version DOI of v1.7.1 — the deposit the article cites
 repository-code: "https://github.com/ulissesflores/block-storage-tco"
 url: "https://github.com/ulissesflores/block-storage-tco"
 keywords:
