@@ -95,7 +95,7 @@ succeed.
 
 ## 4. Divergences: what is not byte-identical to the sealed copy, and why
 
-Of the 96 files carried over from the sealed working tree, **83 are byte-identical** and **13 are
+Of the 96 files carried over from the sealed working tree, **82 are byte-identical** and **14 are
 not**. Every one of the thirteen is listed here with both digests, and the machine-readable form is
 [`divergences.tsv`](divergences.tsv). All 46 captured price bodies and all 4 raw HTML evidence files
 are in the byte-identical group; **no captured evidence was edited**.

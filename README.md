@@ -2,7 +2,7 @@
 
 # Block storage decides the bill
 
-**Two public clouds, one migration, 36 months: the block-storage line alone is USD 110,507 apart — more than the entire gap between the two providers.**
+**Two public clouds, one migration, 36 months: the block-storage line alone is USD 110,506.59 apart — more than the entire gap between the two providers.**
 
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21955051-blue.svg)](https://doi.org/10.5281/zenodo.21955051)
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
@@ -15,9 +15,9 @@
 
 > [!IMPORTANT]
 > **Finding.** For a twelve-server migration priced in São Paulo on 13 August 2026, AWS is cheaper
-> than IBM Cloud by **USD 97,832 over 36 months** in phase 1 (34.1%) and **USD 80,314** in phase 2
+> than IBM Cloud by **USD 97,832.15 over 36 months** in phase 1 (34.1%) and **USD 80,313.86** in phase 2
 > (23.0%). The item that produces the gap is **block storage** — USD 181,525 against USD 71,019, a
-> difference of **USD 110,507**, larger than the total gap. Compute, the line everyone compares,
+> difference of **USD 110,506.59**, larger than the total gap. Compute, the line everyone compares,
 > runs the other way: IBM Cloud is **USD 3,348 cheaper** over the same horizon. The verdict does not
 > flip anywhere in the pre-registered sizing grid: 24 of 24 points favour the same provider.
 
