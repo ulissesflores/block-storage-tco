@@ -47,6 +47,9 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.21968512
     description: Version DOI of v1.6.0 — the deposit that archives the recomputed primary scenario
+  - type: doi
+    value: 10.5281/zenodo.21968563
+    description: Version DOI of v1.6.1 — the superseding deposit the article cites
 repository-code: "https://github.com/ulissesflores/block-storage-tco"
 url: "https://github.com/ulissesflores/block-storage-tco"
 keywords:
