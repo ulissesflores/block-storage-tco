@@ -2,7 +2,7 @@
   "hash_alg": "sha256",
   "merkle": "RFC 6962 MTH, domain separation 0x00 leaf / 0x01 node",
   "nfiles": 121,
-  "tree_hash": "26bc3c89c69859f8f47cc75a6b8156b5e3e5c29017d50b15e3450019973650b4",
+  "tree_hash": "c0d4b72f655d29589f61bc9dcafca11906e861eec396f4bb528e5cae0964ebdb",
   "sealed_chain": {
     "run_id": "20260816-auditoria-r3-v25",
     "root": "fa537655be84f83edc467e2e11b76c84a089e3399640e266b6bbaedc34d6f78b",
@@ -25,7 +25,7 @@
     ".gitignore": "6a4d9b5ffe6d5c2fa271c58838ac79eb2fd3de368d6e6e6b236102fe7ab2b21c",
     ".zenodo.json": "27bfceb9069eb1e4e8002c3fa7a0bdb11d49b121b31a87ffc3c3b2c0682d0e20",
     "CHANGELOG.md": "5963e65386a5526c29163442b2e2d217925202b701489e4206fd93aea6673234",
-    "CITATION.cff": "1a0106141a4f6fa89a0d1b36f8f744d5d54ccdf79cca47f945c3bc80401dcffb",
+    "CITATION.cff": "5eeb1f2a680fd11ebba059ee6cc7edd3d4453e7cc31390bf07dc879659f81338",
     "LICENSE": "ed5ab3ac6067db52115a2396620306430bc9022c4a5d93552724dd0b42b0eeb2",
     "LICENSES/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "LICENSES/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
