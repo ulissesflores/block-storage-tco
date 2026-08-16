@@ -244,7 +244,7 @@ class TestNumerosPublicados(unittest.TestCase):
     """
 
     TCO_36M = {(1, "ibm"): 384802.19, (1, "aws"): 286970.04,
-               (2, "ibm"): 686676.61, (2, "aws"): 349419.27}
+               (2, "ibm"): 686676.61, (2, "aws"): 558229.74}
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -262,16 +262,16 @@ class TestNumerosPublicados(unittest.TestCase):
 
     def test_xiii_o_delta_encolhe_quando_o_headroom_cresce(self) -> None:
         """O mecanismo da tese, medido: o método de dimensionamento move o veredito na direção
-        da virada — de 96,5% para 80,4% na fase 2 — sem cruzar dentro da grade."""
+        da virada — de 23,0% para 16,2% na fase 2 — sem cruzar dentro da grade."""
         fase2 = sorted((l for l in self.r["grade"]["linhas"] if l["fase"] == 2),
                        key=lambda l: l["multiplicador"])
-        self.assertAlmostEqual(fase2[0]["delta_pct_sobre_menor"], 96.52, places=1)
-        self.assertAlmostEqual(fase2[-1]["delta_pct_sobre_menor"], 80.36, places=1)
+        self.assertAlmostEqual(fase2[0]["delta_pct_sobre_menor"], 23.01, places=1)
+        self.assertAlmostEqual(fase2[-1]["delta_pct_sobre_menor"], 16.18, places=1)
         self.assertLess(fase2[-1]["delta_pct_sobre_menor"], fase2[0]["delta_pct_sobre_menor"])
 
     def test_xiii_veredito_da_tese_e_computado_e_nao_redigido(self) -> None:
         self.assertEqual(self.r["tese"]["veredito"], "TESE NÃO REFUTADA")
-        self.assertEqual(len(self.r["tese"]["violacoes"]), 8)
+        self.assertEqual(len(self.r["tese"]["violacoes"]), 12)
         self.assertEqual(len(self.r["tese"]["deltas"]), 24)
 
     def test_xiii_nao_ha_virada_dentro_da_grade_pre_registrada(self) -> None:
@@ -284,6 +284,94 @@ class TestNumerosPublicados(unittest.TestCase):
         for chave in self.TCO_36M:
             self.assertEqual(outra["base"][chave]["total_36m"],
                              self.r["base"][chave]["total_36m"])
+
+
+class TestParidadeDeRedundancia(unittest.TestCase):
+    """(xvi) Emenda 08: as duas nuvens pagam o mesmo número de réplicas de dados na fase 2.
+
+    A acusação externa (GPT-5, achado 4, GRAVE) era que um agrupamento IBM de dois ou três membros
+    estava sendo comparado a instância única da AWS. A correção fixa a unidade pelo lado que NÃO
+    permite escolher — o plano Standard da IBM, que é HA por construção — e leva a AWS até ela.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.em = CFG["redundancia"]
+        cls.dim = {}
+        for l in tco.executar(RAIZ, escrever=False)["base"][(2, "aws")]["detalhe"]:
+            if l["papel"] == "gerenciado":
+                cls.dim[l["servidor"]] = l
+
+    def test_xvi_a_aws_paga_o_numero_de_replicas_que_o_plano_da_ibm_provisiona(self) -> None:
+        membros = CFG["membros"]["membros_por_motor"]
+        for servidor, entrada in self.em["replicas_por_servidor"].items():
+            with self.subTest(servidor=servidor):
+                self.assertEqual(entrada["replicas"], membros[entrada["motor_ibm"]])
+                self.assertIn(f"\u00d7{entrada['replicas']}", self.dim[servidor]["sku"])
+
+    def test_xvi_a_linearidade_de_replica_e_medicao_da_AWS_nao_extrapolacao(self) -> None:
+        """Vetores lidos do disco: a AWS cobra 2x por duas réplicas e 3x por três, no disco.
+
+        Este é o teste que sustenta a regra. Se a AWS deixar de precificar réplica linearmente, a
+        convenção da emenda 08 perde a base e o paper tem de dizer outra coisa.
+        """
+        def rds(uso):
+            return CAT.aws_um("AmazonRDS", lambda a: (a.get("databaseEngine") == "MySQL"
+                                                      and a.get("usagetype") == uso)).preco
+        single = rds("SAE1-RDS:GP3-Storage")
+        self.assertEqual(single, 0.219)
+        self.assertAlmostEqual(rds("SAE1-RDS:Multi-AZ-GP3-Storage") / single, 2.0, places=6)
+        self.assertAlmostEqual(rds("SAE1-RDS:Multi-AZCluster-GP3-Storage") / single, 3.0, places=6)
+
+    def test_xvi_na_instancia_a_regra_ENCARECE_a_aws_e_isso_e_declarado(self) -> None:
+        """Em três réplicas a AWS dá desconto (2,8467x); aplicar 3x cobra ~5,4% a mais dela.
+
+        O desvio corre CONTRA o resultado publicado — encolhe a diferença que o trabalho afirma.
+        O teste existe para que ninguém o troque por um que o esconda.
+        """
+        def inst(dep, tipo):
+            return CAT.aws_um("AmazonRDS", lambda a: (
+                a.get("databaseEngine") == "MySQL" and a.get("instanceType") == tipo
+                and a.get("deploymentOption") == dep
+                and (dep != "Single-AZ" or a.get("licenseModel") == "No license required"))).preco
+        self.assertAlmostEqual(inst("Multi-AZ", "db.m6i.xlarge") / inst("Single-AZ", "db.m6i.xlarge"),
+                               2.0, places=6)
+        razao3 = inst("Multi-AZ (readable standbys)", "db.m5d.xlarge") / inst("Single-AZ", "db.m5d.xlarge")
+        self.assertAlmostEqual(razao3, 2.8467, places=3)
+        self.assertLess(razao3, 3.0, "se a AWS igualar 3,0 o desvio some e a nota pode cair")
+
+
+class TestSensibilidadeDoDiscoDoBanco1(unittest.TestCase):
+    """(xvii) Achado 2 (GRAVE) da auditoria externa: o alvo de IOPS do banco-1 é circular.
+
+    O auditor computou, por conta própria, que sob disco de uso geral a diferença da fase 1 cairia
+    para 24,34%. O modelo reproduz esse número — e o teste trava a coincidência, porque uma
+    concordância entre o crítico e o corrigido é a evidência mais forte de que a correção é a que
+    ele pediu, e não uma que apenas se parece com ela.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        linhas = tco.executar(RAIZ, escrever=False)
+        cls.s = {(l["nuvem"], l["fase"]): float(l["tco_36m"])
+                 for l in tco.sensibilidades(CFG) if l["cenario"] == "banco-1-disco-uso-geral"}
+        cls.base = linhas["base"]
+
+    def test_xvii_reproduz_os_24_34_por_cento_do_auditor(self) -> None:
+        ibm, aws = self.s[("ibm", 1)], self.s[("aws", 1)]
+        self.assertAlmostEqual((ibm - aws) / aws * 100, 24.34, places=2)
+
+    def test_xvii_o_cenario_nao_troca_o_vencedor(self) -> None:
+        for fase in (1, 2):
+            self.assertLess(self.s[("aws", fase)], self.s[("ibm", fase)], f"fase {fase}")
+
+    def test_xvii_incide_nas_DUAS_nuvens_e_so_na_fase_1(self) -> None:
+        """Aplicar o degrau alternativo a um lado só mediria escolha de projeto, não preço; e a
+        fase 2 não usa a classe de bloco do banco-1, porque ali ele vira serviço gerenciado."""
+        self.assertLess(self.s[("ibm", 1)], self.base[(1, "ibm")]["total_36m"])
+        self.assertLess(self.s[("aws", 1)], self.base[(1, "aws")]["total_36m"])
+        self.assertAlmostEqual(self.s[("ibm", 2)], self.base[(2, "ibm")]["total_36m"], places=4)
+        self.assertAlmostEqual(self.s[("aws", 2)], self.base[(2, "aws")]["total_36m"], places=4)
 
 
 class TestCoberturaDaTaxonomia(unittest.TestCase):

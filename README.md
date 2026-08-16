@@ -8,7 +8,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](LICENSES/Apache-2.0.txt)
 [![License: CC BY 4.0](https://img.shields.io/badge/data%20%26%20docs-CC--BY--4.0-lightgrey.svg)](LICENSES/CC-BY-4.0.txt)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
-[![tests](https://img.shields.io/badge/tests-65_passing-brightgreen.svg)](tests/)
+[![tests](https://img.shields.io/badge/tests-71_passing-brightgreen.svg)](tests/)
 [![provenance](https://img.shields.io/badge/provenance-SHA--256_chain-informational.svg)](PROVENANCE.md)
 
 </div>
@@ -16,13 +16,13 @@
 > [!IMPORTANT]
 > **Finding.** For a twelve-server migration priced in São Paulo on 13 August 2026, AWS is cheaper
 > than IBM Cloud by **USD 97,832.15 over 36 months** in phase 1 (34.1%) and **USD 337,257.34** in phase 2
-> (96.5%). The item that produces the gap is **block storage** — in phase 1, USD 181,525 against
-> USD 71,019, a difference of **USD 110,506.59**, larger than the whole gap, so removing that one
-> line reverses the ranking. In phase 2 block storage is still the largest single driver, at
-> **79.7%** of the gap, but it no longer decides alone: the managed-database premium accounts for a
-> further **19.2%**. Compute, the line everyone compares, runs the other way in phase 1: IBM Cloud
-> is **USD 3,348 cheaper** over the same horizon. The verdict does not flip anywhere in the
-> pre-registered sizing grid: 14 of 14 points favour the same provider.
+> (23.0%), with both clouds priced at the same number of billed data replicas. The item that
+> produces the gap is **block storage**, and in both phases it is larger than the whole gap, so
+> removing that one line reverses the ranking: USD 110,506.59 against a 97,832.15 gap in phase 1,
+> and USD 216,751.50 against a 128,446.87 gap in phase 2. Compute, the line everyone compares, runs
+> the other way in phase 1: IBM Cloud is **USD 3,348 cheaper** over the same horizon. The verdict
+> does not flip anywhere in the pre-registered sizing grid: 14 of 14 points favour the same
+> provider.
 
 This repository is the **evidence and computation** behind a case study on migrating an on-premises
 estate to public cloud. It contains the raw price bodies captured from the providers' public
@@ -98,7 +98,7 @@ provenance chain**, recomputed here from the published files. See [`PROVENANCE.m
 | Phase | IBM Cloud (USD) | AWS (USD) | Gap (USD) | Gap (%) | Lower |
 |---|---:|---:|---:|---:|---|
 | 1 — lift-and-shift | 384,802.19 | 286,970.04 | 97,832.15 | 34.1% | AWS |
-| 2 — modernisation | 686,676.61 | 349,419.27 | 337,257.34 | 96.5% | AWS |
+| 2 — modernisation | 686,676.61 | 558,229.74 | 128,446.87 | 23.0% | AWS |
 
 Where the gap comes from, phase 1 ([`output/tabelas/tco-por-item.csv`](output/tabelas/tco-por-item.csv)):
 
@@ -111,17 +111,17 @@ Where the gap comes from, phase 1 ([`output/tabelas/tco-por-item.csv`](output/ta
 | Backup | 5,761.07 | 7,867.37 | −2,106.30 |
 | Network, IP and load balancer | 3,644.01 | 3,547.80 | +96.21 |
 
-And phase 2, where modernisation moves managed databases onto the provider's own service
+And phase 2, where both clouds pay for the same number of data replicas — shares exceed 100% because the managed premium runs the other way
 ([`output/tabelas/decomposicao-do-gap.csv`](output/tabelas/decomposicao-do-gap.csv)):
 
 | Cost item | IBM Cloud (USD) | AWS (USD) | Difference (USD) | Share of gap |
 |---|---:|---:|---:|---:|
-| Block storage | 340,314.80 | 71,539.32 | **+268,775.48** | 79.7% |
-| Managed-service premium | 137,336.38 | 72,682.60 | **+64,653.79** | 19.2% |
-| Compute | 126,077.12 | 117,309.55 | **+8,767.57** | 2.6% |
-| Object storage | 38,432.38 | 52,483.60 | −14,051.22 | −4.2% |
-| Data transfer out | 39,912.54 | 33,177.60 | **+6,734.94** | 2.0% |
-| Backup | 2,186.56 | 0.00 | **+2,186.56** | 0.6% |
+| Block storage | 340,314.80 | 123,563.31 | **+216,751.50** | 168.7% |
+| Managed-service premium | 137,336.38 | 229,469.08 | −92,132.69 | −71.7% |
+| Compute | 126,077.12 | 117,309.55 | **+8,767.57** | 6.8% |
+| Object storage | 38,432.38 | 52,483.60 | −14,051.22 | −10.9% |
+| Data transfer out | 39,912.54 | 33,177.60 | **+6,734.94** | 5.2% |
+| Backup | 2,186.56 | 0.00 | **+2,186.56** | 1.7% |
 
 ![36-month TCO decomposed by cost item](output/figuras/figura-4-tco-empilhado.png)
 
@@ -196,7 +196,7 @@ tests/                 61 tests: published numbers, laws, determinism, integrity
   title     = {Block storage decides the bill: audited public-cloud price capture
                and a deterministic 36-month TCO model},
   year      = {2026},
-  version   = {1.6.1},
+  version   = {1.7.0},
   doi       = {10.5281/zenodo.21955051},
   publisher = {Zenodo},
   url       = {https://doi.org/10.5281/zenodo.21955051}

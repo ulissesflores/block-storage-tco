@@ -8,7 +8,6 @@ aws,SAE1-Lambda-Provisioned-Concurrency,Lambda-GB-Second,6.6372e-06,até ∞: 6.
 aws,SAE1-Lambda-Provisioned-GB-Second,Lambda-GB-Second,1.54867e-05,até ∞: 1.54867e-05,sa-east-1,api-versionada,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
 aws,SAE1-LoadBalancerUsage,Hrs,0.034,até ∞: 0.034,sa-east-1,api-versionada,data/precos/api/aws-AWSELB-sa-east-1-2026-08-13.json
 aws,SAE1-RDS:GP3-Storage,GB-Mo,0.219,até ∞: 0.219,sa-east-1,api-versionada,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
-aws,SAE1-RDS:Multi-AZ-GP3-Storage,GB-Mo,0.438,até ∞: 0.438,sa-east-1,api-versionada,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
 aws,SAE1-Request,Request,2e-07,até ∞: 2e-07,sa-east-1,api-versionada,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json
 aws,SAE1-StorageUsage,GB-Mo,0.19,até ∞: 0.19,sa-east-1,api-versionada,data/precos/api/aws-AmazonDocDB-sa-east-1-2026-08-13.json
 aws,SAE1-TimedStorage-ByteHrs,GB-Mo,0.0405,até 51200: 0.0405 | até 512000: 0.039 | até ∞: 0.037,sa-east-1,api-versionada,data/precos/api/aws-AmazonS3-sa-east-1-2026-08-13.json

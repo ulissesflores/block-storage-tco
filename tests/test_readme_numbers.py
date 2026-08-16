@@ -59,7 +59,7 @@ class TestManchete(unittest.TestCase):
         self.assertAlmostEqual(total[("1", "ibm")], 384802.19, places=2)
         self.assertAlmostEqual(total[("1", "aws")], 286970.04, places=2)
         self.assertAlmostEqual(total[("2", "ibm")], 686676.61, places=2)
-        self.assertAlmostEqual(total[("2", "aws")], 349419.27, places=2)
+        self.assertAlmostEqual(total[("2", "aws")], 558229.74, places=2)
 
     def test_diferencas_publicadas(self) -> None:
         total = total_por_nuvem()
@@ -70,9 +70,9 @@ class TestManchete(unittest.TestCase):
         f1 = round(total[("1", "ibm")], 2) - round(total[("1", "aws")], 2)
         f2 = round(total[("2", "ibm")], 2) - round(total[("2", "aws")], 2)
         self.assertAlmostEqual(f1, 97832.15, places=2)
-        self.assertAlmostEqual(f2, 337257.34, places=2)
+        self.assertAlmostEqual(f2, 128446.87, places=2)
         self.assertAlmostEqual(100 * f1 / total[("1", "aws")], 34.1, places=1)
-        self.assertAlmostEqual(100 * f2 / total[("2", "aws")], 96.5, places=1)
+        self.assertAlmostEqual(100 * f2 / total[("2", "aws")], 23.0, places=1)
 
     def test_o_bloco_e_maior_que_a_diferenca_total(self) -> None:
         itens, total = por_item(), total_por_nuvem()
@@ -103,19 +103,22 @@ class TestOBlocoDecideOVencedor(unittest.TestCase):
         self.assertLess(ibm, aws)
         self.assertAlmostEqual(aws - ibm, 12674.44, places=2)
 
-    def test_na_fase_2_o_bloco_domina_mas_ja_nao_decide_sozinho(self) -> None:
+    def test_na_fase_2_retirar_o_bloco_tambem_inverte(self) -> None:
+        """Sob paridade de réplicas dos dois lados, o contrafactual volta a inverter na fase 2.
+
+        Entre 1.6.0 e 1.6.1 ele NÃO invertia: a IBM pagava todos os membros e a AWS, instância
+        única. Com a unidade de comparação corrigida (v1.7.0) a inversão reaparece, e é mais
+        forte que na fase 1. Fica registrado que a claim do título já esteve parcialmente falsa
+        neste repositório — a história está no CHANGELOG, não apagada.
+        """
         itens, total = por_item(), total_por_nuvem()
         ibm = total[("2", "ibm")] - itens[("2", "ibm", "bloco")]
         aws = total[("2", "aws")] - itens[("2", "aws", "bloco")]
-        self.assertLess(aws, ibm, "fase 2: sem bloco a AWS segue mais barata")
-        self.assertAlmostEqual(ibm - aws, 68481.86, places=2)
-        # dominance is still measurable, and it is the claim the README makes
+        self.assertLess(ibm, aws, "fase 2: sem bloco a IBM deveria ficar menor")
+        self.assertAlmostEqual(aws - ibm, 88304.62, places=2)
         bloco = itens[("2", "ibm", "bloco")] - itens[("2", "aws", "bloco")]
-        premio = itens[("2", "ibm", "premio-gerenciado")] - itens[("2", "aws", "premio-gerenciado")]
         gap = total[("2", "ibm")] - total[("2", "aws")]
-        self.assertAlmostEqual(100 * bloco / gap, 79.7, places=1)
-        self.assertAlmostEqual(100 * premio / gap, 19.2, places=1)
-        self.assertGreater(bloco, premio)
+        self.assertGreater(bloco, gap, "o item tem de ser maior que a diferença inteira")
 
     def test_com_bloco_a_aws_vence_nas_duas_fases(self) -> None:
         total = total_por_nuvem()
@@ -130,12 +133,12 @@ class TestDecomposicaoDaFase2NoReadme(unittest.TestCase):
     exists from v1.6.0, when the member/disk correction made phase 2 the interesting half.
     """
 
-    ESPERADO = {"bloco": (340314.80, 71539.32, 268775.48, 79.7),
-                "premio-gerenciado": (137336.38, 72682.60, 64653.79, 19.2),
-                "compute": (126077.12, 117309.55, 8767.57, 2.6),
-                "objeto": (38432.38, 52483.60, -14051.22, -4.2),
-                "egress": (39912.54, 33177.60, 6734.94, 2.0),
-                "backup": (2186.56, 0.00, 2186.56, 0.6)}
+    ESPERADO = {"bloco": (340314.80, 123563.31, 216751.50, 168.7),
+                "premio-gerenciado": (137336.38, 229469.08, -92132.69, -71.7),
+                "compute": (126077.12, 117309.55, 8767.57, 6.8),
+                "objeto": (38432.38, 52483.60, -14051.22, -10.9),
+                "egress": (39912.54, 33177.60, 6734.94, 5.2),
+                "backup": (2186.56, 0.00, 2186.56, 1.7)}
 
     def test_a_tabela_da_fase_2_bate_com_o_csv(self) -> None:
         itens = por_item()

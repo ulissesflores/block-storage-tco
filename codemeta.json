@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "Block storage decides the bill: audited public-cloud price capture and a deterministic 36-month TCO model",
   "description": "Raw price bodies captured on 2026-08-13 from the IBM Cloud Global Catalog (br-sao) and the AWS Price List (sa-east-1), the code that captured them, and a deterministic 36-month total-cost-of-ownership model for a twelve-server migration under two sizing methods. Every published number is asserted by a test, and the captured evidence recomputes to the stage hashes of the study's sealed provenance chain.",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "dateCreated": "2026-08-13",
   "datePublished": "2026-08-15",
   "programmingLanguage": "Python",

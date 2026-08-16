@@ -34,7 +34,7 @@ import filas            # noqa: E402
 
 # os quatro totais de 36 meses que o corpo publica; a mesma lista está em TestNumerosPublicados
 TOTAIS_PUBLICADOS = {("C1", 1, "ibm"): 384802.1927, ("C2", 1, "aws"): 286970.0366,
-                     ("C3", 2, "ibm"): 686676.6055, ("C4", 2, "aws"): 349419.2658}
+                     ("C3", 2, "ibm"): 686676.6055, ("C4", 2, "aws"): 558229.7352}
 
 
 def ler(nome: str) -> list[dict]:

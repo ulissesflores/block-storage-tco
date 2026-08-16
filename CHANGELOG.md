@@ -4,6 +4,36 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] — 2026-08-16
+
+**Redundancy parity.** An external audit found that phase 2 compared an IBM Cloud cluster of two or
+three data members against a single AWS instance, and that the commercial-parity claim did not hold
+there. It was right, and 1.6.x made it more visible by charging IBM for every member. The unit of
+comparison is now declared and applied to both sides.
+
+### Changed
+
+- **Both clouds are priced at the same number of billed data replicas** in phase 2. The count comes
+  from the IBM Standard plan because that is the side that offers no choice — the cluster is
+  intrinsic — while AWS offers single-instance, Multi-AZ and cluster deployments. Convention, source
+  measurements and limits: [`configs/emenda-08-2026-08-16.json`](configs/emenda-08-2026-08-16.json).
+- **This is AWS's own arithmetic, not the author's extrapolation:** in the captured slice, storage
+  for two replicas costs exactly 2× the single price and for three replicas exactly 3×. On the
+  instance AWS discounts the three-replica product (2.8467× instead of 3×), so pricing three
+  replicas at the unit rate overcharges AWS by ~5% — a residual that *shrinks* the published gap,
+  which is the safe side of the error. Three cases lock these ratios.
+- **Phase 2, recomputed:** AWS goes from USD 349,419.27 to **558,229.74**, and the gap from 96.5% to
+  **23.0%** (USD 128,446.87). The winner still does not change anywhere in the grid.
+- **The headline claim is whole again.** Between 1.6.0 and 1.6.1, removing block storage no longer
+  reversed the phase-2 ranking. With parity on both sides it does again, and by more than in phase 1
+  (USD 88,304.62). The intermediate state is left in this changelog rather than quietly overwritten.
+- **Second audit finding closed by pricing, not by argument.** The 10 IOPS/GB target on Banco 1 was
+  inherited from the sealed mapping while the case only states high availability — circular, as the
+  auditor said. Rather than revising a pre-registered input after seeing the result, the alternative
+  is now a named scenario: with general-purpose disk on both clouds the phase-1 gap falls from 34.1%
+  to **24.34%**, reproducing the auditor's own figure to the decimal, without changing the winner.
+- Reference `Harchol-Balter (2013)` now carries its DOI.
+
 ## [1.6.1] — 2026-08-16
 
 Superseding release for 1.6.0. The 1.6.0 tag was cut before the repository's own documentation had

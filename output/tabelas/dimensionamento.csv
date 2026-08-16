@@ -81,18 +81,18 @@ app-6,2,ibm,premio-gerenciado,iks.vpc.bxf-4x16 − bxf-4x16,,,2,38.7776,data/pre
 —,2,ibm,egress,saída para internet,,,1,1108.6817,ver trilha
 —,2,ibm,rede,balanceador,,,1,41.6939,ver trilha
 —,2,ibm,premio-gerenciado,plano de controle do cluster,,,1,0.0000,ver trilha
-banco-1,2,aws,gerenciado,db.m6i.xlarge,4.0000,16.0000,2,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
-banco-1,2,aws,premio-gerenciado,db.m6i.xlarge − m6a.xlarge,,,2,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
-banco-2,2,aws,gerenciado,db.m6i.2xlarge,8.0000,32.0000,1,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
-banco-2,2,aws,premio-gerenciado,db.m6i.2xlarge − m6a.2xlarge,,,1,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
-banco-3,2,aws,gerenciado,db.m5.2xlarge,6.0000,24.0000,1,680.3600,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
-banco-3,2,aws,premio-gerenciado,db.m5.2xlarge − m6a.2xlarge,,,1,278.2760,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
-banco-4,2,aws,gerenciado,db.r5.xlarge,4.0000,16.0000,1,836.5800,data/precos/api/aws-AmazonDocDB-sa-east-1-2026-08-13.json
-banco-4,2,aws,premio-gerenciado,db.r5.xlarge − m6a.xlarge,,,1,635.5380,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-1,2,aws,gerenciado,db.m6i.xlarge ×3,4.0000,16.0000,2,1011.7800,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-1,2,aws,premio-gerenciado,db.m6i.xlarge ×3 − m6a.xlarge,,,2,609.6960,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-2,2,aws,gerenciado,db.m6i.2xlarge ×3,8.0000,32.0000,1,2023.5600,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-2,2,aws,premio-gerenciado,db.m6i.2xlarge ×3 − m6a.2xlarge,,,1,1621.4760,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-3,2,aws,gerenciado,db.m5.2xlarge ×2,6.0000,24.0000,1,1360.7200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
+banco-3,2,aws,premio-gerenciado,db.m5.2xlarge ×2 − m6a.2xlarge,,,1,958.6360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-4,2,aws,gerenciado,db.r5.xlarge ×3,4.0000,16.0000,1,2509.7400,data/precos/api/aws-AmazonDocDB-sa-east-1-2026-08-13.json
+banco-4,2,aws,premio-gerenciado,db.r5.xlarge ×3 − m6a.xlarge,,,1,2308.6980,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
 banco-5,2,aws,gerenciado,db.m5.2xlarge,8.0000,32.0000,1,674.5200,data/precos/api/aws-AmazonRDS-sa-east-1-2026-08-13.json
 banco-5,2,aws,premio-gerenciado,db.m5.2xlarge − m6a.2xlarge,,,1,272.4360,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
-banco-6,2,aws,gerenciado,cache.r5.large,2.0000,8.0000,1,315.3600,data/precos/api/aws-AmazonElastiCache-sa-east-1-2026-08-13.json
-banco-6,2,aws,premio-gerenciado,cache.r5.large − m6a.large,,,1,214.8390,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
+banco-6,2,aws,gerenciado,cache.r5.large ×2,2.0000,8.0000,1,630.7200,data/precos/api/aws-AmazonElastiCache-sa-east-1-2026-08-13.json
+banco-6,2,aws,premio-gerenciado,cache.r5.large ×2 − m6a.large,,,1,530.1990,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
 app-1,2,aws,gerenciado,m6a.xlarge,4.0000,8.0000,2,402.0840,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
 app-1,2,aws,premio-gerenciado,m6a.xlarge − m6a.xlarge,,,2,0.0000,data/precos/api/aws-AmazonEC2-sa-east-1-2026-08-13.json
 app-2,2,aws,gerenciado,lambda concorrência provisionada,2.0000,4.0000,2,41.9266,data/precos/api/aws-AWSLambda-sa-east-1-2026-08-13.json

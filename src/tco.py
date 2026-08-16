@@ -72,7 +72,8 @@ def carregar(raiz: Path = RAIZ) -> dict:
         return json.loads((raiz / "configs" / nome).read_text(encoding="utf-8"))
     return {"caso": js("caso-xyz.json"), "projeto": js("projeto-tecnico.json"),
             "premissas": js("premissas-carga.json"), "emenda": js("emenda-03-2026-08-13.json"),
-            "membros": js("emenda-07-2026-08-16.json"), "catalogo": Catalogo(raiz)}
+            "membros": js("emenda-07-2026-08-16.json"),
+            "redundancia": js("emenda-08-2026-08-16.json"), "catalogo": Catalogo(raiz)}
 
 
 # --------------------------------------------------------------------------- #
@@ -186,9 +187,11 @@ class Modelo:
         self.caso, self.projeto = cfg["caso"], cfg["projeto"]
         self.premissas, self.emenda = cfg["premissas"], cfg["emenda"]
         self.membros = cfg["membros"]
+        self.redundancia = cfg["redundancia"]
         # cenários de sensibilidade nomeados ANTES de capturar (pré-registro §5 e emenda 03);
         # o cenário primário é o dicionário vazio, e é o que alimenta as tabelas do corpo.
-        self.opcoes = {"arm": False, "oracle_ibm": None, "oracle_aws_licenca": None} | (opcoes or {})
+        self.opcoes = {"arm": False, "oracle_ibm": None, "oracle_aws_licenca": None,
+                       "disco_banco_1_uso_geral": False} | (opcoes or {})
         self.detalhe: list[dict] = []
         self._escadas: dict[tuple, list[dict]] = {}
 
@@ -281,12 +284,26 @@ class Modelo:
         return custo, f"gp3 ({alvo:.0f} IOPS)", armazenamento.arquivo
 
     # -- fase 1: máquina virtual + bloco ------------------------------------ #
+    def classe_de_disco(self, servidor_id: str) -> str:
+        """A classe declarada no de-para, com um cenário de sensibilidade nomeado para o banco-1.
+
+        Achado 2 (GRAVE) da auditoria externa: a linha de base do banco-1 pede apenas alta
+        disponibilidade, e o degrau de dez operações por gigabyte foi fixado porque o degrau
+        comercial existe — raciocínio circular no mecanismo central da tese. A resposta honesta
+        não é remover o degrau (o de-para o declarou ANTES da captura, e mexer nele agora seria
+        escolher o resultado): é PRECIFICAR a alternativa e publicar o número.
+        """
+        classe = next(d["fase1_ibm"]["disco"] for d in self.projeto["de_para"]
+                      if d["id"] == servidor_id)
+        if servidor_id == "banco-1" and self.opcoes["disco_banco_1_uso_geral"]:
+            return "gen2-volume-general-purpose"
+        return classe
+
     def fase1(self, nuvem: str, servidor: dict, alvo: dict, mult: float) -> dict[str, float]:
         vcpu, ram = requisito(servidor, mult)
         n = alvo.get("instancias", 1)
         # a classe de disco declarada do lado IBM define o ALVO de desempenho dos dois lados
-        classe = next(d["fase1_ibm"]["disco"] for d in self.projeto["de_para"]
-                      if d["id"] == servidor["id"])
+        classe = self.classe_de_disco(servidor["id"])
         gb = servidor["armazenamento_gb"] * n
         if nuvem == "ibm" and servidor["tecnologia"] == "Oracle Database":
             # os DOIS caminhos da D13 valem já na fase 1: o lift-and-shift literal é a máquina
@@ -359,7 +376,8 @@ class Modelo:
             arquivo = degrau["tarifa"].arquivo
             sku = f"{degrau['sku']} ×{membros}"
         elif servico.startswith("RDS for") or servico == "DocumentDB" or "ElastiCache" in servico:
-            total, disco, backup, sku, arquivo = self.gerenciado_aws(servidor, servico, vcpu, ram, gb)
+            total, disco, backup, sku, arquivo = self.gerenciado_aws(servidor, servico, vcpu,
+                                                                     ram, gb)
         elif "Kubernetes" in servico or "EKS" in servico:
             total, disco, backup, sku, arquivo = self.kubernetes(nuvem, servidor, vcpu, ram, n)
             # o prêmio do contêiner isola a GESTÃO, então a base é a máquina virtual do MESMO
@@ -404,11 +422,25 @@ class Modelo:
         return {"usd_mes": degrau["usd_hora"] * HORAS_MES * n, "sku": degrau["sku"],
                 "arquivo": degrau["tarifa"].arquivo}
 
+    def replicas_aws(self, servidor_id: str) -> int:
+        """Emenda 08: quantas réplicas de dados a linha da AWS paga nesta comparação.
+
+        O número vem do plano da IBM porque é o lado que NÃO permite escolher — o Standard é HA
+        por construção. Fixar a unidade pelo lado rígido e levar a nuvem flexível até ela é o que
+        impede que a escolha de implantação decida o veredito, que foi a acusação externa.
+        """
+        entrada = self.redundancia["replicas_por_servidor"].get(servidor_id)
+        return entrada["replicas"] if entrada else 1
+
     def gerenciado_aws(self, servidor: dict, servico: str, vcpu: float, ram: float,
                        gb: float) -> tuple:
+        # emenda 08: preço unitário x réplicas, na instância E no armazenamento. A implantação
+        # deixa de ser escolhida por `sla_morde`: usa-se sempre o unitário Single-AZ como unidade,
+        # porque a própria AWS cobra o dobro dele para duas réplicas (medido, e travado por KAT).
+        n_rep = self.replicas_aws(servidor["id"])
         if servico.startswith("RDS for"):
             motor = servico.split()[-1]
-            implantacao = "Multi-AZ" if servidor.get("sla_morde") else "Single-AZ"
+            implantacao = "Single-AZ"
             # D13: licença própria simétrica no primário. A licença inclusa só existe na edição
             # Standard Two da AWS e entra apenas no cenário de sensibilidade nomeado.
             licenca = ("Bring your own license" if motor == "Oracle" else "No license required")
@@ -416,14 +448,14 @@ class Modelo:
                 licenca = "License included"
             degrau = escolher(self.escada(("aws", "rds", (motor, implantacao, licenca))), vcpu, ram,
                               f"{servidor['id']} fase 2 RDS")
-            uso = "Multi-AZ-GP3-Storage" if implantacao == "Multi-AZ" else "GP3-Storage"
             disco = self.cat.aws_um("AmazonRDS", lambda a: (
-                a.get("databaseEngine") == motor and a.get("usagetype") == f"SAE1-RDS:{uso}")).custo(gb)
+                a.get("databaseEngine") == motor
+                and a.get("usagetype") == "SAE1-RDS:GP3-Storage")).custo(gb) * n_rep
         elif servico == "DocumentDB":
             degrau = escolher(self.escada(("aws", "docdb", None)), vcpu, ram,
                               f"{servidor['id']} fase 2 DocumentDB")
             disco = self.cat.aws_um("AmazonDocDB", lambda a: a.get("usagetype") ==
-                                    "SAE1-StorageUsage").custo(gb)
+                                    "SAE1-StorageUsage").custo(gb) * n_rep
         else:                                              # ElastiCache: cache é servido de memória
             degrau = escolher(self.escada(("aws", "cache", "r")), vcpu, ram,
                               f"{servidor['id']} fase 2 ElastiCache")
@@ -438,7 +470,8 @@ class Modelo:
         # a posição comercial, não cláusula contratual verificada. A regra selada é UMA cópia
         # completa, que iguala o provisionado e cabe inteira na franquia. Registro e trecho literal
         # em 00-material-fonte/research/EIXO-6-sla-ferramentas-politicas.md.
-        return (degrau["usd_hora"] * HORAS_MES, disco, 0.0, degrau["sku"],
+        sku = degrau["sku"] if n_rep == 1 else f"{degrau['sku']} \u00d7{n_rep}"
+        return (degrau["usd_hora"] * HORAS_MES * n_rep, disco, 0.0, sku,
                 degrau["tarifa"].arquivo)
 
     def kubernetes(self, nuvem: str, servidor: dict, vcpu: float, ram: float, n: int) -> tuple:
@@ -780,6 +813,10 @@ def sensibilidades(cfg: dict) -> list[dict]:
            "só existe na edição Standard Two da AWS; não há equivalente na IBM")
     juntar("graviton-aws", "aws", (1, 2), {"arm": True},
            "ARM admitido do lado AWS, sem contrapartida no catálogo IBM de br-sao")
+    for nuvem in ("ibm", "aws"):
+        juntar("banco-1-disco-uso-geral", nuvem, (1, 2), {"disco_banco_1_uso_geral": True},
+               "achado externo: a linha de base do banco-1 declara alta disponibilidade, não "
+               "desempenho de disco; aqui ele recebe o degrau de uso geral nas DUAS nuvens")
     return linhas
 
 

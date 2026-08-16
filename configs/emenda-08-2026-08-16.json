@@ -1,0 +1,56 @@
+{
+  "_natureza": "emenda ao modelo de custo — UNIDADE DE COMPARAÇÃO DE REDUNDÂNCIA na fase 2: as duas nuvens passam a ser precificadas com o mesmo número de réplicas de dados faturadas",
+  "_data": "2026-08-16",
+  "_etapa": "E9.28 — achado 4 (GRAVE) da auditoria externa GPT-5 sobre o v24, executado",
+  "_a_acusacao_na_integra": "\"A comparação financeira da fase 2 não preserva redundância equivalente: os bancos IBM Standard são intrinsecamente HA com 2/3 membros, enquanto Banco 2, Banco 3 e outras linhas AWS foram precificadas Single-AZ; a alegação de paridade comercial não vale para esses cenários.\" (codex-gpt5-alto-20260816-0322am.md, achado 4). A acusação PROCEDE, e ficou mais visível depois da emenda 07, que passou a cobrar da IBM todos os membros.",
+  "_por_que_arquivo_novo": "`projeto-tecnico.json` e as emendas 01 a 07 estão selados no estágio `inputs`, e a identidade em bytes deles é a prova de que o compromisso precede os dados. A correção entra como arquivo próprio e datado, lido por `tco.py`.",
+  "unidade_declarada": {
+    "_regra": "na fase 2, a linha de banco gerenciado de CADA nuvem é precificada com o mesmo número de réplicas de dados faturadas; esse número é o que o plano da IBM provisiona por construção (emenda 07), porque é o lado que NÃO permite escolher",
+    "_por_que_o_numero_vem_da_IBM": "O plano Standard da IBM não oferece opção de menos membros — a redundância é intrínseca ao produto. A AWS, ao contrário, oferece Single-AZ, Multi-AZ e Multi-AZ com standbys legíveis. Como só um dos lados pode ser ajustado, a unidade tem de ser fixada pelo lado rígido e a nuvem flexível é levada até ela; o contrário permitiria escolher o resultado.",
+    "_o_que_isso_substitui": "Antes, a implantação da AWS era Multi-AZ apenas onde o nível de serviço morde (`sla_morde`) e Single-AZ no resto. Isso comparava um agrupamento de três membros da IBM contra uma instância única da AWS em banco-2, banco-4 e banco-6.",
+    "aplicacao": "preço unitário Single-AZ (ou de UM nó, em DocumentDB e ElastiCache) multiplicado pelo número de réplicas, tanto na instância quanto no armazenamento"
+  },
+  "replicas_por_servidor": {
+    "banco-1": {
+      "motor_ibm": "mysql",
+      "replicas": 3
+    },
+    "banco-2": {
+      "motor_ibm": "mysql",
+      "replicas": 3
+    },
+    "banco-3": {
+      "motor_ibm": "postgresql",
+      "replicas": 2
+    },
+    "banco-4": {
+      "motor_ibm": "mongodb",
+      "replicas": 3
+    },
+    "banco-6": {
+      "motor_ibm": "redis",
+      "replicas": 2
+    }
+  },
+  "_por_que_multiplicar_e_a_aritmetica_DA_PROPRIA_AWS": {
+    "_afirmacao": "a AWS cobra réplica de forma LINEAR, e isso é medição na fatia capturada, não extrapolação do autor: o armazenamento de duas réplicas custa exatamente o dobro e o de três, exatamente o triplo",
+    "medido_em_2026-08-13_na_fatia_capturada": {
+      "armazenamento_gp3_single_az": 0.219,
+      "armazenamento_gp3_multi_az_2_replicas": 0.438,
+      "razao_2_replicas": 2.0,
+      "armazenamento_gp3_multi_az_cluster_3_replicas": 0.657,
+      "razao_3_replicas": 3.0,
+      "instancia_db.m6i.xlarge_single_az": 0.462,
+      "instancia_db.m6i.xlarge_multi_az_2_replicas": 0.924,
+      "razao_instancia_2_replicas": 2.0,
+      "instancia_db.m5d.xlarge_single_az": 0.548,
+      "instancia_db.m5d.xlarge_cluster_3_replicas": 1.56,
+      "razao_instancia_3_replicas": 2.8467
+    },
+    "_onde_a_regra_NAO_e_exata_e_a_direcao_disso": "No ARMAZENAMENTO a linearidade é exata nos dois casos medidos (2,0 e 3,0). Na INSTÂNCIA é exata em duas réplicas (2,0) e a AWS concede desconto em três (2,8467 em vez de 3,0). Aplicar 3× à instância, portanto, cobra da AWS cerca de 5,4% a mais do que o produto de agrupamento cobraria — ou seja, o desvio residual ENCARECE a nuvem que o trabalho aponta como vencedora e ENCOLHE a diferença publicada. É a direção conservadora, e é declarada em vez de silenciada.",
+    "_por_que_nao_usar_o_produto_de_agrupamento_direto": "O `deployment Multi-AZ (readable standbys)` existe na fatia, mas entre as famílias x86 de geração corrente que a regra de seleção selada admite ele só cobre `db.m5d.xlarge` (4 vCPU); não alcança os degraus exigidos por todos os servidores. Trocar a regra de seleção para acomodá-lo seria escolher SKU a dedo, que é exatamente o que o pré-registro proíbe.",
+    "_kat": "test_tco.py trava as seis medições e as três razões"
+  },
+  "_direcao_do_efeito": "ENCARECE A AWS e, portanto, ENCOLHE a diferença publicada. A correção vai CONTRA o resultado que o trabalho já publicou, e é por isso que ela precisava ser feita: um viés que favorece a própria conclusão é o que um avaliador procura.",
+  "_limite_honesto": "A AWS tem produto de três instâncias, mas ele não cobre a escada exigida sob a regra de seleção selada — ver `_por_que_nao_usar_o_produto_de_agrupamento_direto`. O preço unitário vezes o número de réplicas é a leitura disponível e uniforme para RDS, DocumentDB e ElastiCache, e o seu desvio residual pesa CONTRA o resultado publicado."
+}
