@@ -2,7 +2,7 @@
   "hash_alg": "sha256",
   "merkle": "RFC 6962 MTH, domain separation 0x00 leaf / 0x01 node",
   "nfiles": 121,
-  "tree_hash": "ab1dc5863532294a81c0241a1575c8260462a0c652a2a0970205887a9956d215",
+  "tree_hash": "8794d4e68564d84f4148ef1a1241d0f7a73de273b8a7260bf7acc962f68af76e",
   "sealed_chain": {
     "run_id": "20260816-conteudo-r4-v26",
     "root": "d364fabf30d3e0a3c827c70e1903417e83b9df2c3b35460662565ba91b68bdcf",
@@ -25,7 +25,7 @@
     ".gitignore": "6a4d9b5ffe6d5c2fa271c58838ac79eb2fd3de368d6e6e6b236102fe7ab2b21c",
     ".zenodo.json": "575a12e07b4830e96461cb1ea01d53b45f28fdd8f45fa3767d3e0c35d5ade85c",
     "CHANGELOG.md": "18c51a36b97a956e39fc84d046bb64462f898c374924e4461365ba497c0aa174",
-    "CITATION.cff": "195d626043d33c43b8dff351a7144b7ce509eaa6ded4dff2182e162093fda599",
+    "CITATION.cff": "bd45d59ae2a60230487ab0352fd8801009f66962632eb49b22c21ae66021147b",
     "LICENSE": "ed5ab3ac6067db52115a2396620306430bc9022c4a5d93552724dd0b42b0eeb2",
     "LICENSES/Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "LICENSES/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
