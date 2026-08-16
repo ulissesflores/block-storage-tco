@@ -4,6 +4,22 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.1] — 2026-08-16
+
+Superseding release for 1.6.0. The 1.6.0 tag was cut before the repository's own documentation had
+caught up with the recomputation, so the archived copy of that release carried a `REPRODUCIBILITY.md`
+announcing a step `run_all.py` no longer runs and a `README.md` without the phase-2 breakdown. This
+release archives the complete state.
+
+### Fixed
+
+- Documentation brought in line with the recomputed model — see the *Documentation* section of
+  1.6.0 for the substance; this release is what actually archives it.
+- **Version label.** `CITATION.cff` and `.zenodo.json` still read `1.5.0` when the 1.6.0 tag was
+  cut, so Zenodo labelled record `10.5281/zenodo.21968512` as version 1.5.0 while archiving the
+  1.6.0 tree. The metadata is corrected here and the version bump is now part of cutting the tag,
+  not of the backfill that follows it.
+
 ## [1.6.0] — 2026-08-16
 
 **Primary scenario recomputed.** Provider documentation that earlier versions could not reach —

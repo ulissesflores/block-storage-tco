@@ -5,7 +5,7 @@
   "access_right": "open",
   "notes": "Published with the operator's explicit authorization on 2026-08-15. Companion artefact to a case study: it carries the evidence and the computation; the text of the study is not part of it. Concept DOI: 10.5281/zenodo.21955051.",
   "license": "Apache-2.0",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "language": "eng",
   "creators": [
     {
