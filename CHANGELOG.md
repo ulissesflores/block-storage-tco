@@ -4,6 +4,23 @@ All notable changes to this repository are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the versioning follows
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] — 2026-08-16
+
+Third round of external audit. Fixes here are metadata and prose; no captured evidence and no
+computed number changed, and `environment` and `data` keep their sealed hashes.
+
+### Fixed
+
+- **Divergence count.** The narrative in `PROVENANCE.md` said 83 files byte-identical and 13
+  divergent; the table carries 14 since the style-manual citation was sanitised.
+- **Headline rounding.** The banner rounded the gap to whole dollars while the Results table below
+  it carried cents. Both now carry cents, matching what the article publishes.
+- **Release mechanics documented.** Two audits read the one-commit difference between the tag and
+  `main` as a discrepancy. Zenodo mints the version DOI *from* the release, so the tagged tree
+  cannot contain it; the backfill commit is the mechanism, and the README now says so.
+- **Chain.** The ledger and the sealed-chain block name run `20260816-auditoria-r3-v25`
+  (root `fa537655…`, link `f8b52f9e…`).
+
 ## [1.3.0] — 2026-08-15
 
 Second round of external audit — seven independent reports on the same artefact. What they found

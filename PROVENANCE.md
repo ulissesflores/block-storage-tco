@@ -23,7 +23,7 @@ linked to the previous run's head (`chain_head = H(0x02 || prev_head || ROOT)`),
 Haber–Stornetta construction. The domain-separation bytes — `0x00` for a leaf, `0x01` for an
 interior node, `0x02` for a chain link — are what stop a leaf from being passed off as a node.
 
-**Thirty-five runs** were sealed between 2026-08-13 and 2026-08-15. The full ledger, hashes only, is in
+**Thirty-six runs** were sealed between 2026-08-13 and 2026-08-15. The full ledger, hashes only, is in
 [`docs/chain-ledger.tsv`](docs/chain-ledger.tsv). Three of its properties are worth reading directly,
 because they are the ones that could not be faked after the fact:
 
@@ -37,9 +37,9 @@ Head of the chain at the time of publication:
 
 | Field | Value |
 |---|---|
-| Run | `20260815-auditoria-r2-v24` |
-| ROOT | `4c565c687db28c9c16a7bad3710794920ec239566d002f1ec124fc7c5884ca5a` |
-| `chain_head` | `9167dcf68e78eee9b0b19f280ef6a932829030b794a4633e1572e6f462c026ba` |
+| Run | `20260816-auditoria-r3-v25` |
+| ROOT | `fa537655be84f83edc467e2e11b76c84a089e3399640e266b6bbaedc34d6f78b` |
+| `chain_head` | `f8b52f9ee0686c55c8f7ccffb31c2c3297b270c40d181557fb28e47aa7c49a85` |
 | `stage_environment` | `e116b39d689216d7ee6b936adc6133dd8532071fa07ce16c39fa2c379b1e543d` |
 | `stage_data` | `d1221100a76ce4e0bdd90dedd20e029d063a3b46d7a31f9bb706b63173d5ca95` |
 
